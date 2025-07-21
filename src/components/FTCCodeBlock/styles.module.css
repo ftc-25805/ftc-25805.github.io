@@ -1,0 +1,274 @@
+/* FTCCodeBlock Component Styles */
+
+.codeContainer {
+  margin: 1.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.robotController {
+  border-left: 4px solid var(--team-primary);
+  background: linear-gradient(135deg, rgba(255, 106, 0, 0.02), rgba(0, 92, 185, 0.02));
+}
+
+.codeHeader {
+  padding: 1rem 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.codeTitle {
+  margin: 0;
+  color: var(--team-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.languageIcon {
+  font-size: 1.1rem;
+}
+
+.languageBadge {
+  background: var(--team-secondary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.robotControllerNote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 106, 0, 0.1);
+  border: 1px solid var(--team-primary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--team-primary);
+  margin-bottom: 0.75rem;
+}
+
+.robotIcon {
+  font-size: 1.1rem;
+}
+
+.codeDescription {
+  margin: 0;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.codeWrapper {
+  position: relative;
+}
+
+.codeWrapper pre {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.codeFooter {
+  padding: 1rem 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.ftcTips {
+  padding: 1rem 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.ftcTips h5 {
+  margin: 0 0 0.75rem 0;
+  color: var(--team-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ftcTips ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.ftcTips li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ifm-color-content);
+}
+
+.ftcTips code {
+  background: var(--ifm-code-background);
+  color: var(--ifm-code-color);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Language-specific styling */
+.codeContainer[data-language="java"] .languageBadge {
+  background: #ED8B00;
+}
+
+.codeContainer[data-language="blocks"] .languageBadge {
+  background: #4CAF50;
+}
+
+.codeContainer[data-language="python"] .languageBadge {
+  background: #3776AB;
+}
+
+.codeContainer[data-language="javascript"] .languageBadge {
+  background: #F7DF1E;
+  color: #000;
+}
+
+.codeContainer[data-language="json"] .languageBadge {
+  background: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .codeHeader {
+    padding: 1rem;
+  }
+  
+  .headerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .codeTitle {
+    font-size: 1.1rem;
+  }
+  
+  .languageBadge {
+    align-self: flex-start;
+  }
+  
+  .robotControllerNote {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .codeFooter,
+  .ftcTips {
+    padding: 1rem;
+  }
+  
+  .ftcTips h5 {
+    font-size: 0.95rem;
+  }
+  
+  .ftcTips li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .codeHeader {
+    padding: 0.75rem;
+  }
+  
+  .codeTitle {
+    font-size: 1rem;
+  }
+  
+  .languageBadge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .robotControllerNote {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .codeDescription {
+    font-size: 0.9rem;
+  }
+  
+  .codeFooter,
+  .ftcTips {
+    padding: 0.75rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .codeHeader,
+[data-theme='dark'] .codeFooter,
+[data-theme='dark'] .ftcTips {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .robotController {
+  background: linear-gradient(135deg, rgba(255, 106, 0, 0.05), rgba(0, 92, 185, 0.05));
+}
+
+[data-theme='dark'] .robotControllerNote {
+  background: rgba(255, 106, 0, 0.15);
+  border-color: var(--team-primary);
+}
+
+[data-theme='dark'] .ftcTips code {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-content);
+}
+
+/* Copy button styling enhancement */
+.codeWrapper button[title="Copy code to clipboard"] {
+  background: var(--team-primary);
+  border: none;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.codeWrapper button[title="Copy code to clipboard"]:hover {
+  background: var(--team-secondary);
+  transform: scale(1.05);
+}
+
+/* Syntax highlighting enhancements for FTC-specific terms */
+.codeWrapper .token.class-name {
+  color: var(--team-primary);
+}
+
+.codeWrapper .token.method {
+  color: var(--team-secondary);
+}
+
+.codeWrapper .token.comment {
+  color: var(--team-accent);
+  font-style: italic;
+}

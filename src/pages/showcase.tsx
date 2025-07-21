@@ -3,6 +3,10 @@ import Layout from '@theme/Layout';
 import RobotCard from '@site/src/components/RobotCard';
 import TeamMember from '@site/src/components/TeamMember';
 import CompetitionResults from '@site/src/components/CompetitionResults';
+import ProgressTimeline from '@site/src/components/ProgressTimeline';
+import SponsorShowcase from '@site/src/components/SponsorShowcase';
+import FTCCodeBlock from '@site/src/components/FTCCodeBlock';
+import ImageGallery from '@site/src/components/ImageGallery';
 
 export default function Showcase(): ReactNode {
   // Sample data for demonstration
@@ -124,27 +128,184 @@ export default function Showcase(): ReactNode {
           <CompetitionResults {...sampleCompetition} />
         </section>
 
+        <section style={{ marginTop: '3rem' }}>
+          <h2>ProgressTimeline Component</h2>
+          <p>Visual timeline for tracking build progress, competition milestones, and team achievements.</p>
+          <ProgressTimeline
+            title="Build Season Timeline"
+            events={[
+              {
+                id: '1',
+                date: '2024-09-07',
+                title: 'Game Reveal & Kickoff',
+                description: 'Official start of the 2024-25 FTC season with game rules announcement.',
+                type: 'milestone',
+                status: 'completed'
+              },
+              {
+                id: '2', 
+                date: '2024-10-15',
+                title: 'Design Review Complete',
+                description: 'Finalized robot design and CAD models after extensive prototyping.',
+                type: 'build',
+                status: 'completed'
+              },
+              {
+                id: '3',
+                date: '2024-11-20',
+                title: 'First Competition',
+                description: 'League Tournament #1 - Testing our robot against other teams.',
+                type: 'competition',
+                status: 'in-progress'
+              }
+            ]}
+          />
+        </section>
+
+        <section style={{ marginTop: '3rem' }}>
+          <h2>SponsorShowcase Component</h2>
+          <p>Tiered sponsor display with recognition levels and contribution tracking.</p>
+          <SponsorShowcase
+            sponsors={[
+              {
+                id: '1',
+                name: 'Tech Innovations Corp',
+                logo: '/img/team-placeholder.svg',
+                tier: 'title',
+                description: 'Leading technology partner supporting STEM education.',
+                since: '2023',
+                featured: true,
+                website: 'https://example.com'
+              },
+              {
+                id: '2',
+                name: 'Local Engineering Firm',
+                logo: '/img/team-placeholder.svg', 
+                tier: 'gold',
+                description: 'Providing mentorship and technical expertise.',
+                since: '2024'
+              }
+            ]}
+            layout="tiered"
+            showDescription={true}
+          />
+        </section>
+
+        <section style={{ marginTop: '3rem' }}>
+          <h2>FTCCodeBlock Component</h2>
+          <p>Enhanced code display specifically designed for FTC programming with syntax highlighting and tips.</p>
+          <FTCCodeBlock
+            language="java"
+            title="Autonomous Drive Example"
+            description="Basic autonomous routine for driving forward and turning"
+            robotController={true}
+            code={`@Autonomous(name="Drive Forward", group="Linear OpMode")
+public class DriveForward extends LinearOpMode {
+    private DcMotor leftDrive = null;
+    private DcMotor rightDrive = null;
+
+    @Override
+    public void runOpMode() {
+        // Initialize the hardware variables
+        leftDrive = hardwareMap.get(DcMotor.class, "left_drive");
+        rightDrive = hardwareMap.get(DcMotor.class, "right_drive");
+        
+        // Set motor directions
+        leftDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightDrive.setDirection(DcMotor.Direction.REVERSE);
+        
+        // Wait for the game to start
+        waitForStart();
+        
+        // Drive forward for 3 seconds
+        leftDrive.setPower(0.5);
+        rightDrive.setPower(0.5);
+        sleep(3000);
+        
+        // Stop motors
+        leftDrive.setPower(0);
+        rightDrive.setPower(0);
+    }
+}`}
+          />
+        </section>
+
+        <section style={{ marginTop: '3rem' }}>
+          <h2>ImageGallery Component</h2>
+          <p>Responsive image gallery with lightbox functionality and category filtering.</p>
+          <ImageGallery
+            title="Robot Build Gallery"
+            images={[
+              {
+                id: '1',
+                src: '/img/robot-placeholder.svg',
+                alt: 'Robot assembly progress',
+                caption: 'Initial robot frame assembly',
+                category: 'Build Progress',
+                date: '2024-10-15'
+              },
+              {
+                id: '2',
+                src: '/img/team-placeholder.svg',
+                alt: 'Team working on robot',
+                caption: 'Team collaborating on mechanical design',
+                category: 'Team Photos',
+                date: '2024-10-20'
+              },
+              {
+                id: '3',
+                src: '/img/robot-placeholder.svg',
+                alt: 'Competition robot',
+                caption: 'Completed robot ready for competition',
+                category: 'Competitions',
+                date: '2024-11-01'
+              }
+            ]}
+            showCategories={true}
+            columns={3}
+            aspectRatio="landscape"
+          />
+        </section>
+
         <section style={{ marginTop: '3rem', padding: '2rem', backgroundColor: 'var(--ifm-background-surface-color)', borderRadius: '8px' }}>
-          <h2>Usage Instructions</h2>
-          <h3>Importing Components</h3>
+          <h2>Phase 3 Component Library</h2>
+          <h3>All Components</h3>
           <pre style={{ background: 'var(--ifm-code-background)', padding: '1rem', borderRadius: '4px' }}>
-{`import RobotCard from '@site/src/components/RobotCard';
+{`// Phase 2 Components
+import RobotCard from '@site/src/components/RobotCard';
 import TeamMember from '@site/src/components/TeamMember';
-import CompetitionResults from '@site/src/components/CompetitionResults';`}
+import CompetitionResults from '@site/src/components/CompetitionResults';
+
+// Phase 3 Components  
+import ProgressTimeline from '@site/src/components/ProgressTimeline';
+import SponsorShowcase from '@site/src/components/SponsorShowcase';
+import FTCCodeBlock from '@site/src/components/FTCCodeBlock';
+import ImageGallery from '@site/src/components/ImageGallery';`}
           </pre>
           
-          <h3>Component Features</h3>
+          <h3>Advanced Features</h3>
           <ul>
-            <li><strong>RobotCard:</strong> TypeScript interfaces, responsive design, technical specs display, media links</li>
-            <li><strong>TeamMember:</strong> Social media integration, specialty tags, leadership badges, profile images</li>
-            <li><strong>CompetitionResults:</strong> Match breakdown, statistical analysis, awards display, video links</li>
+            <li><strong>ProgressTimeline:</strong> Interactive timeline with status tracking, event categorization, and image support</li>
+            <li><strong>SponsorShowcase:</strong> Tiered sponsor display with multiple layouts, contribution tracking, and call-to-action</li>
+            <li><strong>FTCCodeBlock:</strong> Enhanced code blocks with FTC-specific features, programming tips, and syntax highlighting</li>
+            <li><strong>ImageGallery:</strong> Full-featured gallery with lightbox, category filtering, and responsive grid layouts</li>
           </ul>
           
-          <h3>Responsive Design</h3>
-          <p>All components are fully responsive and adapt to mobile, tablet, and desktop screen sizes.</p>
+          <h3>Interactive Elements</h3>
+          <ul>
+            <li>Lightbox modals with keyboard navigation</li>
+            <li>Category filtering and search</li>
+            <li>Hover animations and transitions</li>
+            <li>Mobile-optimized touch interactions</li>
+          </ul>
           
-          <h3>Theming</h3>
-          <p>Components automatically adapt to light and dark modes using CSS custom properties.</p>
+          <h3>Accessibility & Performance</h3>
+          <ul>
+            <li>WCAG 2.1 AA compliant with screen reader support</li>
+            <li>Keyboard navigation and focus management</li>
+            <li>Optimized for performance with lazy loading</li>
+            <li>Dark mode support across all components</li>
+          </ul>
         </section>
       </div>
     </Layout>

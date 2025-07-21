@@ -1,0 +1,379 @@
+/* ProgressTimeline Component Styles */
+
+.timelineContainer {
+  max-width: 100%;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.timelineTitle {
+  margin: 0 0 2rem 0;
+  color: var(--team-primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 3px solid var(--team-primary);
+  padding-bottom: 0.75rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--team-primary), var(--team-secondary));
+  border-radius: 2px;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 3rem;
+}
+
+.timelineMarker {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.timelineIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--ifm-background-color);
+  border: 3px solid var(--team-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelineIcon {
+  transform: scale(1.1);
+  border-color: var(--team-secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timelineDate {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--team-secondary);
+  background: var(--ifm-background-surface-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  white-space: nowrap;
+}
+
+.timelineContent {
+  background: var(--ifm-background-surface-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timelineContent::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 1rem;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid var(--ifm-background-surface-color);
+}
+
+.timelineItem:hover .timelineContent {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.eventHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.eventTitle {
+  margin: 0;
+  color: var(--team-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+}
+
+.eventType {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+}
+
+.typeMilestone { background: var(--team-primary); }
+.typeCompetition { background: var(--team-secondary); }
+.typeBuild { background: var(--team-accent); }
+.typeOutreach { background: #6f42c1; }
+.typeAward { background: #fd7e14; }
+
+.eventDescription {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: var(--ifm-color-content);
+}
+
+.eventImages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+  max-width: 320px;
+}
+
+.eventImage {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  transition: transform 0.2s ease;
+}
+
+.eventImage:hover {
+  transform: scale(1.05);
+}
+
+.moreImages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ifm-color-content-secondary);
+}
+
+.eventLink {
+  display: inline-block;
+  color: var(--team-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.eventLink:hover {
+  color: var(--team-primary);
+  text-decoration: none;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+}
+
+.statusCompleted { background: var(--team-accent); }
+.statusInprogress { background: var(--team-primary); }
+.statusUpcoming { background: var(--ifm-color-emphasis-600); }
+
+.timelineConnector {
+  position: absolute;
+  left: -1rem;
+  bottom: -1.25rem;
+  width: 2rem;
+  height: 1rem;
+  background: var(--ifm-background-surface-color);
+  z-index: 1;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Status-based styling */
+.completed .timelineIcon {
+  border-color: var(--team-accent);
+  background: rgba(0, 166, 81, 0.1);
+}
+
+.inProgress .timelineIcon {
+  border-color: var(--team-primary);
+  background: rgba(255, 106, 0, 0.1);
+  animation: pulse 2s infinite;
+}
+
+.upcoming .timelineIcon {
+  border-color: var(--ifm-color-emphasis-600);
+  background: var(--ifm-color-emphasis-200);
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 2px 8px rgba(255, 106, 0, 0.1); }
+  50% { box-shadow: 0 4px 16px rgba(255, 106, 0, 0.3); }
+  100% { box-shadow: 0 2px 8px rgba(255, 106, 0, 0.1); }
+}
+
+/* Compact mode */
+.compact .timelineItem {
+  margin-bottom: 1.5rem;
+}
+
+.compact .timelineContent {
+  padding: 1rem;
+}
+
+.compact .eventTitle {
+  font-size: 1.1rem;
+}
+
+.compact .timelineIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.compact .eventImages {
+  max-width: 160px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+  
+  .timeline::before {
+    left: 0.5rem;
+  }
+  
+  .timelineMarker {
+    left: -1.5rem;
+  }
+  
+  .timelineIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .timelineContent {
+    padding: 1rem;
+  }
+  
+  .timelineContent::before {
+    left: -6px;
+    border-right-width: 6px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+  }
+  
+  .eventHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .eventTitle {
+    font-size: 1.1rem;
+  }
+  
+  .eventImages {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    max-width: 240px;
+  }
+  
+  .eventImage {
+    height: 50px;
+  }
+  
+  .statusBadge {
+    position: static;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timelineTitle {
+    font-size: 1.5rem;
+  }
+  
+  .timelineItem {
+    padding-left: 2rem;
+  }
+  
+  .timelineIcon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .timelineDate {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .eventImages {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 180px;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .timelineIcon {
+  background: var(--ifm-background-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .timelineContent {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-600);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .timelineContent::before {
+  border-right-color: var(--ifm-background-color);
+}
+
+[data-theme='dark'] .timelineDate {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .moreImages {
+  background: var(--ifm-color-emphasis-600);
+}

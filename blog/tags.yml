@@ -1,19 +1,65 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+# FTC Team 25805 Blog Tags
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+# Build & Engineering
+robot-design:
+  label: Robot Design
+  permalink: /robot-design
+  description: Posts about robot design and engineering process
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+engineering:
+  label: Engineering
+  permalink: /engineering
+  description: Engineering methods, processes, and technical content
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+cad:
+  label: CAD
+  permalink: /cad
+  description: Computer-aided design and 3D modeling content
+
+programming:
+  label: Programming
+  permalink: /programming
+  description: Software development, autonomous programming, and coding
+
+build-progress:
+  label: Build Progress
+  permalink: /build-progress
+  description: Updates on robot construction and assembly
+
+build-season:
+  label: Build Season
+  permalink: /build-season
+  description: Content related to FTC build season activities
+
+# Competition & Events
+kickoff:
+  label: Kickoff
+  permalink: /kickoff
+  description: Season kickoff and game reveal events
+
+# Outreach & Community
+outreach:
+  label: Outreach
+  permalink: /outreach
+  description: Community outreach programs and activities
+
+community:
+  label: Community
+  permalink: /community
+  description: Community engagement and partnerships
+
+stem-education:
+  label: STEM Education
+  permalink: /stem-education
+  description: Educational initiatives and STEM promotion
+
+elementary-school:
+  label: Elementary School
+  permalink: /elementary-school
+  description: Elementary school visits and programs
+
+# Team Updates
+team-update:
+  label: Team Update
+  permalink: /team-update
+  description: General team news and announcements

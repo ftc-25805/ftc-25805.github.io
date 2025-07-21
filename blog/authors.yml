@@ -1,9 +1,35 @@
+# FTC Team 25805 Authors
+team-captain:
+  name: Alex Johnson
+  title: Team Captain & Lead Programmer
+  image_url: /img/team-placeholder.svg
+  page: true
+
+mechanical-lead:
+  name: Sarah Chen
+  title: Mechanical Team Lead
+  image_url: /img/team-placeholder.svg
+  page: true
+
+programming-lead:
+  name: Mike Rodriguez
+  title: Programming Team Lead
+  image_url: /img/team-placeholder.svg
+  page: true
+
+outreach-lead:
+  name: Jessica Thompson
+  title: Outreach Team Lead
+  image_url: /img/team-placeholder.svg
+  page: true
+
+# Example authors (keeping for reference)
 yangshun:
   name: Yangshun Tay
   title: Front End Engineer @ Facebook
   url: https://github.com/yangshun
   image_url: https://github.com/yangshun.png
-  page: true
+  page: false
   socials:
     x: yangshunz
     github: yangshun
@@ -13,9 +39,7 @@ slorber:
   title: Docusaurus maintainer
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+  page: false
   socials:
     x: sebastienlorber
     linkedin: sebastienlorber
