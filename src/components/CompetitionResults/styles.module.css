@@ -1,0 +1,298 @@
+/* CompetitionResults Component Styles */
+
+.competitionCard {
+  margin: 1.5rem 0;
+  max-width: 100%;
+}
+
+.competitionHeader {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.competitionName {
+  margin: 0 0 0.5rem 0;
+  color: var(--team-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.competitionInfo {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.competitionDate,
+.competitionLocation {
+  color: var(--ifm-color-content-secondary);
+  font-weight: 500;
+}
+
+.competitionStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--team-primary);
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+  font-weight: 500;
+}
+
+.awardsSection,
+.highlightsSection,
+.matchesSection,
+.videosSection {
+  margin: 1.5rem 0;
+}
+
+.awardsSection h4,
+.highlightsSection h4,
+.matchesSection h4,
+.videosSection h4 {
+  margin: 0 0 1rem 0;
+  color: var(--team-secondary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--team-secondary);
+  padding-bottom: 0.5rem;
+}
+
+.awardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.awardItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.awardDescription {
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.highlightsList {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.highlightsList li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.matchesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.matchItem {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  transition: transform 0.2s ease;
+}
+
+.matchItem:hover {
+  transform: translateY(-2px);
+}
+
+.matchWin {
+  border-color: var(--team-accent);
+  background: rgba(0, 166, 81, 0.05);
+}
+
+.matchLoss {
+  border-color: #DC3545;
+  background: rgba(220, 53, 69, 0.05);
+}
+
+.matchTie {
+  border-color: #FFC107;
+  background: rgba(255, 193, 7, 0.05);
+}
+
+.matchHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.matchNumber {
+  font-weight: 600;
+  color: var(--ifm-color-content);
+}
+
+.matchAlliance {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.allianceRed {
+  background: #DC3545;
+}
+
+.allianceBlue {
+  background: var(--team-secondary);
+}
+
+.matchScore {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.scoreTeam {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--team-primary);
+}
+
+.scoreSeparator {
+  margin: 0 0.5rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.scoreOpponent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-content-secondary);
+}
+
+.matchResult {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.matchWin .matchResult {
+  color: var(--team-accent);
+}
+
+.matchLoss .matchResult {
+  color: #DC3545;
+}
+
+.matchTie .matchResult {
+  color: #FFC107;
+}
+
+.videoLinks {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .competitionInfo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .competitionStats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .statValue {
+    font-size: 1.25rem;
+  }
+  
+  .matchesGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .videoLinks {
+    flex-direction: column;
+  }
+  
+  .videoLinks .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .competitionName {
+    font-size: 1.25rem;
+  }
+  
+  .competitionStats {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .statValue {
+    font-size: 1.1rem;
+  }
+  
+  .matchItem {
+    padding: 0.75rem;
+  }
+  
+  .matchScore {
+    margin-bottom: 0.25rem;
+  }
+  
+  .scoreTeam,
+  .scoreOpponent {
+    font-size: 1.25rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .competitionStats {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .matchItem {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .matchWin {
+  background: rgba(0, 166, 81, 0.1);
+}
+
+[data-theme='dark'] .matchLoss {
+  background: rgba(220, 53, 69, 0.1);
+}
+
+[data-theme='dark'] .matchTie {
+  background: rgba(255, 193, 7, 0.1);
+}

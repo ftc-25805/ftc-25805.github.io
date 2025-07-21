@@ -1,0 +1,174 @@
+/* RobotCard Component Styles */
+
+.robotCard {
+  max-width: 100%;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.robotHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.robotImage {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--ifm-color-emphasis-300);
+}
+
+.robotImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.robotCard:hover .robotImage img {
+  transform: scale(1.05);
+}
+
+.robotInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.robotName {
+  margin: 0 0 0.5rem 0;
+  color: var(--team-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.robotContent {
+  margin-bottom: 1.5rem;
+}
+
+.robotDescription {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-content-secondary);
+}
+
+.achievementsSection,
+.specsSection {
+  margin: 1rem 0;
+}
+
+.achievementsSection h4,
+.specsSection h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--team-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--team-secondary);
+  padding-bottom: 0.25rem;
+}
+
+.achievementsList {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.achievementsList li {
+  margin-bottom: 0.25rem;
+  color: var(--ifm-color-content);
+}
+
+.specsGrid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.specItem {
+  padding: 0.5rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 4px;
+  border-left: 3px solid var(--team-accent);
+}
+
+.specItem strong {
+  color: var(--team-primary);
+}
+
+.featuresList {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1rem;
+}
+
+.featuresList li {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.robotActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding-top: 1rem;
+}
+
+.robotActions .button {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .robotHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .robotImage {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .robotName {
+    font-size: 1.25rem;
+  }
+  
+  .robotActions {
+    flex-direction: column;
+  }
+  
+  .robotActions .button {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .robotImage {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .specsGrid {
+    gap: 0.5rem;
+  }
+  
+  .specItem {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .robotImage {
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .specItem {
+  background: var(--ifm-background-color);
+  border-left-color: var(--team-accent);
+}

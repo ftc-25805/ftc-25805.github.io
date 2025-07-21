@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="60" fill="#F8F9FA"/>
+  <circle cx="60" cy="60" r="55" fill="#E9ECEF" stroke="#DEE2E6" stroke-width="2"/>
+  
+  <!-- Person Icon -->
+  <!-- Head -->
+  <circle cx="60" cy="45" r="15" fill="#6C757D"/>
+  
+  <!-- Body -->
+  <ellipse cx="60" cy="85" rx="25" ry="20" fill="#6C757D"/>
+  
+  <!-- FTC Accent -->
+  <circle cx="60" cy="60" r="58" stroke="#FF6A00" stroke-width="2" fill="none" opacity="0.3"/>
+</svg>
