@@ -295,7 +295,7 @@ const config: Config = {
                 },
                 {
                     type: 'docSidebar',
-                    sidebarId: 'tutorialSidebar',
+                    sidebarId: 'ftcSidebar',
                     position: 'left',
                     label: 'Resources',
                     className: 'navbar__item--hide-mobile',

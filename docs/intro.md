@@ -2,46 +2,150 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Welcome to FTC Resources
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Your comprehensive guide to **FIRST Tech Challenge robotics** for Team 25805.
 
-## Getting Started
+## Getting Started with FTC
 
-Get started by **creating a new site**.
+Welcome to the exciting world of FIRST Tech Challenge! Whether you're a new team member or looking to brush up on the fundamentals, this resource hub will help you navigate the world of competitive robotics.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### What is FIRST Tech Challenge?
 
-### What you'll need
+FIRST Tech Challenge (FTC) is a robotics competition for students in grades 7-12. Teams design, build, and program robots to compete in an alliance format against other teams. The competition combines the excitement of sport with the rigors of science and technology.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Resource Navigation
 
-## Generate a new site
+Quick access to all FTC resource sections:
 
-Generate a new Docusaurus site using the **classic template**.
+<div className="row" style={{marginBottom: '2rem'}}>
+  <div className="col col--6">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3>🚀 Getting Started</h3>
+      </div>
+      <div className="card__body">
+        <p>Essential information for new team members</p>
+        <ul>
+          <li><a href="./getting-started/team-handbook">Team Handbook</a></li>
+          <li><a href="./getting-started/ftc-basics">FTC Basics</a></li>
+          <li><a href="./getting-started/safety">Safety First</a></li>
+        </ul>
+      </div>
+      <div className="card__footer">
+        <a href="./getting-started/team-handbook" className="button button--primary button--block">Start Here</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--6">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3>💻 Programming</h3>
+      </div>
+      <div className="card__body">
+        <p>Learn Java, Blocks, and robot control systems</p>
+        <ul>
+          <li>FTC Blocks (Visual Programming)</li>
+          <li>Java Programming</li>
+          <li>Autonomous & TeleOp</li>
+        </ul>
+      </div>
+      <div className="card__footer">
+        <a href="./programming/" className="button button--primary button--block">Learn Programming</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-The classic template will automatically be added to your project after you run the command:
+<div className="row" style={{marginBottom: '2rem'}}>
+  <div className="col col--6">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3>🔧 Building & Design</h3>
+      </div>
+      <div className="card__body">
+        <p>Mechanical engineering and robot construction</p>
+        <ul>
+          <li>Design Process</li>
+          <li>Mechanical Systems</li>
+          <li>CAD & Documentation</li>
+        </ul>
+      </div>
+      <div className="card__footer">
+        <a href="./building/" className="button button--primary button--block">Build Robots</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--6">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3>🎯 Strategy & Scouting</h3>
+      </div>
+      <div className="card__body">
+        <p>Game analysis and competition strategy</p>
+        <ul>
+          <li>Game Strategy</li>
+          <li>Scouting Systems</li>
+          <li>Alliance Selection</li>
+        </ul>
+      </div>
+      <div className="card__footer">
+        <a href="./strategy/" className="button button--primary button--block">Plan Strategy</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+<div className="row" style={{marginBottom: '2rem'}}>
+  <div className="col col--6">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3>📝 Engineering Notebook</h3>
+      </div>
+      <div className="card__body">
+        <p>Documentation and design process</p>
+        <ul>
+          <li>Notebook Structure</li>
+          <li>Technical Writing</li>
+          <li>Award Submissions</li>
+        </ul>
+      </div>
+      <div className="card__footer">
+        <a href="./notebook/" className="button button--primary button--block">Document Process</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--6">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3>📋 Rules & Updates</h3>
+      </div>
+      <div className="card__body">
+        <p>Current season rules and official updates</p>
+        <ul>
+          <li>INTO THE DEEP℠ 2024-25</li>
+          <li>Game Manual</li>
+          <li>Official Q&A</li>
+        </ul>
+      </div>
+      <div className="card__footer">
+        <a href="./rules-updates/" className="button button--primary button--block">Check Rules</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Current Season: INTO THE DEEP℠
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+The 2024-25 FTC season challenges teams to explore the ocean depths! Learn about:
+- Game rules and scoring
+- Strategic considerations
+- Common robot designs
+- Match analysis tools
 
-## Start your site
+## Quick Links
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- [Game Manual](https://www.firstinspires.org/resource-library/ftc/game-and-season-info) - Official rules and updates
+- [FTC Discord](https://discord.gg/first-programs) - Community support and discussions
+- [REV Robotics](https://www.revrobotics.com/) - Hardware supplier and resources
+- [FTC Community](https://ftc-community.firstinspires.org/) - Official forums and Q&A
