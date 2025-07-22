@@ -7,6 +7,9 @@ import ProgressTimeline from '@site/src/components/ProgressTimeline';
 import SponsorShowcase from '@site/src/components/SponsorShowcase';
 import FTCCodeBlock from '@site/src/components/FTCCodeBlock';
 import ImageGallery from '@site/src/components/ImageGallery';
+import AwardShowcase from '@site/src/components/AwardShowcase';
+import TechnicalNotebook from '@site/src/components/TechnicalNotebook';
+import GameElementDemo from '@site/src/components/GameElementDemo';
 
 export default function Showcase(): ReactNode {
   // Sample data for demonstration
@@ -99,6 +102,216 @@ export default function Showcase(): ReactNode {
     ],
     videos: ["https://youtube.com/watch1", "https://youtube.com/watch2"]
   };
+
+  const sampleAwards = [
+    {
+      id: '1',
+      name: 'Think Award',
+      season: '2023-24',
+      competition: 'Regional Championship',
+      date: '2024-03-15',
+      level: 'regional' as const,
+      category: 'judged' as const,
+      description: 'Awarded to the team whose robot design shows the most creative and thoughtful engineering process.',
+      significance: 'This award recognizes our comprehensive engineering notebook documentation and innovative autonomous routines.',
+      teamRole: 'Lead recognition for our engineering design process and documentation excellence.',
+      certificate: '/docs/awards/think-award-2024.pdf'
+    },
+    {
+      id: '2',
+      name: 'Alliance Captain',
+      season: '2023-24',
+      competition: 'League Tournament #2',
+      date: '2024-02-10',
+      level: 'tournament' as const,
+      category: 'performance' as const,
+      description: 'Selected as first alliance captain for elimination rounds based on ranking performance.',
+      significance: 'Demonstrates consistent high performance and strategic gameplay throughout qualification matches.',
+      teamRole: 'Alliance captain with 6-2 qualification record, leading our alliance to semifinal rounds.'
+    },
+    {
+      id: '3',
+      name: 'Connect Award',
+      season: '2022-23',
+      competition: 'State Championship',
+      date: '2023-04-08',
+      level: 'state' as const,
+      category: 'outreach' as const,
+      description: 'Recognizes a team that connects with their community through their enthusiasm for FIRST.',
+      significance: 'Awarded for our extensive community outreach program including STEM workshops for elementary students.',
+      teamRole: 'Led 12 community outreach events reaching over 300 students in local schools.',
+      image: '/img/connect-award-ceremony.jpg'
+    }
+  ];
+
+  const sampleNotebookEntries = [
+    {
+      id: '1',
+      date: '2024-11-15',
+      title: 'Autonomous Routine Testing Results',
+      category: 'testing' as const,
+      author: 'Sarah Chen',
+      content: 'Today we conducted comprehensive testing of our autonomous routines on the competition field setup. We tested three different approach strategies for the specimen scoring.\n\nResults:\n- Strategy A (Vision-guided): 85% success rate, average time 28.5 seconds\n- Strategy B (Encoder-based): 92% success rate, average time 31.2 seconds  \n- Strategy C (Hybrid): 88% success rate, average time 29.8 seconds\n\nStrategy B shows the most consistent results, though slightly slower. We recommend implementing Strategy B as our primary autonomous with Strategy C as backup.',
+      images: ['/img/auto-test-field.jpg', '/img/auto-results-chart.png'],
+      attachments: [
+        {
+          name: 'Autonomous Test Data.xlsx',
+          url: '/data/auto-test-results-nov15.xlsx',
+          type: 'data' as const
+        }
+      ],
+      tags: ['autonomous', 'testing', 'specimens', 'vision'],
+      status: 'approved' as const
+    },
+    {
+      id: '2',
+      date: '2024-11-10',
+      title: 'Intake Mechanism Design Review',
+      category: 'design' as const,
+      author: 'Marcus Rodriguez',
+      content: 'Design review for our sample intake mechanism. The current prototype uses a combination of compliant wheels and surgical tubing to effectively grab and manipulate game elements.\n\nKey Design Features:\n- Variable compression system for different sample types\n- Quick-release mechanism for scoring\n- Integration with existing elevator system\n\nNext steps: Finalize CAD model and prepare for manufacturing.',
+      images: ['/img/intake-prototype.jpg'],
+      attachments: [
+        {
+          name: 'Intake_Mechanism_v3.step',
+          url: '/cad/intake-v3.step',
+          type: 'cad' as const
+        },
+        {
+          name: 'Design Requirements.pdf',
+          url: '/docs/intake-requirements.pdf',
+          type: 'document' as const
+        }
+      ],
+      tags: ['intake', 'design', 'cad', 'mechanisms'],
+      status: 'review' as const
+    },
+    {
+      id: '3',
+      date: '2024-11-05',
+      title: 'Team Strategy Meeting - Game Analysis',
+      category: 'meeting' as const,
+      author: 'Alex Johnson',
+      content: 'Weekly strategy meeting focused on analyzing the current game and developing our competition strategy.\n\nKey Discussion Points:\n- Scoring priorities: Specimens vs Samples\n- Alliance cooperation strategies\n- Endgame hanging mechanism requirements\n- Time allocation during autonomous and teleoperated periods\n\nDecisions made: Focus on specimen scoring for higher points, develop reliable hanging mechanism for endgame.',
+      tags: ['strategy', 'game-analysis', 'alliance', 'endgame'],
+      status: 'implemented' as const
+    }
+  ];
+
+  const sampleGameElements = [
+    {
+      id: '1',
+      name: 'Sample',
+      type: 'scoring' as const,
+      description: 'Cube-shaped scoring element that can be picked up by robots and placed in scoring areas for points.',
+      image: '/img/sample-element.svg',
+      points: {
+        autonomous: 6,
+        teleoperated: 4,
+        endgame: 0
+      },
+      rules: [
+        'Samples must be fully supported by the scoring area to count',
+        'Maximum of 3 samples can be scored in the observation zone',
+        'Samples cannot be possessed for more than 30 seconds'
+      ],
+      strategies: [
+        'Prioritize sample collection during autonomous for higher points',
+        'Use vision systems to identify and track sample locations',
+        'Develop reliable intake mechanism for consistent pickup'
+      ],
+      dimensions: {
+        length: '3.5 inches',
+        width: '3.5 inches',
+        height: '3.5 inches',
+        weight: '4.0 oz'
+      },
+      materials: ['Foam', 'Plastic coating', 'Reflective tape'],
+      interactions: ['Specimens', 'Baskets', 'Observation zone']
+    },
+    {
+      id: '2',
+      name: 'Specimen',
+      type: 'scoring' as const,
+      description: 'Elongated scoring element designed to hang on the submersible or be placed in specific scoring positions.',
+      image: '/img/specimen-element.svg',
+      points: {
+        autonomous: 10,
+        teleoperated: 6,
+        endgame: 0
+      },
+      rules: [
+        'Specimens must be hung completely above the chamber wall',
+        'Only one robot can score specimens at a time per alliance',
+        'Specimens cannot be moved once properly scored'
+      ],
+      strategies: [
+        'Focus on specimen scoring for maximum point potential',
+        'Develop precise hanging mechanism for consistent scoring',
+        'Practice coordination with alliance partners for chamber access'
+      ],
+      dimensions: {
+        length: '11.5 inches',
+        width: '1.5 inches',
+        height: '1.5 inches',
+        weight: '1.5 oz'
+      },
+      materials: ['Plastic tube', 'End caps', 'Hook attachments'],
+      interactions: ['Chambers', 'Submersible', 'Alliance coordination']
+    },
+    {
+      id: '3',
+      name: 'Submersible',
+      type: 'field' as const,
+      description: 'Central field element where specimens are hung and robots can ascend for endgame points.',
+      image: '/img/submersible-field.svg',
+      points: {
+        autonomous: 0,
+        teleoperated: 0,
+        endgame: 6
+      },
+      rules: [
+        'Robots must be fully supported by the submersible rungs',
+        'Multiple alliance robots can ascend the same submersible',
+        'Ascent must be completed before the match timer expires'
+      ],
+      strategies: [
+        'Design climbing mechanism early in build season',
+        'Practice consistent and fast climbing routines',
+        'Coordinate with alliance for optimal positioning'
+      ],
+      dimensions: {
+        length: '24 inches',
+        width: '24 inches',
+        height: '46 inches'
+      },
+      materials: ['Aluminum frame', 'Polycarbonate panels', 'Steel bars'],
+      interactions: ['Ascending robots', 'Specimen hanging', 'Alliance coordination']
+    },
+    {
+      id: '4',
+      name: 'Net Zone',
+      type: 'field' as const,
+      description: 'Scoring area where samples can be placed for points, with higher scoring for the upper basket.',
+      rules: [
+        'Samples must be completely within the net zone boundaries',
+        'Upper basket scores higher than lower basket',
+        'Robots cannot contact the net zone structure during scoring'
+      ],
+      strategies: [
+        'Develop accurate shooting mechanism for upper basket',
+        'Practice consistent scoring from various field positions',
+        'Balance speed vs accuracy for optimal scoring rate'
+      ],
+      dimensions: {
+        length: '18 inches',
+        width: '18 inches',
+        height: '36 inches'
+      },
+      materials: ['PVC frame', 'Netting material', 'Mounting hardware'],
+      interactions: ['Samples', 'Scoring robots', 'Field boundaries']
+    }
+  ];
 
   return (
     <Layout
@@ -267,8 +480,39 @@ public class DriveForward extends LinearOpMode {
           />
         </section>
 
+        <section style={{ marginTop: '3rem' }}>
+          <h2>AwardShowcase Component</h2>
+          <p>Display team awards and achievements with detailed recognition information and filtering capabilities.</p>
+          <AwardShowcase awards={sampleAwards} layout="grid" showFilters={true} showStats={true} />
+        </section>
+
+        <section style={{ marginTop: '3rem' }}>
+          <h2>TechnicalNotebook Component</h2>
+          <p>Engineering notebook entries with expandable content, attachments, and category filtering.</p>
+          <TechnicalNotebook 
+            entries={sampleNotebookEntries} 
+            layout="journal" 
+            showFilters={true} 
+            showStats={true}
+            entriesPerPage={5}
+          />
+        </section>
+
+        <section style={{ marginTop: '3rem' }}>
+          <h2>GameElementDemo Component</h2>
+          <p>Interactive game element guide with detailed specifications, rules, and strategic information.</p>
+          <GameElementDemo 
+            elements={sampleGameElements}
+            season="2024-25"
+            gameName="INTO THE DEEP℠"
+            layout="interactive"
+            showFilters={true}
+            interactive={true}
+          />
+        </section>
+
         <section style={{ marginTop: '3rem', padding: '2rem', backgroundColor: 'var(--ifm-background-surface-color)', borderRadius: '8px' }}>
-          <h2>Phase 3 Component Library</h2>
+          <h2>Phase 4 Component Library</h2>
           <h3>All Components</h3>
           <pre style={{ background: 'var(--ifm-code-background)', padding: '1rem', borderRadius: '4px' }}>
 {`// Phase 2 Components
@@ -280,7 +524,12 @@ import CompetitionResults from '@site/src/components/CompetitionResults';
 import ProgressTimeline from '@site/src/components/ProgressTimeline';
 import SponsorShowcase from '@site/src/components/SponsorShowcase';
 import FTCCodeBlock from '@site/src/components/FTCCodeBlock';
-import ImageGallery from '@site/src/components/ImageGallery';`}
+import ImageGallery from '@site/src/components/ImageGallery';
+
+// Phase 4 Components
+import AwardShowcase from '@site/src/components/AwardShowcase';
+import TechnicalNotebook from '@site/src/components/TechnicalNotebook';
+import GameElementDemo from '@site/src/components/GameElementDemo';`}
           </pre>
           
           <h3>Advanced Features</h3>
@@ -289,6 +538,9 @@ import ImageGallery from '@site/src/components/ImageGallery';`}
             <li><strong>SponsorShowcase:</strong> Tiered sponsor display with multiple layouts, contribution tracking, and call-to-action</li>
             <li><strong>FTCCodeBlock:</strong> Enhanced code blocks with FTC-specific features, programming tips, and syntax highlighting</li>
             <li><strong>ImageGallery:</strong> Full-featured gallery with lightbox, category filtering, and responsive grid layouts</li>
+            <li><strong>AwardShowcase:</strong> Award display with multi-level filtering, statistics, and achievement tracking</li>
+            <li><strong>TechnicalNotebook:</strong> Engineering notebook with expandable entries, attachments, and search capabilities</li>
+            <li><strong>GameElementDemo:</strong> Interactive game element guide with detailed specifications, rules, and strategies</li>
           </ul>
           
           <h3>Interactive Elements</h3>

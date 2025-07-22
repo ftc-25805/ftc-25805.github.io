@@ -1,0 +1,514 @@
+/* GameElementDemo Component Styles */
+:root {
+  --game-scoring: #ff6b35;
+  --game-field: #4ecdc4;
+  --game-robot: #45b7d1;
+  --game-special: #ffd700;
+}
+
+.gameElementDemo {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--ifm-color-secondary);
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  line-height: 1.5;
+}
+
+.gameInfo {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.season,
+.gameName {
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filterLabel {
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  font-size: 0.9rem;
+}
+
+.typeFilters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.typeButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 25px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.typeButton:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+}
+
+.typeButton.active {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.typeIcon {
+  font-size: 1.1rem;
+}
+
+.typeName {
+  text-transform: capitalize;
+}
+
+/* Elements Container */
+.elementsContainer {
+  display: grid;
+  gap: 2rem;
+}
+
+.elementsContainer.grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.elementsContainer.detailed {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.elementsContainer.interactive {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Element Card */
+.elementCard {
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.elementCard.interactive {
+  cursor: pointer;
+}
+
+.elementCard.interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary);
+}
+
+.elementCard.selected {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.elementHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lightest), var(--ifm-color-emphasis-100));
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.typeBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.pointsBadge {
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-success);
+  color: white;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.elementImage {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.elementCard.interactive:hover .image {
+  transform: scale(1.05);
+}
+
+.elementContent {
+  padding: 1.5rem;
+}
+
+.elementName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-content);
+}
+
+.elementDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-content-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Points Breakdown */
+.pointsBreakdown {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-success);
+}
+
+.pointsBreakdown h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-primary);
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.pointItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pointValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-success);
+  display: block;
+}
+
+.pointLabel {
+  font-size: 0.8rem;
+  color: var(--ifm-color-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Element Details */
+.elementDetails {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.elementDetails h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.elementDetails h4::before {
+  content: '🔍';
+  font-size: 1rem;
+}
+
+/* Dimensions */
+.dimensionsSection {
+  margin-bottom: 2rem;
+}
+
+.dimensionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.dimensionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.dimLabel {
+  font-weight: 500;
+  color: var(--ifm-color-content);
+}
+
+.dimValue {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+/* Materials */
+.materialsSection {
+  margin-bottom: 2rem;
+}
+
+.materialsList {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.materialTag {
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-warning-lightest);
+  color: var(--ifm-color-warning-dark);
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--ifm-color-warning-light);
+}
+
+/* Rules */
+.rulesSection {
+  margin-bottom: 2rem;
+}
+
+.rulesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ruleItem {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--ifm-color-danger-lightest);
+  border-left: 4px solid var(--ifm-color-danger);
+  border-radius: 0 6px 6px 0;
+  color: var(--ifm-color-content);
+  position: relative;
+}
+
+.ruleItem::before {
+  content: '⚠️';
+  margin-right: 0.5rem;
+}
+
+/* Strategies */
+.strategiesSection {
+  margin-bottom: 2rem;
+}
+
+.strategiesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.strategyItem {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--ifm-color-info-lightest);
+  border-left: 4px solid var(--ifm-color-info);
+  border-radius: 0 6px 6px 0;
+  color: var(--ifm-color-content);
+  position: relative;
+}
+
+.strategyItem::before {
+  content: '💡';
+  margin-right: 0.5rem;
+}
+
+/* Interactions */
+.interactionsSection {
+  margin-bottom: 2rem;
+}
+
+.interactionsList {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.interactionTag {
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--ifm-color-primary-light);
+}
+
+/* Element Footer */
+.elementFooter {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
+  text-align: center;
+}
+
+.detailsButton {
+  padding: 0.75rem 2rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.detailsButton:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  color: var(--ifm-color-secondary);
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .gameInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .typeFilters {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .typeButton {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+  
+  .elementsContainer.grid,
+  .elementsContainer.interactive {
+    grid-template-columns: 1fr;
+  }
+  
+  .elementHeader {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .pointsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .dimensionsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .materialsList,
+  .interactionsList {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .elementContent {
+    padding: 1rem;
+  }
+  
+  .elementName {
+    font-size: 1.3rem;
+  }
+  
+  .pointsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pointItem {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .typeButton {
+    padding: 0.5rem 1rem;
+  }
+}
