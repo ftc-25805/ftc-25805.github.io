@@ -104,6 +104,9 @@ const config: Config = {
                     blogSidebarTitle: 'Recent Posts',
                     blogSidebarCount: 10,
                     postsPerPage: 6,
+                    // Enable draft posts in development
+                    showLastUpdateTime: true,
+                    showLastUpdateAuthor: true,
                     // Useful options to enforce blogging best practices
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
