@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-07-21T23:54:15.225Z",
+  "performance": {
+    "bundleSize": {
+      "totalJSSize": 1191.931640625,
+      "totalCSSSize": 116.85546875,
+      "totalSize": 1308.79,
+      "jsFiles": 100,
+      "cssFiles": 1
+    },
+    "recommendations": [
+      "Consider code splitting and lazy loading",
+      "Optimize JavaScript bundle size",
+      "Optimize CSS bundle size"
+    ]
+  },
+  "accessibility": {
+    "status": "needs-testing",
+    "checklist": [
+      "alt-text",
+      "semantic-html",
+      "color-contrast",
+      "keyboard-navigation",
+      "screen-reader",
+      "focus-management",
+      "aria-labels"
+    ]
+  }
+}

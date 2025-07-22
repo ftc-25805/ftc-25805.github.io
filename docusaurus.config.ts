@@ -38,21 +38,25 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
+                    editUrl: 'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
+                    showLastUpdateAuthor: true,
+                    showLastUpdateTime: true,
                 },
                 blog: {
                     showReadingTime: true,
+                    readingTime: ({content, frontMatter, defaultReadingTime}) =>
+                        defaultReadingTime({content, options: {wordsPerMinute: 300}}),
                     feedOptions: {
                         type: ['rss', 'atom'],
                         xslt: true,
+                        title: 'FTC Team 25805 Blog',
+                        description: 'Latest updates from FTC Team 25805 - robotics, competitions, and STEM outreach',
+                        copyright: `Copyright © ${new Date().getFullYear()} FTC Team 25805`,
                     },
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
+                    editUrl: 'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
+                    blogSidebarTitle: 'Recent Posts',
+                    blogSidebarCount: 10,
+                    postsPerPage: 6,
                     // Useful options to enforce blogging best practices
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
@@ -61,13 +65,167 @@ const config: Config = {
                 theme: {
                     customCss: './src/css/custom.css',
                 },
+                sitemap: {
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                    ignorePatterns: ['/tags/**'],
+                    filename: 'sitemap.xml',
+                },
+                gtag: {
+                    trackingID: 'G-XXXXXXXXXX', // Replace with actual Google Analytics ID
+                    anonymizeIP: true,
+                },
             } satisfies Preset.Options,
         ],
     ],
 
+    plugins: [
+        [
+            '@docusaurus/plugin-ideal-image',
+            {
+                quality: 70,
+                max: 1030,
+                min: 640,
+                steps: 2,
+                disableInDev: false,
+            },
+        ],
+        [
+            '@easyops-cn/docusaurus-search-local',
+            {
+                hashed: true,
+                language: ['en'],
+                highlightSearchTermsOnTargetPage: true,
+                explicitSearchResultPath: true,
+                docsRouteBasePath: '/docs',
+                blogRouteBasePath: '/blog',
+                removeDefaultStopWordFilter: false,
+                searchResultLimits: 8,
+                searchResultContextMaxLength: 50,
+            },
+        ],
+        [
+            '@docusaurus/plugin-pwa',
+            {
+                debug: true,
+                offlineModeActivationStrategies: [
+                    'appInstalled',
+                    'standalone',
+                    'queryString',
+                ],
+                pwaHead: [
+                    {
+                        tagName: 'link',
+                        rel: 'icon',
+                        href: '/img/team-logo.png',
+                    },
+                    {
+                        tagName: 'link',
+                        rel: 'manifest',
+                        href: '/manifest.json',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'theme-color',
+                        content: '#8B5CF6',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'apple-mobile-web-app-capable',
+                        content: 'yes',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'apple-mobile-web-app-status-bar-style',
+                        content: '#8B5CF6',
+                    },
+                    {
+                        tagName: 'link',
+                        rel: 'apple-touch-icon',
+                        href: '/img/team-logo-192.png',
+                    },
+                    {
+                        tagName: 'link',
+                        rel: 'mask-icon',
+                        href: '/img/team-logo.svg',
+                        color: '#FF6A00',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'msapplication-TileImage',
+                        content: '/img/team-logo-192.png',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'msapplication-TileColor',
+                        content: '#8B5CF6',
+                    },
+                    // SEO and metadata
+                    {
+                        tagName: 'meta',
+                        name: 'keywords',
+                        content: 'FTC, FIRST Tech Challenge, robotics, STEM education, engineering, programming',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'author',
+                        content: 'FTC Team 25805',
+                    },
+                    {
+                        tagName: 'meta',
+                        property: 'og:type',
+                        content: 'website',
+                    },
+                    {
+                        tagName: 'meta',
+                        property: 'og:site_name',
+                        content: 'FTC Team 25805',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'twitter:card',
+                        content: 'summary_large_image',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'twitter:site',
+                        content: '@ftc25805',
+                    },
+                ],
+            },
+        ],
+    ],
+
     themeConfig: {
-        // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        // Social card image for sharing
+        image: 'img/ftc-25805-social-card.jpg',
+        
+        // Announcement bar for important updates
+        announcementBar: {
+            id: 'competition-season-2024',
+            content:
+                '🏆 <strong>Competition Season 2024-25 is underway!</strong> Follow our journey and upcoming tournaments. <a target="_blank" rel="noopener noreferrer" href="/seasons/2024-25">Learn more</a>',
+            backgroundColor: '#8B5CF6',
+            textColor: '#FFFFFF',
+            isCloseable: true,
+        },
+        
+        // Enhanced navbar configuration
+        colorMode: {
+            defaultMode: 'light',
+            disableSwitch: false,
+            respectPrefersColorScheme: true,
+        },
+        
+        // Search configuration (disabled until Algolia is properly configured)
+        // algolia: {
+        //     appId: 'YOUR_APP_ID',
+        //     apiKey: 'YOUR_SEARCH_API_KEY',
+        //     indexName: 'ftc-25805',
+        //     contextualSearch: true,
+        //     searchParameters: {},
+        //     searchPagePath: 'search',
+        // },
         navbar: {
             title: 'FTC Team 25805',
             logo: {
@@ -81,13 +239,8 @@ const config: Config = {
                     position: 'left',
                 },
                 {
-                    to: '/robots',
-                    label: 'Robots',
-                    position: 'left',
-                },
-                {
-                    to: '/competitions',
-                    label: 'Competitions',
+                    to: '/seasons',
+                    label: 'Seasons',
                     position: 'left',
                 },
                 {
@@ -133,16 +286,16 @@ const config: Config = {
                     title: 'Competition',
                     items: [
                         {
+                            label: 'All Seasons',
+                            to: '/seasons',
+                        },
+                        {
                             label: 'Current Season',
-                            to: '/competitions/current',
+                            to: '/seasons/2024-25',
                         },
                         {
                             label: 'Our Robots',
-                            to: '/robots',
-                        },
-                        {
-                            label: 'Awards',
-                            to: '/competitions/awards',
+                            to: '/seasons/2024-25#current-robot',
                         },
                     ],
                 },
@@ -186,6 +339,26 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
+            additionalLanguages: ['java', 'kotlin', 'groovy'],
+        },
+        
+        // Table of contents configuration
+        tableOfContents: {
+            minHeadingLevel: 2,
+            maxHeadingLevel: 4,
+        },
+        
+        // Live code blocks configuration
+        liveCodeBlock: {
+            playgroundPosition: 'bottom',
+        },
+        
+        // Enhanced docs configuration
+        docs: {
+            sidebar: {
+                hideable: true,
+                autoCollapseCategories: true,
+            },
         },
     } satisfies Preset.ThemeConfig,
 };
