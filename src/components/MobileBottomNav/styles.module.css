@@ -1,0 +1,168 @@
+/**
+ * Mobile Bottom Navigation Styles
+ * Modern, accessible bottom navigation for mobile devices
+ */
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding: env(safe-area-inset-bottom);
+  display: none; /* Hidden by default, shown on mobile */
+}
+
+/* Show only on mobile devices */
+@media (max-width: 996px) {
+  .bottomNav {
+    display: block;
+  }
+}
+
+/* Dark mode styling */
+[data-theme='dark'] .bottomNav {
+  background: rgba(30, 30, 30, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.5rem;
+  min-width: 50px;
+  flex: 1;
+  text-decoration: none;
+  color: var(--ifm-color-content-secondary);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  position: relative;
+}
+
+.navItem:hover {
+  color: var(--team-primary);
+  background: var(--ifm-background-surface-color);
+  text-decoration: none;
+}
+
+.navItem.active {
+  color: var(--team-primary);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* Dark mode active state */
+[data-theme='dark'] .navItem.active {
+  color: var(--ifm-color-primary-light);
+  background: rgba(167, 139, 250, 0.2);
+}
+
+.icon {
+  margin-bottom: 0.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Accessibility improvements */
+.navItem:focus {
+  outline: 2px solid var(--team-primary);
+  outline-offset: 2px;
+}
+
+/* Active state indicator */
+.navItem.active::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--team-primary);
+  border-radius: 50%;
+}
+
+/* Add bottom padding to body when bottom nav is visible */
+@media (max-width: 996px) {
+  body {
+    padding-bottom: 75px; /* Adjust based on bottom nav height */
+  }
+  
+  /* Ensure proper spacing when navbar is hidden */
+  .navbar--fixed-top {
+    display: none !important;
+  }
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .navItem {
+    padding: 0.375rem 0.25rem;
+    min-width: 45px;
+  }
+  
+  .icon {
+    height: 18px;
+    width: 18px;
+  }
+  
+  .label {
+    font-size: 0.625rem;
+  }
+}
+
+/* Extra small screens - hide labels if needed */
+@media (max-width: 380px) {
+  .label {
+    display: none;
+  }
+  
+  .navItem {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .icon {
+    margin-bottom: 0;
+  }
+}
+
+/* Smooth entrance animation */
+.bottomNav {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

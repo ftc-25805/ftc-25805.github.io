@@ -3,58 +3,59 @@
  * Global CSS with FTC branding and team-specific design system
  */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Roboto+Slab:wght@400;500;600;700&display=swap');
+/* Import Google Fonts - Modern, minimal font stack */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* FTC Team 25805 Color System */
 :root {
-  /* Team Purple & Yellow Colors */
-  --team-purple: #8B5CF6;
-  --team-purple-dark: #7C3AED;
-  --team-purple-darker: #6D28D9;
-  --team-yellow: #FDE047;
-  --team-yellow-dark: #FACC15;
-  --team-yellow-darker: #EAB308;
+  /* Team Purple & Yellow Colors - Modern palette */
+  --team-purple: #7C3AED;
+  --team-purple-dark: #6D28D9;
+  --team-purple-darker: #5B21B6;
+  --team-yellow: #F59E0B;
+  --team-yellow-dark: #D97706;
+  --team-yellow-darker: #B45309;
   
-  /* Team Branding */
-  --team-primary: #8B5CF6;
-  --team-secondary: #FDE047;
-  --team-accent: #A855F7;
+  /* Team Branding - Updated for modern look */
+  --team-primary: #7C3AED;
+  --team-secondary: #F59E0B;
+  --team-accent: #8B5CF6;
   
-  /* Docusaurus Primary Colors (using Team Purple) */
-  --ifm-color-primary: #8B5CF6;
-  --ifm-color-primary-dark: #7C3AED;
-  --ifm-color-primary-darker: #6D28D9;
-  --ifm-color-primary-darkest: #5B21B6;
-  --ifm-color-primary-light: #A78BFA;
-  --ifm-color-primary-lighter: #C4B5FD;
-  --ifm-color-primary-lightest: #DDD6FE;
+  /* Docusaurus Primary Colors (using refined Team Purple) */
+  --ifm-color-primary: #7C3AED;
+  --ifm-color-primary-dark: #6D28D9;
+  --ifm-color-primary-darker: #5B21B6;
+  --ifm-color-primary-darkest: #4C1D95;
+  --ifm-color-primary-light: #8B5CF6;
+  --ifm-color-primary-lighter: #A78BFA;
+  --ifm-color-primary-lightest: #C4B5FD;
   
-  /* Typography */
+  /* Typography - Modern, clean fonts */
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --ifm-font-family-monospace: 'JetBrains Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-  --ifm-heading-font-family: 'Roboto Slab', serif;
+  --ifm-heading-font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
-  /* Text Colors */
-  --ifm-color-content: #1A1A1A;
-  --ifm-color-content-secondary: #666666;
+  /* Text Colors - Modern contrast ratios */
+  --ifm-color-content: #0F172A;
+  --ifm-color-content-secondary: #475569;
   
-  /* Background Colors */
+  /* Background Colors - Subtle, modern backgrounds */
   --ifm-background-color: #FFFFFF;
-  --ifm-background-surface-color: #F8F9FA;
+  --ifm-background-surface-color: #F8FAFC;
   
   /* Code & Syntax */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.1);
   
-  /* Spacing and Layout */
-  --ifm-spacing-horizontal: 1rem;
-  --ifm-navbar-height: 4rem;
+  /* Spacing and Layout - Modern proportions */
+  --ifm-spacing-horizontal: 1.5rem;
+  --ifm-navbar-height: 4.5rem;
   
-  /* Borders and Shadows */
-  --ifm-color-emphasis-300: #E0E0E0;
-  --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  /* Borders and Shadows - Subtle, modern shadows */
+  --ifm-color-emphasis-300: #CBD5E1;
+  --ifm-global-shadow-lw: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ifm-global-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Dark Mode Theme */
@@ -75,46 +76,74 @@
   --docusaurus-highlighted-code-line-bg: rgba(167, 139, 250, 0.2);
 }
 
-/* Typography Enhancements */
+/* Typography Enhancements - Modern, clean hierarchy */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--ifm-heading-font-family);
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 600;
+  line-height: 1.15;
 }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-/* Navigation Styling */
+/* Improved body text */
+p {
+  line-height: 1.7;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Navigation Styling - Modern, clean navbar */
 .navbar {
-  box-shadow: var(--ifm-global-shadow-md);
-  border-bottom: 2px solid var(--team-primary);
+  box-shadow: var(--ifm-global-shadow-lw);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Dark mode navbar styling */
+[data-theme='dark'] .navbar {
+  background: rgba(30, 30, 30, 0.95);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .navbar__brand {
   font-weight: 700;
   font-size: 1.25rem;
+  font-family: var(--ifm-heading-font-family);
 }
 
 .navbar__link {
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
 }
 
 .navbar__link:hover {
   color: var(--team-primary);
+  background: var(--ifm-background-surface-color);
+}
+
+/* Dark mode navbar link hover */
+[data-theme='dark'] .navbar__link:hover {
+  color: var(--ifm-color-primary-light);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer Styling */
@@ -136,59 +165,154 @@ h3 {
   color: var(--team-primary);
 }
 
-/* Custom FTC Components */
+/* Custom FTC Components - Modern, minimal design */
 .ftc-hero {
-  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-secondary) 100%);
+  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-accent) 100%);
   color: white;
-  padding: 4rem 0;
+  padding: 5rem 0;
   text-align: center;
 }
 
 .ftc-card {
-  border: 2px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
-  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  padding: 2rem;
   margin: 1rem 0;
-  background: var(--ifm-background-surface-color);
+  background: var(--ifm-background-color);
   box-shadow: var(--ifm-global-shadow-lw);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .ftc-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--ifm-global-shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--ifm-global-shadow-lg);
+  border-color: var(--team-primary);
 }
 
 .ftc-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.375rem 1rem;
   background: var(--team-primary);
   color: white;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   font-size: 0.875rem;
   font-weight: 500;
   margin: 0.25rem;
+  letter-spacing: 0.025em;
+  transition: all 0.2s ease;
+}
+
+.ftc-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ifm-global-shadow-md);
 }
 
 .ftc-badge--secondary {
   background: var(--team-secondary);
+  color: var(--ifm-color-content);
 }
 
 .ftc-badge--accent {
   background: var(--team-accent);
 }
 
+/* Modern Utilities */
+.gradient-text {
+  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .glass-effect {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button Improvements */
+.button {
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-accent) 100%);
+  border: none;
+}
+
+.button--secondary {
+  background: var(--team-secondary);
+  color: var(--ifm-color-content);
+  border: none;
+}
+
+/* Mobile Bottom Navigation Support */
+.mobile-bottom-nav-spacing {
+  padding-bottom: 85px;
+}
+
+/* Hide desktop navbar completely on mobile when bottom nav is present */
+@media (max-width: 996px) {
+  /* Completely hide the main navbar on mobile */
+  .navbar {
+    display: none !important;
+  }
+  
+  /* Reset navbar height since it's hidden */
+  :root {
+    --ifm-navbar-height: 0px;
+  }
+  
+  /* Ensure content doesn't overlap with bottom nav */
+  .main-wrapper {
+    padding-bottom: 85px;
+    padding-top: 0;
+  }
+  
+  /* Add padding to footer to account for bottom nav */
+  .footer {
+    padding-bottom: 85px;
+  }
+  
+  /* Adjust page layout for no top navbar */
+  .container {
+    padding-top: 1rem;
+  }
+  
+  /* Ensure hero sections look good without navbar */
+  .ftc-hero {
+    margin-top: 0;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .ftc-hero {
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
   }
 }
