@@ -2,56 +2,73 @@
 
 Welcome to our comprehensive season archives! Here you can explore our journey through each FIRST Tech Challenge season, including robot development, competition results, and team achievements.
 
+import { loadSeasons, getCurrentSeason, getCompletedSeasons } from '@site/src/data/seasons';
+import Link from '@docusaurus/Link';
+
+export const seasons = loadSeasons();
+export const currentSeason = getCurrentSeason();
+export const completedSeasons = getCompletedSeasons();
+
 ## Current Season
 
-### [2024-2025 Season](/seasons/2024-25)
-**Status**: Active  
-**Robot**: In Development  
-**Game**: TBD
+{currentSeason ? (
+<div>
+<h3><Link to={currentSeason.path}>{currentSeason.title}</Link></h3>
+<p><strong>Status:</strong> {currentSeason.status === 'active' ? 'Active' : 'Complete'}<br/>
+<strong>Robot:</strong> {currentSeason.robotName || 'In Development'}<br/>
+<strong>Game:</strong> {currentSeason.game}</p>
 
-Our current competition season is underway! Follow our progress as we design, build, and compete with our latest robot. This season features new challenges and opportunities for growth.
+<p>Our current competition season is underway! Follow our progress as we design, build, and compete with our latest robot. This season features new challenges and opportunities for growth.</p>
 
-**Key Focus Areas:**
-- High-precision scoring mechanisms
-- Reliable autonomous routines
-- Robust mechanical design
-- Efficient programming and control systems
+<p><strong>Key Focus Areas:</strong></p>
+<ul>
+<li>High-precision scoring mechanisms</li>
+<li>Reliable autonomous routines</li>
+<li>Robust mechanical design</li>
+<li>Efficient programming and control systems</li>
+</ul>
 
-[View Current Season Details →](/seasons/2024-25)
+<p><Link to={currentSeason.path}>View Current Season Details →</Link></p>
+</div>
+) : (
+<div>
+<h3><Link to="/seasons/2024-25">2024-2025 Season</Link></h3>
+<p><strong>Status:</strong> Active<br/>
+<strong>Robot:</strong> In Development<br/>
+<strong>Game:</strong> TBD</p>
+
+<p>Our current competition season is underway! Follow our progress as we design, build, and compete with our latest robot.</p>
+
+<p><Link to="/seasons/2024-25">View Current Season Details →</Link></p>
+</div>
+)}
 
 ---
 
 ## Previous Seasons
 
-### [2023-2024 Season](/seasons/2023-24)
-**Status**: Complete  
-**Robot**: TBD  
-**Game**: TBD
+{completedSeasons.map(season => (
+<div key={season.id}>
+<h3><Link to={season.path}>{season.title}</Link></h3>
+<p><strong>Status:</strong> Complete<br/>
+<strong>Robot:</strong> {season.robotName || 'TBD'}<br/>
+<strong>Game:</strong> {season.game}</p>
 
-Our previous season achievements and learnings. This season helped establish our team's foundation and competition strategies.
+{season.achievements && season.achievements.length > 0 && (
+<div>
+<p><strong>Season Highlights:</strong></p>
+<ul>
+{season.achievements.map((achievement, index) => (
+<li key={index}>{achievement}</li>
+))}
+</ul>
+</div>
+)}
 
-**Season Highlights:**
-- Tournament participation details
-- Robot design and development
-- Team growth and learning experiences
-- Awards and recognition earned
-
-[View 2023-24 Season →](/seasons/2023-24)
-
-### [2022-2023 Season](/seasons/2022-23)
-**Status**: Complete  
-**Robot**: TBD  
-**Game**: TBD
-
-An early season in our team's development, featuring important foundational work and initial competition experiences.
-
-**Season Highlights:**
-- Initial robot designs and prototypes
-- First competition experiences
-- Team building and skill development
-- Foundation for future seasons
-
-[View 2022-23 Season →](/seasons/2022-23)
+<p><Link to={season.path}>View {season.year} Season →</Link></p>
+<br/>
+</div>
+))}
 
 ---
 

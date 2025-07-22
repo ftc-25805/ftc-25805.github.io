@@ -6,11 +6,15 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SponsorShowcase from '@site/src/components/SponsorShowcase';
 import Heading from '@theme/Heading';
+import { loadSponsors } from '@site/src/data/sponsors';
+import { getCurrentSeason } from '@site/src/data/seasons';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const currentSeason = getCurrentSeason();
+  
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -27,11 +31,18 @@ function HomepageHeader() {
           <div className={styles.seasonInfo}>
             <div className={styles.currentSeason}>
               <span className={styles.seasonLabel}>Current Season:</span>
-              <span className={styles.seasonName}>INTO THE DEEP™ 2024-25</span>
+              <span className={styles.seasonName}>
+                {currentSeason ? `${currentSeason.game} ${currentSeason.year}` : 'INTO THE DEEP™ 2024-25'}
+              </span>
             </div>
             <div className={styles.competitionStatus}>
               <span className={styles.statusIndicator}>🏆</span>
-              <span>Competition Season Active</span>
+              <span>
+                {currentSeason ? 
+                  (currentSeason.status === 'active' ? 'Competition Season Active' : 'Season Complete') : 
+                  'Competition Season Active'
+                }
+              </span>
             </div>
           </div>
 
@@ -58,12 +69,12 @@ function HomepageHeader() {
             </Link>
             <Link
               className="button button--primary button--lg"
-              to="/seasons/2024-25">
+              to={currentSeason ? currentSeason.path : "/seasons/2024-25"}>
               Current Season
             </Link>
             <Link
               className="button button--outline button--lg"
-              to="/seasons/2024-25#current-robot">
+              to={currentSeason ? `${currentSeason.path}#current-robot` : "/seasons/2024-25#current-robot"}>
               Our Robot
             </Link>
           </div>
@@ -74,60 +85,8 @@ function HomepageHeader() {
 }
 
 function CurrentSponsors() {
-  const currentSponsors = [
-    {
-      id: '1',
-      name: 'TechVantage Solutions',
-      logo: '/img/team-placeholder.svg',
-      tier: 'title' as const,
-      description: 'Leading technology partner providing cutting-edge engineering mentorship and resources.',
-      since: '2023',
-      featured: true,
-      website: 'https://example.com'
-    },
-    {
-      id: '2',
-      name: 'Precision Manufacturing Inc',
-      logo: '/img/team-placeholder.svg',
-      tier: 'platinum' as const,
-      description: 'Professional manufacturing services and machining expertise for robot components.',
-      since: '2024',
-      contribution: 'CNC machining services and aluminum stock'
-    },
-    {
-      id: '3',
-      name: 'Innovation Labs',
-      logo: '/img/team-placeholder.svg',
-      tier: 'gold' as const,
-      description: '3D printing services and rapid prototyping support.',
-      since: '2023',
-      website: 'https://example.com'
-    },
-    {
-      id: '4',
-      name: 'STEM Education Foundation',
-      logo: '/img/team-placeholder.svg',
-      tier: 'gold' as const,
-      description: 'Supporting STEM education and robotics programs in our community.',
-      since: '2022'
-    },
-    {
-      id: '5',
-      name: 'Local Hardware Store',
-      logo: '/img/team-placeholder.svg',
-      tier: 'silver' as const,
-      description: 'Providing essential tools and materials for robot construction.',
-      since: '2024'
-    },
-    {
-      id: '6',
-      name: 'Community Tech Club',
-      logo: '/img/team-placeholder.svg',
-      tier: 'supporter' as const,
-      description: 'Volunteer mentors and meeting space support.',
-      since: '2023'
-    }
-  ];
+  // Load sponsors dynamically from repository files
+  const currentSponsors = loadSponsors();
 
   return (
     <section className={styles.sponsors}>

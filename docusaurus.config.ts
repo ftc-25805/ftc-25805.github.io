@@ -1,8 +1,55 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { loadSeasons } from './scripts/generate-data.js';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+// Dynamic navigation helper functions
+function getSeasonsNavItems() {
+  try {
+    const seasons = loadSeasons();
+    const currentSeason = seasons.find(season => season.status === 'active');
+    
+    const items = [];
+    
+    // Add current season first if it exists
+    if (currentSeason) {
+      items.push({
+        label: `Current (${currentSeason.year})`,
+        to: currentSeason.path,
+      });
+    }
+    
+    // Add all seasons link
+    items.push({
+      label: 'All Seasons',
+      to: '/seasons',
+    });
+    
+    // Add individual season links (limit to recent ones)
+    const recentSeasons = seasons.slice(0, 3);
+    for (const season of recentSeasons) {
+      if (season.status !== 'active') {
+        items.push({
+          label: season.year,
+          to: season.path,
+        });
+      }
+    }
+    
+    return items;
+  } catch (error) {
+    console.error('Error loading seasons for navigation:', error);
+    // Fallback navigation
+    return [
+      { label: 'Current (2024-25)', to: '/seasons/2024-25' },
+      { label: 'All Seasons', to: '/seasons' },
+      { label: '2023-24', to: '/seasons/2023-24' },
+      { label: '2022-23', to: '/seasons/2022-23' },
+    ];
+  }
+}
 
 const config: Config = {
     title: 'FTC Team 25805',
@@ -239,9 +286,10 @@ const config: Config = {
                     position: 'left',
                 },
                 {
-                    to: '/seasons',
+                    type: 'dropdown',
                     label: 'Seasons',
                     position: 'left',
+                    items: getSeasonsNavItems(),
                 },
                 {
                     type: 'docSidebar',

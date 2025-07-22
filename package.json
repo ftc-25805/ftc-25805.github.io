@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "build:analyze": "ANALYZE=true docusaurus build",
+    "start": "npm run generate-data && docusaurus start",
+    "build": "npm run generate-data && docusaurus build",
+    "build:analyze": "npm run generate-data && ANALYZE=true docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "npm run generate-data && docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
@@ -18,7 +18,8 @@
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "performance": "node scripts/performance-check.js",
     "audit": "npm audit && npm run performance",
-    "optimize": "npm run build:analyze && npm run performance"
+    "optimize": "npm run build:analyze && npm run performance",
+    "generate-data": "node scripts/generate-data.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",
@@ -30,6 +31,7 @@
     "@easyops-cn/docusaurus-search-local": "^0.52.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "gray-matter": "^4.0.3",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
