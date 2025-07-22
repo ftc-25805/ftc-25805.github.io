@@ -13,24 +13,98 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/team">
-            Meet Our Team
-          </Link>
-          <Link
-            className="button button--primary button--lg"
-            to="/robots">
-            Our Robots
-          </Link>
+        <div className={styles.heroContent}>
+          <div className={styles.teamNumber}>
+            <span className={styles.ftcLabel}>FTC</span>
+            <span className={styles.number}>25805</span>
+          </div>
+          <Heading as="h1" className="hero__title">
+            {siteConfig.title}
+          </Heading>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          
+          <div className={styles.seasonInfo}>
+            <div className={styles.currentSeason}>
+              <span className={styles.seasonLabel}>Current Season:</span>
+              <span className={styles.seasonName}>INTO THE DEEP™ 2024-25</span>
+            </div>
+            <div className={styles.competitionStatus}>
+              <span className={styles.statusIndicator}>🏆</span>
+              <span>Competition Season Active</span>
+            </div>
+          </div>
+
+          <div className={styles.quickStats}>
+            <div className={styles.stat}>
+              <span className={styles.statNumber}>6</span>
+              <span className={styles.statLabel}>Years Active</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statNumber}>25+</span>
+              <span className={styles.statLabel}>Competitions</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statNumber}>15+</span>
+              <span className={styles.statLabel}>Awards</span>
+            </div>
+          </div>
+
+          <div className={styles.buttons}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/team">
+              Meet Our Team
+            </Link>
+            <Link
+              className="button button--primary button--lg"
+              to="/seasons/2024-25">
+              Current Season
+            </Link>
+            <Link
+              className="button button--outline button--lg"
+              to="/seasons/2024-25#current-robot">
+              Our Robot
+            </Link>
+          </div>
         </div>
       </div>
     </header>
+  );
+}
+
+function RecentAchievements() {
+  return (
+    <section className={styles.achievements}>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Heading as="h2" className={styles.sectionTitle}>
+              Recent Achievements & Updates
+            </Heading>
+            <div className={styles.achievementGrid}>
+              <div className={styles.achievementCard}>
+                <div className={styles.achievementIcon}>🏆</div>
+                <h3>Regional Tournament</h3>
+                <p>Advanced to Championship with Think Award for innovative autonomous navigation system</p>
+                <span className={styles.achievementDate}>December 2024</span>
+              </div>
+              <div className={styles.achievementCard}>
+                <div className={styles.achievementIcon}>🤖</div>
+                <h3>Robot Reveal</h3>
+                <p>Unveiled our INTO THE DEEP robot featuring advanced specimen manipulation and deep zone scoring</p>
+                <span className={styles.achievementDate}>November 2024</span>
+              </div>
+              <div className={styles.achievementCard}>
+                <div className={styles.achievementIcon}>🌟</div>
+                <h3>Community Outreach</h3>
+                <p>Hosted robotics workshop for 200+ elementary students at local STEM fair</p>
+                <span className={styles.achievementDate}>October 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -43,6 +117,7 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <RecentAchievements />
       </main>
     </Layout>
   );

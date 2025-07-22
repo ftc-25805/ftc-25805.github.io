@@ -11,32 +11,35 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Innovation & Engineering',
+    title: 'Competitive Robotics',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        We design, build, and program competitive robots using cutting-edge engineering 
-        principles and innovative problem-solving approaches.
+        🤖 We design, build, and program competitive robots for FTC challenges using Java, 
+        OpenCV, and advanced autonomous systems. Our current robot features mecanum drivetrain,
+        precision manipulators, and computer vision.
       </>
     ),
   },
   {
-    title: 'STEM Education',
+    title: 'Awards & Achievements',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Our team is dedicated to promoting STEM education through hands-on learning,
-        mentorship, and community outreach programs.
+        🏆 Regional Tournament Winners, Think Award recipients, and Dean's List nominees.
+        We've competed in 25+ tournaments across 6 seasons, consistently ranking in top performances
+        with our innovative engineering solutions.
       </>
     ),
   },
   {
-    title: 'Team Collaboration',
+    title: 'STEM Outreach',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        We foster teamwork, leadership, and communication skills while working together
-        to achieve excellence in FIRST Tech Challenge competitions.
+        🌟 Active in community outreach with 500+ hours of STEM mentoring, elementary school 
+        robotics camps, and local science fairs. We inspire the next generation through 
+        hands-on demonstrations and collaborative learning.
       </>
     ),
   },

@@ -8,6 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--ifm-color-primary-darker) 0%, var(--ifm-color-primary) 100%);
 }
 
 @media screen and (max-width: 996px) {
@@ -16,8 +17,210 @@
   }
 }
 
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.teamNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.ftcLabel {
+  background: var(--ifm-color-secondary);
+  color: var(--ifm-color-secondary-contrast-foreground);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.number {
+  font-size: 2.5rem;
+  color: var(--ifm-hero-text-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.seasonInfo {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.currentSeason {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.seasonLabel {
+  color: var(--ifm-hero-text-color);
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.seasonName {
+  color: var(--ifm-color-warning);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.competitionStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-hero-text-color);
+  opacity: 0.9;
+}
+
+.statusIndicator {
+  font-size: 1.2rem;
+}
+
+.quickStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ifm-color-warning);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-hero-text-color);
+  opacity: 0.9;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Achievements Section */
+.achievements {
+  padding: 4rem 0;
+  background: var(--ifm-background-surface-color);
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.achievementGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.achievementCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.achievementCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.achievementIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.achievementCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.achievementCard p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.achievementDate {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .number {
+    font-size: 2rem;
+  }
+  
+  .quickStats {
+    gap: 1.5rem;
+  }
+  
+  .seasonInfo {
+    margin: 1rem 0;
+  }
+  
+  .currentSeason {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .achievements {
+    padding: 2rem 0;
+  }
+  
+  .achievementGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .achievementCard {
+    padding: 1.5rem;
+  }
 }
