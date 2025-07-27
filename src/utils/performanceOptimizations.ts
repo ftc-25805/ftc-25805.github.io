@@ -42,14 +42,7 @@ export const webpackOptimizations = {
         priority: 15,
         reuseExistingChunk: true,
       },
-      // Mobile-specific chunk
-      mobile: {
-        test: /[\\/]src[\\/]components[\\/]MobileBottomNav[\\/]/,
-        name: 'mobile',
-        chunks: 'all' as const,
-        priority: 12,
-        reuseExistingChunk: true,
-      },
+      // Mobile navigation is now handled directly in Layout component
     },
   },
   usedExports: true,
