@@ -1,0 +1,429 @@
+/* Enhanced Card Component Styles */
+
+.enhancedCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ftc-radius-lg);
+  background: var(--ifm-card-background-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  
+  /* Default shadow */
+  box-shadow: var(--ftc-shadow-sm);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Clickable state */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:focus {
+  outline: 2px solid var(--team-primary);
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.loading {
+  pointer-events: none;
+}
+
+/* Variant styles */
+.default {
+  /* Default styling already applied above */
+}
+
+.elevated {
+  box-shadow: var(--ftc-shadow-lg);
+  border: none;
+}
+
+.outlined {
+  background: transparent;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  box-shadow: none;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--ftc-shadow-md);
+}
+
+[data-theme='dark'] .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient {
+  background: linear-gradient(135deg, 
+    var(--ifm-card-background-color) 0%, 
+    rgba(124, 58, 237, 0.05) 50%, 
+    var(--ifm-card-background-color) 100%);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Padding variants */
+.padding-none {
+  padding: 0;
+}
+
+.padding-small {
+  padding: 1rem;
+}
+
+.padding-medium {
+  padding: 1.5rem;
+}
+
+.padding-large {
+  padding: 2rem;
+}
+
+/* Rounded variants */
+.rounded-none {
+  border-radius: 0;
+}
+
+.rounded-small {
+  border-radius: var(--ftc-radius-sm);
+}
+
+.rounded-medium {
+  border-radius: var(--ftc-radius-lg);
+}
+
+.rounded-large {
+  border-radius: var(--ftc-radius-xl);
+}
+
+.rounded-full {
+  border-radius: 50px;
+}
+
+/* Hover effects */
+.hover-lift:hover:not(.loading) {
+  transform: translateY(-4px);
+  box-shadow: var(--ftc-shadow-xl);
+}
+
+.hover-lift.clickable:hover {
+  border-color: var(--team-primary);
+}
+
+.hover-glow:hover:not(.loading) {
+  box-shadow: 
+    var(--ftc-shadow-lg),
+    0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.hover-scale:hover:not(.loading) {
+  transform: scale(1.02);
+}
+
+.hover-tilt {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.hover-tilt:hover:not(.loading) {
+  /* Transform applied via JavaScript */
+}
+
+.hover-none:hover {
+  transform: none;
+  box-shadow: var(--ftc-shadow-sm);
+}
+
+/* Card structure */
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+/* Image handling */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hasImage .imageContainer {
+  margin: calc(-1.5rem) calc(-1.5rem) 0 calc(-1.5rem);
+}
+
+.padding-small.hasImage .imageContainer {
+  margin: calc(-1rem) calc(-1rem) 0 calc(-1rem);
+}
+
+.padding-large.hasImage .imageContainer {
+  margin: calc(-2rem) calc(-2rem) 0 calc(-2rem);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.cardImage.loaded {
+  opacity: 1;
+}
+
+.enhancedCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.imagePlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--ifm-color-emphasis-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageLoader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--ifm-color-emphasis-300);
+  border-top: 3px solid var(--team-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.imageError {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--ifm-color-emphasis-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.imageErrorIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.imageErrorText {
+  font-size: 0.875rem;
+}
+
+/* Badge positioning */
+.badgeContainer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+/* Header and footer */
+.cardHeader {
+  margin-bottom: 1rem;
+}
+
+.cardFooter {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.cardHeaderStandalone,
+.cardFooterStandalone {
+  padding: 1rem 0;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Loading overlay */
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+[data-theme='dark'] .loadingOverlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.loadingSpinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--ifm-color-emphasis-300);
+  border-top: 3px solid var(--team-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Skeleton loader */
+.skeleton {
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.skeletonHeader {
+  height: 24px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+.skeletonLine {
+  height: 16px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.skeletonLineShort {
+  height: 16px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  width: 75%;
+}
+
+@keyframes skeletonPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .outlined {
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .cardFooter {
+  border-top-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .skeletonHeader,
+[data-theme='dark'] .skeletonLine,
+[data-theme='dark'] .skeletonLineShort {
+  background: var(--ifm-color-emphasis-300);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .enhancedCard {
+    border-width: 2px;
+  }
+  
+  .outlined {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .enhancedCard {
+    transition: none;
+  }
+  
+  .enhancedCard:hover {
+    transform: none !important;
+  }
+  
+  .cardImage {
+    transition: none;
+  }
+  
+  .enhancedCard:hover .cardImage {
+    transform: none;
+  }
+  
+  .loadingSpinner,
+  .imageLoader {
+    animation: none;
+  }
+  
+  .skeleton {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+/* Print styles */
+@media print {
+  .enhancedCard {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    transform: none !important;
+    break-inside: avoid;
+  }
+  
+  .loadingOverlay {
+    display: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .imageContainer {
+    height: 160px;
+  }
+  
+  .padding-medium {
+    padding: 1rem;
+  }
+  
+  .padding-large {
+    padding: 1.5rem;
+  }
+  
+  .hasImage .imageContainer {
+    margin: calc(-1rem) calc(-1rem) 0 calc(-1rem);
+  }
+  
+  .padding-large.hasImage .imageContainer {
+    margin: calc(-1.5rem) calc(-1.5rem) 0 calc(-1.5rem);
+  }
+}

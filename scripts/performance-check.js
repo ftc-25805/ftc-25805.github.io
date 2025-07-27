@@ -8,6 +8,14 @@
 const fs = require('fs');
 const path = require('path');
 
+// Import performance thresholds
+const performanceThresholds = {
+  maxJSSize: 500 * 1024,    // 500KB
+  maxCSSSize: 80 * 1024,    // 80KB
+  maxChunkSize: 250 * 1024, // 250KB
+  maxAssetSize: 100 * 1024, // 100KB
+};
+
 function analyzeBundle() {
   console.log('🔍 Analyzing bundle size...');
   
@@ -52,7 +60,7 @@ function analyzeBundle() {
     const sizeKB = (stats.size / 1024).toFixed(2);
     totalJSSize += stats.size;
     
-    if (stats.size > 100 * 1024) { // Files larger than 100KB
+    if (stats.size > performanceThresholds.maxChunkSize) {
       console.log(`  ⚠️  ${file}: ${sizeKB} KB (Large)`);
     } else {
       console.log(`  ✅ ${file}: ${sizeKB} KB`);
@@ -67,7 +75,7 @@ function analyzeBundle() {
     const sizeKB = (stats.size / 1024).toFixed(2);
     totalCSSSize += stats.size;
     
-    if (stats.size > 50 * 1024) { // Files larger than 50KB
+    if (stats.size > performanceThresholds.maxCSSSize) {
       console.log(`  ⚠️  ${file}: ${sizeKB} KB (Large)`);
     } else {
       console.log(`  ✅ ${file}: ${sizeKB} KB`);
@@ -86,14 +94,14 @@ function analyzeBundle() {
   console.log('\n💡 Performance Recommendations:');
   console.log('================================');
   
-  if (totalJSSize > 500 * 1024) {
+  if (totalJSSize > performanceThresholds.maxJSSize) {
     console.log('⚠️  Consider code splitting for JS files larger than 500KB');
   } else {
     console.log('✅ JS bundle size is within recommended limits');
   }
   
-  if (totalCSSSize > 100 * 1024) {
-    console.log('⚠️  Consider CSS optimization for files larger than 100KB');
+  if (totalCSSSize > performanceThresholds.maxCSSSize) {
+    console.log('⚠️  Consider CSS optimization for files larger than 80KB');
   } else {
     console.log('✅ CSS bundle size is within recommended limits');
   }

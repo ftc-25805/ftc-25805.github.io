@@ -19,6 +19,8 @@
     "performance": "node scripts/performance-check.js",
     "audit": "npm audit && npm run performance",
     "optimize": "npm run build:analyze && npm run performance",
+    "optimize-assets": "node scripts/optimize-assets.js",
+    "build:optimized": "npm run optimize-assets && npm run generate-data && docusaurus build",
     "generate-data": "node scripts/generate-data.js"
   },
   "dependencies": {

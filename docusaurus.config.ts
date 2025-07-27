@@ -2,6 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { loadSeasons } from './scripts/generate-data.js';
+import { webpackOptimizations, resourceHints } from './src/utils/performanceOptimizations';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -71,6 +72,34 @@ const config: Config = {
     onBrokenMarkdownLinks: 'warn',
     deploymentBranch: 'gh-pages',
 
+    // Client modules for performance optimizations
+    clientModules: [
+        require.resolve('./src/utils/performanceOptimizations.ts'),
+    ],
+
+    // Add resource hints for performance
+    headTags: [
+        // Preconnect to external domains
+        ...resourceHints.preconnect.map(href => ({
+            tagName: 'link',
+            attributes: {
+                rel: 'preconnect',
+                href,
+                crossorigin: 'anonymous',
+            },
+        })),
+        // Preload critical resources
+        ...resourceHints.preload.map(href => ({
+            tagName: 'link',
+            attributes: {
+                rel: 'preload',
+                href,
+                as: href.endsWith('.svg') ? 'image' : 'fetch',
+                crossorigin: 'anonymous',
+            },
+        })),
+    ],
+
     // Even if you don't use internationalization, you can use this field to set
     // useful metadata like html lang. For example, if your site is Chinese, you
     // may want to replace "en" with "zh-Hans".
@@ -118,8 +147,32 @@ const config: Config = {
                 sitemap: {
                     changefreq: 'weekly',
                     priority: 0.5,
-                    ignorePatterns: ['/tags/**'],
+                    ignorePatterns: ['/tags/**', '/search/**'],
                     filename: 'sitemap.xml',
+                    createSitemapItems: async (params) => {
+                        const {defaultCreateSitemapItems, ...rest} = params;
+                        const items = await defaultCreateSitemapItems(rest);
+                        
+                        // Add custom priorities for important pages
+                        return items.map((item) => {
+                            if (item.url === '/') {
+                                return {...item, priority: 1.0, changefreq: 'daily'};
+                            }
+                            if (item.url.includes('/seasons/2024-25')) {
+                                return {...item, priority: 0.9, changefreq: 'weekly'};
+                            }
+                            if (item.url.includes('/team')) {
+                                return {...item, priority: 0.8, changefreq: 'monthly'};
+                            }
+                            if (item.url.includes('/docs/')) {
+                                return {...item, priority: 0.7, changefreq: 'weekly'};
+                            }
+                            if (item.url.includes('/blog/')) {
+                                return {...item, priority: 0.6, changefreq: 'never'};
+                            }
+                            return item;
+                        });
+                    },
                 },
                 gtag: {
                     trackingID: 'G-XXXXXXXXXX', // Replace with actual Google Analytics ID
@@ -133,10 +186,10 @@ const config: Config = {
         [
             '@docusaurus/plugin-ideal-image',
             {
-                quality: 70,
-                max: 1030,
+                quality: 75,
+                max: 1200,
                 min: 640,
-                steps: 2,
+                steps: 3,
                 disableInDev: false,
             },
         ],
@@ -210,16 +263,26 @@ const config: Config = {
                         name: 'msapplication-TileColor',
                         content: '#8B5CF6',
                     },
-                    // SEO and metadata
+                    // Enhanced SEO and metadata
                     {
                         tagName: 'meta',
                         name: 'keywords',
-                        content: 'FTC, FIRST Tech Challenge, robotics, STEM education, engineering, programming',
+                        content: 'FTC, FIRST Tech Challenge, robotics, STEM education, engineering, programming, Team 25805, competition, automation, Virginia',
                     },
                     {
                         tagName: 'meta',
                         name: 'author',
                         content: 'FTC Team 25805',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'robots',
+                        content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'googlebot',
+                        content: 'index, follow',
                     },
                     {
                         tagName: 'meta',
@@ -233,6 +296,11 @@ const config: Config = {
                     },
                     {
                         tagName: 'meta',
+                        property: 'og:locale',
+                        content: 'en_US',
+                    },
+                    {
+                        tagName: 'meta',
                         name: 'twitter:card',
                         content: 'summary_large_image',
                     },
@@ -240,6 +308,33 @@ const config: Config = {
                         tagName: 'meta',
                         name: 'twitter:site',
                         content: '@ftc25805',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'twitter:creator',
+                        content: '@ftc25805',
+                    },
+                    // Geo location meta tags
+                    {
+                        tagName: 'meta',
+                        name: 'geo.region',
+                        content: 'US-VA',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'geo.placename',
+                        content: 'Virginia, United States',
+                    },
+                    // Mobile optimization
+                    {
+                        tagName: 'meta',
+                        name: 'format-detection',
+                        content: 'telephone=no',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'mobile-web-app-capable',
+                        content: 'yes',
                     },
                 ],
             },
@@ -290,11 +385,10 @@ const config: Config = {
                     className: 'navbar__item--hide-mobile',
                 },
                 {
-                    type: 'dropdown',
+                    to: '/seasons',
                     label: 'Seasons',
                     position: 'left',
-                    items: getSeasonsNavItems(),
-                    className: 'navbar__item--show-mobile',
+                    className: 'navbar__item--hide-mobile',
                 },
                 {
                     type: 'docSidebar',

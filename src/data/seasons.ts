@@ -17,7 +17,7 @@ export interface SeasonInfo {
  */
 export function loadSeasons(): SeasonInfo[] {
   try {
-    return seasonsData.seasons || [];
+    return (seasonsData.seasons as SeasonInfo[]) || [];
   } catch (error) {
     console.error('Error loading seasons:', error);
     // Fallback data
@@ -40,7 +40,7 @@ export function loadSeasons(): SeasonInfo[] {
  */
 export function getCurrentSeason(): SeasonInfo | undefined {
   try {
-    return seasonsData.currentSeason || undefined;
+    return (seasonsData.currentSeason as SeasonInfo) || undefined;
   } catch (error) {
     return loadSeasons().find(season => season.status === 'active');
   }
@@ -51,7 +51,7 @@ export function getCurrentSeason(): SeasonInfo | undefined {
  */
 export function getCompletedSeasons(): SeasonInfo[] {
   try {
-    return seasonsData.completedSeasons || [];
+    return (seasonsData.completedSeasons as SeasonInfo[]) || [];
   } catch (error) {
     return loadSeasons().filter(season => season.status === 'complete');
   }

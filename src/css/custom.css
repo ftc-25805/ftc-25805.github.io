@@ -3,8 +3,14 @@
  * Global CSS with FTC branding and team-specific design system
  */
 
-/* Import Google Fonts - Modern, minimal font stack */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Import enhanced styles for better cascade */
+@import './optimized-utilities.css';
+@import './enhanced-typography.css';
+@import './scroll-animations.css';
+@import './mobile-optimizations.css';
+
+/* Import Google Fonts - Optimized loading with reduced weight variants */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 /* FTC Team 25805 Color System */
 :root {

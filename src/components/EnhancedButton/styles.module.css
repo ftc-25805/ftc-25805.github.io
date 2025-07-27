@@ -1,0 +1,386 @@
+/* Enhanced Button Styles with Advanced Micro-interactions */
+
+.enhancedButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  /* Base styling */
+  border: none;
+  border-radius: var(--ftc-radius-md);
+  font-family: var(--ifm-font-family-base);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  user-select: none;
+  
+  /* Transitions */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* States */
+  transform: translateY(0);
+  box-shadow: var(--ftc-shadow-sm);
+}
+
+/* Remove default button styles */
+.enhancedButton:focus {
+  outline: 2px solid var(--team-primary);
+  outline-offset: 2px;
+}
+
+.enhancedButton:active {
+  outline: none;
+}
+
+/* Disabled state */
+.enhancedButton.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.enhancedButton.loading {
+  cursor: wait;
+}
+
+/* Size variants */
+.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-height: 36px;
+}
+
+.medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  min-height: 44px;
+}
+
+.large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  min-height: 52px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Color variants */
+.primary {
+  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-accent) 100%);
+  color: white;
+  border: 1px solid transparent;
+}
+
+.primary:hover:not(.disabled):not(.loading) {
+  transform: translateY(-2px);
+  box-shadow: var(--ftc-shadow-lg);
+  background: linear-gradient(135deg, var(--team-primary-dark) 0%, var(--team-primary) 100%);
+}
+
+.primary.pressed {
+  transform: translateY(0);
+  box-shadow: var(--ftc-shadow-sm);
+}
+
+.secondary {
+  background: var(--ifm-background-color);
+  color: var(--team-primary);
+  border: 2px solid var(--team-primary);
+}
+
+.secondary:hover:not(.disabled):not(.loading) {
+  transform: translateY(-2px);
+  background: var(--team-primary);
+  color: white;
+  box-shadow: var(--ftc-shadow-lg);
+}
+
+.secondary.pressed {
+  transform: translateY(0);
+  box-shadow: var(--ftc-shadow-sm);
+}
+
+.tertiary {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-content);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.tertiary:hover:not(.disabled):not(.loading) {
+  transform: translateY(-1px);
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+  box-shadow: var(--ftc-shadow-md);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--team-primary);
+  border: 2px solid transparent;
+}
+
+.ghost:hover:not(.disabled):not(.loading) {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--team-primary);
+  transform: translateY(-1px);
+}
+
+.gradient {
+  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-secondary) 50%, var(--team-accent) 100%);
+  background-size: 200% 200%;
+  color: white;
+  border: 1px solid transparent;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gradient:hover:not(.disabled):not(.loading) {
+  transform: translateY(-3px);
+  box-shadow: var(--ftc-shadow-xl);
+  animation-duration: 1s;
+}
+
+.gradient.pressed {
+  transform: translateY(-1px);
+  box-shadow: var(--ftc-shadow-md);
+}
+
+/* Interactive states */
+.hovered:not(.disabled):not(.loading) {
+  /* Enhanced hover state with subtle scale */
+  transform: translateY(-2px) scale(1.02);
+}
+
+.pressed:not(.disabled):not(.loading) {
+  /* Pressed state feedback */
+  transform: translateY(0) scale(0.98);
+}
+
+/* Glow effect */
+.glow {
+  position: relative;
+}
+
+.glowEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: inherit;
+  filter: blur(8px);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.glow:hover:not(.disabled):not(.loading) .glowEffect {
+  opacity: 0.6;
+}
+
+/* Button content */
+.buttonText {
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* Icon styling */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.hasIcon.iconLeft .buttonText {
+  margin-left: 0.25rem;
+}
+
+.hasIcon.iconRight .buttonText {
+  margin-right: 0.25rem;
+}
+
+.enhancedButton:hover:not(.disabled):not(.loading) .iconWrapper {
+  transform: scale(1.1);
+}
+
+.iconRight {
+  order: 3;
+}
+
+/* Loading spinner */
+.loadingSpinner {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.spinnerDot {
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: spinnerBounce 1.4s ease-in-out infinite both;
+}
+
+.spinnerDot:nth-child(1) { animation-delay: -0.32s; }
+.spinnerDot:nth-child(2) { animation-delay: -0.16s; }
+.spinnerDot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes spinnerBounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: rippleEffect 0.6s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .tertiary {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .tertiary:hover:not(.disabled):not(.loading) {
+  background: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-500);
+}
+
+[data-theme='dark'] .ghost:hover:not(.disabled):not(.loading) {
+  background: rgba(124, 58, 237, 0.2);
+}
+
+[data-theme='dark'] .ripple {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Focus indicators for keyboard navigation */
+.enhancedButton:focus-visible {
+  outline: 2px solid var(--team-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .enhancedButton {
+    border-width: 2px;
+  }
+  
+  .primary {
+    border-color: var(--team-primary);
+  }
+  
+  .ghost {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .enhancedButton {
+    transition: none;
+  }
+  
+  .enhancedButton:hover {
+    transform: none !important;
+  }
+  
+  .gradient {
+    animation: none;
+    background-position: 0% 50%;
+  }
+  
+  .ripple {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .spinnerDot {
+    animation: none;
+  }
+  
+  .iconWrapper {
+    transition: none;
+  }
+  
+  .glowEffect {
+    transition: none;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .enhancedButton {
+    min-height: 48px; /* Larger touch target */
+  }
+  
+  .small {
+    min-height: 42px;
+    padding: 0.75rem 1.25rem;
+  }
+  
+  .medium {
+    min-height: 48px;
+    padding: 1rem 1.75rem;
+  }
+  
+  .large {
+    min-height: 56px;
+    padding: 1.25rem 2.25rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .enhancedButton {
+    box-shadow: none !important;
+    transform: none !important;
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .ripple,
+  .glowEffect {
+    display: none;
+  }
+}

@@ -1,0 +1,398 @@
+/**
+ * Scroll-triggered Animation CSS
+ * Performance-optimized animations with smooth transitions
+ */
+
+/* Base animation classes */
+.ftc-scroll-animation {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* Animation states */
+.ftc-animation-hidden {
+  opacity: 0;
+}
+
+.ftc-animation-visible {
+  opacity: 1;
+}
+
+/* Fade animations */
+.ftc-animation-fadeIn.ftc-animation-hidden {
+  opacity: 0;
+}
+
+.ftc-animation-fadeIn.ftc-animation-visible {
+  opacity: 1;
+}
+
+/* Slide animations */
+.ftc-animation-slideUp.ftc-animation-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.ftc-animation-slideUp.ftc-animation-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ftc-animation-slideDown.ftc-animation-hidden {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.ftc-animation-slideDown.ftc-animation-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ftc-animation-slideLeft.ftc-animation-hidden {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.ftc-animation-slideLeft.ftc-animation-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ftc-animation-slideRight.ftc-animation-hidden {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.ftc-animation-slideRight.ftc-animation-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale animations */
+.ftc-animation-scaleIn.ftc-animation-hidden {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.ftc-animation-scaleIn.ftc-animation-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ftc-animation-scaleOut.ftc-animation-hidden {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.ftc-animation-scaleOut.ftc-animation-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Rotate animations */
+.ftc-animation-rotateIn.ftc-animation-hidden {
+  opacity: 0;
+  transform: rotate(-5deg) scale(0.9);
+}
+
+.ftc-animation-rotateIn.ftc-animation-visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Flip animations */
+.ftc-animation-flipIn.ftc-animation-hidden {
+  opacity: 0;
+  transform: perspective(1000px) rotateY(-90deg);
+}
+
+.ftc-animation-flipIn.ftc-animation-visible {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Bounce animation */
+.ftc-animation-bounceIn.ftc-animation-hidden {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.ftc-animation-bounceIn.ftc-animation-visible {
+  opacity: 1;
+  transform: scale(1);
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Stagger animation delays */
+.ftc-stagger-1 { transition-delay: 0ms; }
+.ftc-stagger-2 { transition-delay: 100ms; }
+.ftc-stagger-3 { transition-delay: 200ms; }
+.ftc-stagger-4 { transition-delay: 300ms; }
+.ftc-stagger-5 { transition-delay: 400ms; }
+.ftc-stagger-6 { transition-delay: 500ms; }
+.ftc-stagger-7 { transition-delay: 600ms; }
+.ftc-stagger-8 { transition-delay: 700ms; }
+.ftc-stagger-9 { transition-delay: 800ms; }
+.ftc-stagger-10 { transition-delay: 900ms; }
+
+/* Animation duration variants */
+.ftc-animation-fast {
+  transition-duration: 0.3s;
+}
+
+.ftc-animation-normal {
+  transition-duration: 0.6s;
+}
+
+.ftc-animation-slow {
+  transition-duration: 0.9s;
+}
+
+.ftc-animation-slower {
+  transition-duration: 1.2s;
+}
+
+/* Animation easing variants */
+.ftc-ease-linear {
+  transition-timing-function: linear;
+}
+
+.ftc-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.ftc-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ftc-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ftc-ease-back {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.ftc-ease-bounce {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Parallax container */
+.ftc-parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.ftc-parallax-element {
+  will-change: transform;
+  transition: none;
+}
+
+/* Scroll progress indicator */
+.ftc-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1000;
+  background: rgba(124, 58, 237, 0.2);
+}
+
+.ftc-scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--team-primary), var(--team-accent));
+  transform-origin: left;
+  transition: transform 0.1s ease-out;
+}
+
+/* Intersection observer markers (invisible helpers) */
+.ftc-intersection-marker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Animation performance optimizations */
+.ftc-scroll-animation,
+.ftc-parallax-element {
+  /* Promote to GPU layer for smoother animations */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Special effects */
+.ftc-text-reveal {
+  overflow: hidden;
+  position: relative;
+}
+
+.ftc-text-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--ifm-background-color);
+  transform: translateX(-100%);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ftc-text-reveal.ftc-animation-visible::after {
+  transform: translateX(100%);
+}
+
+/* Counter animation */
+.ftc-counter {
+  font-variant-numeric: tabular-nums;
+  transition: all 0.6s ease;
+}
+
+/* Loading skeleton for scroll content */
+.ftc-skeleton-line {
+  height: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-emphasis-200) 25%,
+    var(--ifm-color-emphasis-100) 50%,
+    var(--ifm-color-emphasis-200) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ftc-animation-slideUp.ftc-animation-hidden,
+  .ftc-animation-slideDown.ftc-animation-hidden {
+    transform: translateY(20px);
+  }
+  
+  .ftc-animation-slideLeft.ftc-animation-hidden,
+  .ftc-animation-slideRight.ftc-animation-hidden {
+    transform: translateX(20px);
+  }
+  
+  .ftc-scroll-animation {
+    transition-duration: 0.4s;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ftc-scroll-animation,
+  .ftc-parallax-element,
+  .ftc-text-reveal::after,
+  .ftc-counter {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .ftc-animation-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .ftc-animation-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .ftc-skeleton-line {
+    animation: none;
+    background: var(--ifm-color-emphasis-200);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .ftc-scroll-progress {
+    background: #000;
+  }
+  
+  .ftc-scroll-progress-bar {
+    background: #fff;
+  }
+  
+  [data-theme='dark'] .ftc-scroll-progress {
+    background: #fff;
+  }
+  
+  [data-theme='dark'] .ftc-scroll-progress-bar {
+    background: #000;
+  }
+}
+
+/* Print styles */
+@media print {
+  .ftc-scroll-animation,
+  .ftc-parallax-element {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  
+  .ftc-scroll-progress {
+    display: none;
+  }
+}
+
+/* Performance hints */
+.ftc-animation-will-change {
+  will-change: transform, opacity;
+}
+
+.ftc-animation-gpu {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Utility classes for common patterns */
+.ftc-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ftc-fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ftc-scale-on-scroll {
+  transform: scale(0.95);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ftc-scale-on-scroll.visible {
+  transform: scale(1);
+}

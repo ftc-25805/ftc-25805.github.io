@@ -6,7 +6,7 @@ import sponsorsData from '@site/src/data/generated/sponsors.json';
  */
 export function loadSponsors(): Sponsor[] {
   try {
-    return sponsorsData.sponsors || [];
+    return (sponsorsData.sponsors as Sponsor[]) || [];
   } catch (error) {
     console.error('Error loading sponsors:', error);
     // Fallback to hardcoded sponsors if JSON is not available
@@ -34,7 +34,7 @@ export function getSponsorsByTier(tier: Sponsor['tier']): Sponsor[] {
  */
 export function getFeaturedSponsors(): Sponsor[] {
   try {
-    return sponsorsData.featuredSponsors || [];
+    return (sponsorsData.featuredSponsors as Sponsor[]) || [];
   } catch (error) {
     return loadSponsors().filter(sponsor => sponsor.featured);
   }

@@ -1,0 +1,94 @@
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 0;
+}
+
+.image {
+  transition: opacity var(--ftc-transition-normal);
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image.loaded {
+  opacity: 1;
+}
+
+.image.error {
+  opacity: 0;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.loadingIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-top: 2px solid var(--team-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.errorFallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-600);
+  z-index: 3;
+}
+
+.errorIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}
+
+.errorText {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+}

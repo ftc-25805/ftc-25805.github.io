@@ -14,7 +14,7 @@ interface NavItem {
   to?: string;
   href?: string;
   label: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
   badge?: string | number;
   isExternal?: boolean;
   isDropdown?: boolean;
@@ -155,7 +155,7 @@ const getSecondaryItems = (): NavItem[] => [
   }
 ];
 
-export default function MobileBottomNav(): JSX.Element {
+export default function MobileBottomNav(): React.ReactElement {
   const location = useLocation();
   const { siteConfig } = useDocusaurusContext();
   const [showDropdown, setShowDropdown] = useState<string | null>(null);

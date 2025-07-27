@@ -1,0 +1,67 @@
+# Robots.txt for FTC Team 25805 Website
+# Optimized for search engine crawling
+
+User-agent: *
+Allow: /
+
+# Important pages to crawl
+Allow: /team/
+Allow: /seasons/
+Allow: /docs/
+Allow: /blog/
+Allow: /community/
+
+# Disallow admin and search pages
+Disallow: /search/
+Disallow: /tags/
+Disallow: /_next/
+Disallow: /api/
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://ftc-25805.github.io/sitemap.xml
+
+# Specific bot configurations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Block aggressive scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Social media bots (allow for rich previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /

@@ -1,0 +1,236 @@
+/**
+ * Optimized CSS Utilities
+ * Consolidates common patterns to reduce CSS bundle size
+ */
+
+/* Shared Animation System - Reduce CSS duplication */
+:root {
+  /* Consistent timing functions */
+  --ftc-transition-fast: 0.15s ease;
+  --ftc-transition-normal: 0.3s ease;
+  --ftc-transition-slow: 0.5s ease;
+  
+  /* Standard border radius values */
+  --ftc-radius-sm: 6px;
+  --ftc-radius-md: 8px;
+  --ftc-radius-lg: 12px;
+  --ftc-radius-xl: 16px;
+  
+  /* Consistent spacing scale */
+  --ftc-space-xs: 0.25rem;
+  --ftc-space-sm: 0.5rem;
+  --ftc-space-md: 1rem;
+  --ftc-space-lg: 1.5rem;
+  --ftc-space-xl: 2rem;
+  --ftc-space-2xl: 3rem;
+  
+  /* Standard shadows - replace individual shadow definitions */
+  --ftc-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --ftc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ftc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --ftc-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Shared Card Base - Used across multiple components */
+.ftc-card-base {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ftc-radius-lg);
+  padding: var(--ftc-space-xl);
+  box-shadow: var(--ftc-shadow-sm);
+  transition: all var(--ftc-transition-normal);
+}
+
+.ftc-card-base:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ftc-shadow-lg);
+  border-color: var(--team-primary);
+}
+
+/* Shared Button Base - Reduces button style duplication */
+.ftc-button-base {
+  border-radius: var(--ftc-radius-md);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  transition: all var(--ftc-transition-fast);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.ftc-button-base:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ftc-shadow-md);
+}
+
+.ftc-button-base:focus {
+  outline: 2px solid var(--team-primary);
+  outline-offset: 2px;
+}
+
+.ftc-button-base:active {
+  transform: translateY(0);
+}
+
+/* Shared Icon Base - Consistent icon styling */
+.ftc-icon-base {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+  transition: transform var(--ftc-transition-fast);
+}
+
+.ftc-icon-base:hover {
+  transform: scale(1.1);
+}
+
+/* Loading Spinner - Reusable across components */
+.ftc-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-top: 2px solid var(--team-primary);
+  border-radius: 50%;
+  animation: ftc-spin 1s linear infinite;
+}
+
+@keyframes ftc-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Shared Grid Systems - Reduce grid duplication */
+.ftc-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--ftc-space-lg);
+}
+
+.ftc-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--ftc-space-lg);
+  align-items: stretch;
+}
+
+/* Shared Typography Utilities */
+.ftc-text-gradient {
+  background: linear-gradient(135deg, var(--team-primary) 0%, var(--team-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ftc-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ftc-text-balance {
+  text-wrap: balance;
+}
+
+/* Shared Layout Utilities */
+.ftc-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ftc-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ftc-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Shared Responsive Utilities */
+.ftc-hide-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.ftc-show-mobile {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+/* Performance-optimized animations */
+.ftc-animate-fade-in {
+  animation: ftc-fade-in 0.5s ease-out;
+}
+
+.ftc-animate-slide-up {
+  animation: ftc-slide-up 0.5s ease-out;
+}
+
+.ftc-animate-scale-in {
+  animation: ftc-scale-in 0.3s ease-out;
+}
+
+@keyframes ftc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ftc-slide-up {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ftc-scale-in {
+  from { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ftc-card-base,
+  .ftc-button-base,
+  .ftc-icon-base,
+  .ftc-animate-fade-in,
+  .ftc-animate-slide-up,
+  .ftc-animate-scale-in {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .ftc-card-base:hover,
+  .ftc-button-base:hover,
+  .ftc-icon-base:hover {
+    transform: none !important;
+  }
+}
+
+/* Print styles - Remove unnecessary styling for print */
+@media print {
+  .ftc-card-base {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .ftc-button-base {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}

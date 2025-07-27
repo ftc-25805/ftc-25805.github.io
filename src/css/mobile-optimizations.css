@@ -1,0 +1,336 @@
+/**
+ * Mobile Performance and Touch Optimizations
+ * Enhanced mobile experience with touch-friendly interactions
+ */
+
+/* Touch Target Optimization */
+@media (max-width: 996px) {
+  /* Ensure all touch targets are at least 44px */
+  button,
+  .button,
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"],
+  .navbar__link,
+  .footer__link-item,
+  .pagination-nav__link {
+    min-height: 44px;
+    min-width: 44px;
+    padding: max(0.75rem, calc((44px - 1em) / 2)) max(1rem, calc((44px - 1em) / 2));
+  }
+
+  /* Larger touch targets for primary actions */
+  .button--primary,
+  .button--secondary {
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+  }
+
+  /* Enhanced navbar touch targets */
+  .navbar__item {
+    padding: 0.25rem;
+  }
+
+  .navbar__link {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Improved dropdown menu touch experience */
+  .dropdown__menu {
+    min-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  .dropdown__link {
+    padding: 0.875rem 1.25rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Card touch optimization */
+  .ftc-card,
+  .enhancedCard {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(124, 58, 237, 0.1);
+    tap-highlight-color: rgba(124, 58, 237, 0.1);
+  }
+}
+
+/* Smooth Scrolling and Performance */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimized scrolling for iOS */
+.main-wrapper,
+.container {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* Touch Feedback Improvements */
+@media (max-width: 996px) {
+  /* Remove default tap highlighting */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+  }
+
+  /* Custom touch feedback for interactive elements */
+  button,
+  .button,
+  a[role="button"],
+  .enhancedButton,
+  .enhancedCard[role="button"] {
+    -webkit-tap-highlight-color: rgba(124, 58, 237, 0.1);
+    tap-highlight-color: rgba(124, 58, 237, 0.1);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  /* Active state feedback */
+  button:active,
+  .button:active,
+  a[role="button"]:active,
+  .enhancedButton:active {
+    transform: scale(0.98);
+    transition-duration: 0.05s;
+  }
+
+  /* Enhanced ripple effect for touch */
+  .enhancedButton .ripple,
+  .enhancedCard .ripple {
+    background: rgba(124, 58, 237, 0.2);
+    animation-duration: 0.4s;
+  }
+}
+
+/* Gesture Support */
+@media (max-width: 996px) {
+  /* Swipe gestures for carousels and galleries */
+  .imageGallery,
+  .carousel {
+    touch-action: pan-x;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Vertical scrolling only for main content */
+  .main-wrapper {
+    touch-action: pan-y;
+  }
+
+  /* Pinch-to-zoom for images */
+  .optimizedImage img,
+  .imageGallery img {
+    touch-action: pinch-zoom;
+  }
+}
+
+/* Performance Optimizations */
+@media (max-width: 996px) {
+  /* Hardware acceleration for smooth animations */
+  .enhancedButton,
+  .enhancedCard,
+  .mobileNav,
+  .navbar {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Optimize font rendering on mobile */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Reduce motion for battery optimization */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* GPU acceleration for transforms */
+  .enhancedHero,
+  .enhancedFeatures,
+  .scrollAnimation {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Typography Optimization for Mobile */
+@media (max-width: 996px) {
+  /* Improved readability */
+  body {
+    font-size: 16px; /* Minimum for mobile readability */
+    line-height: 1.6;
+  }
+
+  /* Larger headings for mobile */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    line-height: 1.3;
+  }
+
+  /* Better spacing for mobile reading */
+  p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  /* Form improvements */
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+
+  /* Search input optimization */
+  .navbar__search input {
+    font-size: 16px;
+    min-width: 200px;
+  }
+}
+
+/* Dark Mode Mobile Optimizations */
+@media (max-width: 996px) {
+  [data-theme='dark'] {
+    /* Better contrast for mobile screens */
+    --ifm-color-content: #E8E8E8;
+    --ifm-color-content-secondary: #B8B8B8;
+    
+    /* Optimized dark colors for OLED screens */
+    --ifm-background-color: #000000;
+    --ifm-background-surface-color: #1A1A1A;
+  }
+
+  /* Dark mode touch feedback */
+  [data-theme='dark'] button:active,
+  [data-theme='dark'] .button:active,
+  [data-theme='dark'] a[role="button"]:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Accessibility Improvements for Mobile */
+@media (max-width: 996px) {
+  /* Focus indicators for keyboard/screen reader users */
+  *:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Skip link for screen readers */
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    z-index: 100000;
+    padding: 8px 16px;
+    background: var(--ifm-color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .skip-to-content:focus {
+    top: 6px;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .button,
+    .enhancedButton,
+    .enhancedCard {
+      border: 2px solid currentColor;
+    }
+
+    .mobileNav {
+      border-top-width: 3px;
+    }
+  }
+
+  /* Large text mode support */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (font-size: 1rem) {
+      .large-text {
+        font-size: 120%;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+/* Performance Monitoring */
+@media (max-width: 996px) {
+  /* Critical resource hints for mobile */
+  .performance-critical {
+    content-visibility: auto;
+    contain-intrinsic-size: 200px;
+  }
+
+  /* Lazy loading optimization */
+  .lazy-load {
+    loading: lazy;
+    decoding: async;
+  }
+
+  /* Connection-aware loading */
+  @media (max-width: 996px) and (prefers-reduced-data: reduce) {
+    .data-heavy {
+      display: none;
+    }
+    
+    .low-data-alternative {
+      display: block;
+    }
+  }
+}
+
+/* Safe Area Support for Notched Devices */
+@supports (padding: max(0px)) {
+  @media (max-width: 996px) {
+    .mobile-safe-area {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    .mobile-safe-area-top {
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    .mobile-safe-area-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+  }
+}

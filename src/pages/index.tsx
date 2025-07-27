@@ -3,9 +3,14 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import SponsorShowcase from '@site/src/components/SponsorShowcase';
 import Heading from '@theme/Heading';
+import { LazyImageGallery, LazyGameElementDemo } from '@site/src/components/LazyComponents';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import EnhancedFeatures from '@site/src/components/EnhancedFeatures';
+import SponsorShowcase from '@site/src/components/SponsorShowcase';
+import EnhancedHero from '@site/src/components/EnhancedHero';
+import SEO, { generatePageSEO } from '@site/src/components/SEO';
+import SocialShare from '@site/src/components/SocialShare';
 import { loadSponsors } from '@site/src/data/sponsors';
 import { getCurrentSeason, loadSeasons } from '@site/src/data/seasons';
 
@@ -153,15 +158,31 @@ function RecentAchievements() {
 
 export default function Home(): ReactNode {
     const { siteConfig } = useDocusaurusContext();
+    const seoProps = generatePageSEO('home');
+    
     return (
         <Layout
             title={`${siteConfig.title} - FIRST Tech Challenge Team`}
             description="FTC Team 25805 - Innovation through Engineering Excellence. Competitive robotics team dedicated to STEM education and community outreach.">
-            <HomepageHeader />
+            <SEO 
+                {...seoProps}
+                image="/img/ftc-25805-social-card.jpg"
+                imageAlt="FTC Team 25805 - Innovation through Engineering Excellence"
+            />
+            <EnhancedHero />
             <main>
-                <HomepageFeatures />
+                <EnhancedFeatures />
                 <CurrentSponsors />
                 <RecentAchievements />
+                <div className="container">
+                    <SocialShare
+                        title="FTC Team 25805 - Innovation through Engineering Excellence"
+                        description="Follow our robotics journey and STEM education initiatives"
+                        hashtags={['FTC', 'Robotics', 'STEM', 'FTC25805', 'Education', 'Engineering']}
+                        variant="buttons"
+                        size="medium"
+                    />
+                </div>
             </main>
         </Layout>
     );
