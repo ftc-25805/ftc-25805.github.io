@@ -4,6 +4,7 @@ title: Build Season Kickoff - Ready to Engineer!
 authors: [team-captain]
 tags: [build-season, kickoff, engineering, team-update]
 image: /img/blog/build-season-2024.jpg
+draft: true
 ---
 
 The 2024-25 FTC build season is officially underway! After an exciting game reveal in September, our team has been hard at work analyzing the challenge and preparing our strategy.
@@ -23,11 +24,13 @@ Over the past few weeks, we've conducted a thorough analysis of this year's game
 Our mechanical and programming teams have been collaborating on initial designs:
 
 ### Mechanical Design
+
 - Completed initial CAD concepts for our main mechanisms
 - Prototyped key subsystems to validate our approach
 - Selected drive base configuration for optimal field navigation
 
 ### Programming Framework
+
 - Set up our development environment with the latest FTC SDK
 - Created base robot control structure
 - Began work on autonomous routine framework
@@ -57,4 +60,5 @@ Interested in supporting our team or learning more about FTC? Contact us at [tea
 
 ---
 
-*Posted by the FTC Team 25805 Leadership Team*
+_Posted by the FTC Team 25805 Leadership Team_
+

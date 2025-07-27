@@ -264,12 +264,22 @@
   box-shadow: 0 4px 16px rgba(255, 106, 0, 0.2);
 }
 
+/* Sponsors Content Container */
+.sponsorsContent {
+  text-align: center;
+  width: 100%;
+}
+
 /* Layout variants */
 .gridLayout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   justify-items: center;
+  place-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .carouselLayout {
@@ -406,6 +416,7 @@
   .gridLayout {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    justify-content: center;
   }
   
   .carousel .sponsorCard {
@@ -442,6 +453,7 @@
   
   .gridLayout {
     grid-template-columns: 1fr;
+    justify-content: center;
   }
   
   .carousel .sponsorCard {

@@ -25,7 +25,7 @@ contribution: Description of sponsor contribution (optional)
 - **title** ($5000+): Title sponsors with prominent placement
 - **platinum** ($2500+): Premium sponsors with high visibility
 - **gold** ($1000+): Gold tier sponsors
-- **silver** ($500+): Silver tier sponsors  
+- **silver** ($500+): Silver tier sponsors
 - **bronze** ($250+): Bronze tier sponsors
 - **supporter**: In-kind or community supporters
 
@@ -74,3 +74,4 @@ Description of the sponsor and their contribution to the team.
 
 - Set `active: false` to temporarily hide a sponsor
 - Delete the file to permanently remove a sponsor
+

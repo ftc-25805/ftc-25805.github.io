@@ -25,6 +25,23 @@
   z-index: 1;
 }
 
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.teamLogo {
+  height: 120px;
+  width: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.teamLogo:hover {
+  transform: scale(1.05);
+}
+
 .teamNumber {
   display: flex;
   align-items: center;
@@ -153,6 +170,7 @@
 .sponsors {
   padding: 3rem 0;
   background: var(--ifm-color-emphasis-50);
+  text-align: center;
 }
 
 .homepageSponsors {
@@ -176,6 +194,7 @@
   align-items: stretch;
   justify-items: center;
   grid-auto-rows: 1fr;
+  place-items: center;
 }
 
 .sponsors :global(.sponsor-card) {
@@ -371,6 +390,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .teamLogo {
+    height: 80px;
+  }
+  
+  .logoContainer {
+    margin-bottom: 1.5rem;
+  }
+  
   .number {
     font-size: 2rem;
   }
@@ -413,6 +440,7 @@
   .sponsors :global(.sponsors-content .grid-layout) {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
+    justify-content: center;
   }
   
   .sponsors :global(.sponsor-card) {
@@ -451,6 +479,7 @@
   .sponsors :global(.sponsors-content .grid-layout) {
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
+    justify-content: center;
   }
   
   .sponsors :global(.sponsor-card) {
@@ -474,6 +503,7 @@
   .sponsors :global(.sponsors-content .grid-layout) {
     grid-template-columns: 1fr;
     gap: 1rem;
+    justify-content: center;
   }
   
   .sponsors :global(.sponsor-card) {

@@ -18,8 +18,16 @@ To inspire and educate the next generation of innovators through hands-on roboti
 - **Education**: We are committed to learning and sharing knowledge
 - **Community**: We actively engage with and give back to our community
 
+## Team Structure
+
+Learn more about our team:
+
+- **[Team Members](/team/members)** - Meet our talented team members and leadership
+- **[About Our Team](/team/about)** - Learn about our background and culture
+- **[Team History](/team/history)** - Explore our journey and achievements
+
 ## Join Us
 
 Interested in joining our team? We welcome students who are passionate about robotics, engineering, programming, design, and outreach. No prior experience is necessary - just enthusiasm to learn!
 
-Contact us to learn more about joining FTC Team 25805.
+Visit our [Team Members page](/team/members) to see the different roles available and contact us to learn more about joining FTC Team 25805.
