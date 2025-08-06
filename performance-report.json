@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-07-27T02:00:23.854Z",
+  "timestamp": "2025-07-27T17:39:27.002Z",
   "performance": {
     "bundleSize": {
-      "totalJSSize": 1312.642578125,
-      "totalCSSSize": 139.4638671875,
-      "totalSize": 1452.11,
-      "jsFiles": 100,
+      "totalJSSize": 1030.6240234375,
+      "totalCSSSize": 180.1064453125,
+      "totalSize": 1210.73,
+      "jsFiles": 47,
       "cssFiles": 1
     },
     "recommendations": [

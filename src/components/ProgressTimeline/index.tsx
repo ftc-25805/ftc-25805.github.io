@@ -1,3 +1,4 @@
+import React from 'react';
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
@@ -7,10 +8,13 @@ export interface TimelineEvent {
   date: string;
   title: string;
   description: string;
-  type: 'milestone' | 'competition' | 'build' | 'outreach' | 'award';
+  type: 'milestone' | 'competition' | 'build' | 'outreach' | 'achievement';
   images?: string[];
-  status?: 'completed' | 'in-progress' | 'upcoming';
+  status?: 'completed' | 'in-progress' | 'upcoming' | 'cancelled';
   link?: string;
+  location?: string;
+  participants?: string[];
+  details?: string;
 }
 
 export interface ProgressTimelineProps {
@@ -19,6 +23,8 @@ export interface ProgressTimelineProps {
   className?: string;
   showImages?: boolean;
   compact?: boolean;
+  layout?: 'vertical' | 'horizontal';
+  interactive?: boolean;
 }
 
 const getEventIcon = (type: TimelineEvent['type']): string => {
@@ -27,7 +33,7 @@ const getEventIcon = (type: TimelineEvent['type']): string => {
     case 'competition': return '🏆';
     case 'build': return '🔧';
     case 'outreach': return '🤝';
-    case 'award': return '🏅';
+    case 'achievement': return '⭐';
     default: return '📅';
   }
 };
@@ -38,8 +44,18 @@ const getEventTypeLabel = (type: TimelineEvent['type']): string => {
     case 'competition': return 'Competition';
     case 'build': return 'Build';
     case 'outreach': return 'Outreach';
-    case 'award': return 'Award';
+    case 'achievement': return 'Achievement';
     default: return 'Event';
+  }
+};
+
+const getStatusIcon = (status: TimelineEvent['status']): string => {
+  switch (status) {
+    case 'completed': return '✅';
+    case 'in-progress': return '🔄';
+    case 'upcoming': return '⏳';
+    case 'cancelled': return '❌';
+    default: return '📅';
   }
 };
 
@@ -48,9 +64,12 @@ export default function ProgressTimeline({
   title = "Team Timeline",
   className,
   showImages = true,
-  compact = false
+  compact = false,
+  layout = 'vertical',
+  interactive = true
 }: ProgressTimelineProps): ReactNode {
-  const sortedEvents = [...events].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const [selectedEvent, setSelectedEvent] = React.useState<string | null>(null);
+  const sortedEvents = [...events].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
@@ -61,25 +80,41 @@ export default function ProgressTimeline({
     });
   };
 
+  const handleEventClick = (eventId: string) => {
+    if (interactive) {
+      setSelectedEvent(selectedEvent === eventId ? null : eventId);
+    }
+  };
+
   return (
     <div className={clsx('ftc-card', styles.timelineContainer, className, {
-      [styles.compact]: compact
+      [styles.compact]: compact,
+      [styles.horizontal]: layout === 'horizontal'
     })}>
       <h3 className={styles.timelineTitle}>{title}</h3>
       
-      <div className={styles.timeline}>
+      <div className={clsx(styles.timeline, {
+        [styles.timelineHorizontal]: layout === 'horizontal'
+      })}>
         {sortedEvents.map((event, index) => (
           <div
             key={event.id}
             className={clsx(styles.timelineItem, {
               [styles.completed]: event.status === 'completed',
               [styles.inProgress]: event.status === 'in-progress',
-              [styles.upcoming]: event.status === 'upcoming'
+              [styles.upcoming]: event.status === 'upcoming',
+              [styles.cancelled]: event.status === 'cancelled',
+              [styles.interactive]: interactive,
+              [styles.selected]: selectedEvent === event.id
             })}
+            onClick={() => handleEventClick(event.id)}
           >
             <div className={styles.timelineMarker}>
               <div className={styles.timelineIcon}>
-                {getEventIcon(event.type)}
+                <span className={styles.typeIcon}>{getEventIcon(event.type)}</span>
+                {event.status && (
+                  <span className={styles.statusIcon}>{getStatusIcon(event.status)}</span>
+                )}
               </div>
               <div className={styles.timelineDate}>
                 {formatDate(event.date)}
@@ -95,6 +130,18 @@ export default function ProgressTimeline({
               </div>
               
               <p className={styles.eventDescription}>{event.description}</p>
+              
+              {event.location && (
+                <div className={styles.eventLocation}>
+                  📍 {event.location}
+                </div>
+              )}
+
+              {event.participants && event.participants.length > 0 && (
+                <div className={styles.eventParticipants}>
+                  👥 {event.participants.join(', ')}
+                </div>
+              )}
               
               {showImages && event.images && event.images.length > 0 && (
                 <div className={styles.eventImages}>
@@ -114,6 +161,14 @@ export default function ProgressTimeline({
                   )}
                 </div>
               )}
+
+              {selectedEvent === event.id && event.details && (
+                <div className={styles.eventDetails}>
+                  <div className={styles.detailsContent}>
+                    {event.details}
+                  </div>
+                </div>
+              )}
               
               {event.link && (
                 <a
@@ -121,6 +176,7 @@ export default function ProgressTimeline({
                   className={styles.eventLink}
                   target={event.link.startsWith('http') ? '_blank' : '_self'}
                   rel={event.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   Learn More →
                 </a>
@@ -142,7 +198,8 @@ export default function ProgressTimeline({
       
       {events.length === 0 && (
         <div className={styles.emptyState}>
-          <p>No timeline events to display.</p>
+          <div className={styles.emptyIcon}>📅</div>
+          <p>No timeline events to display</p>
         </div>
       )}
     </div>

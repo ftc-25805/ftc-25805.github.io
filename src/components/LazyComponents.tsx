@@ -12,6 +12,8 @@ export const LazyGameElementDemo = lazy(() => import('./GameElementDemo'));
 export const LazyAwardShowcase = lazy(() => import('./AwardShowcase'));
 export const LazyCompetitionResults = lazy(() => import('./CompetitionResults'));
 export const LazyProgressTimeline = lazy(() => import('./ProgressTimeline'));
+export const LazySponsorShowcase = lazy(() => import('./SponsorShowcase'));
+export const LazyFTCCodeBlock = lazy(() => import('./FTCCodeBlock'));
 
 // Loading fallback component with consistent styling
 const LoadingSpinner = ({ height = '200px' }: { height?: string }) => (
@@ -67,6 +69,8 @@ export const GameElementDemo = withLazyLoading(LazyGameElementDemo, '350px');
 export const AwardShowcase = withLazyLoading(LazyAwardShowcase, '250px');
 export const CompetitionResults = withLazyLoading(LazyCompetitionResults, '300px');
 export const ProgressTimeline = withLazyLoading(LazyProgressTimeline, '400px');
+export const SponsorShowcase = withLazyLoading(LazySponsorShowcase, '350px');
+export const FTCCodeBlock = withLazyLoading(LazyFTCCodeBlock, '300px');
 
 // Mobile navigation is now handled directly in Layout component
 
@@ -79,6 +83,8 @@ export const preloadComponents = () => {
       // Preload lazy components by triggering imports
       import('./ImageGallery');
       import('./GameElementDemo');
+      import('./SponsorShowcase');
+      import('./FTCCodeBlock');
     };
 
     // Preload on scroll or user interaction
@@ -98,7 +104,9 @@ export const componentSizes = {
   GameElementDemo: '~40KB',
   AwardShowcase: '~25KB',
   CompetitionResults: '~30KB',
-  ProgressTimeline: '~25KB'
+  ProgressTimeline: '~25KB',
+  SponsorShowcase: '~30KB',
+  FTCCodeBlock: '~20KB'
 } as const;
 
 export default {
@@ -108,6 +116,8 @@ export default {
   AwardShowcase,
   CompetitionResults,
   ProgressTimeline,
+  SponsorShowcase,
+  FTCCodeBlock,
   preloadComponents,
   componentSizes
 };

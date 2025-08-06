@@ -118,29 +118,7 @@ const config: Config = {
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
                 },
-                blog: {
-                    showReadingTime: true,
-                    readingTime: ({content, frontMatter, defaultReadingTime}) =>
-                        defaultReadingTime({content, options: {wordsPerMinute: 300}}),
-                    feedOptions: {
-                        type: ['rss', 'atom'],
-                        xslt: true,
-                        title: 'FTC Team 25805 Blog',
-                        description: 'Latest updates from FTC Team 25805 - robotics, competitions, and STEM outreach',
-                        copyright: `Copyright © ${new Date().getFullYear()} FTC Team 25805`,
-                    },
-                    editUrl: 'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
-                    blogSidebarTitle: 'Recent Posts',
-                    blogSidebarCount: 10,
-                    postsPerPage: 6,
-                    // Enable draft posts in development
-                    showLastUpdateTime: true,
-                    showLastUpdateAuthor: true,
-                    // Useful options to enforce blogging best practices
-                    onInlineTags: 'warn',
-                    onInlineAuthors: 'warn',
-                    onUntruncatedBlogPosts: 'warn',
-                },
+                blog: false,
                 theme: {
                     customCss: './src/css/custom.css',
                 },
@@ -201,7 +179,6 @@ const config: Config = {
                 highlightSearchTermsOnTargetPage: true,
                 explicitSearchResultPath: true,
                 docsRouteBasePath: '/docs',
-                blogRouteBasePath: '/blog',
                 removeDefaultStopWordFilter: false,
                 searchResultLimits: 8,
                 searchResultContextMaxLength: 50,
@@ -403,12 +380,6 @@ const config: Config = {
                     position: 'left',
                     className: 'navbar__item--hide-mobile',
                 },
-                { 
-                    to: '/blog', 
-                    label: 'Blog', 
-                    position: 'left',
-                    className: 'navbar__item--hide-mobile',
-                },
                 {
                     href: 'https://github.com/ftc-25805',
                     label: 'GitHub',
@@ -460,10 +431,6 @@ const config: Config = {
                         {
                             label: 'Documentation',
                             to: '/docs/intro',
-                        },
-                        {
-                            label: 'Blog',
-                            to: '/blog',
                         },
                         {
                             label: 'GitHub',

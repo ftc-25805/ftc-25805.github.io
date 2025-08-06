@@ -149,4 +149,4 @@ Our awards represent not just our accomplishments, but the support of our mentor
 
 ---
 
-*This page will be updated throughout the season as we earn new awards and recognition. Follow our [blog](/blog) for real-time updates on our competition results and achievements!*
+*This page will be updated throughout the season as we earn new awards and recognition. Check back regularly for updates on our competition results and achievements!*
