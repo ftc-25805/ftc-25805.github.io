@@ -6,10 +6,10 @@
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, 
-    var(--team-purple-darker) 0%, 
-    var(--team-purple) 35%, 
-    var(--team-accent) 65%, 
-    var(--team-secondary) 100%);
+    #0f172a 0%, 
+    #1e293b 35%, 
+    #334155 65%, 
+    #475569 100%);
   overflow: hidden;
   color: white;
 }
@@ -22,10 +22,10 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-  animation: backgroundShift 20s ease-in-out infinite;
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+  animation: backgroundShift 25s ease-in-out infinite;
 }
 
 @keyframes backgroundShift {
@@ -49,11 +49,11 @@
   position: absolute;
   width: var(--size);
   height: var(--size);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 50%;
   animation: 
     particleFloat var(--duration) ease-in-out infinite var(--delay),
-    particleFade 3s ease-in-out infinite var(--delay);
+    particleFade 4s ease-in-out infinite var(--delay);
   top: var(--y);
   left: var(--x);
 }
@@ -65,55 +65,10 @@
 }
 
 @keyframes particleFade {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
 }
 
-/* Achievement Badges */
-.achievementBadges {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.achievementBadge {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  padding: 0.5rem 1rem;
-  opacity: 0;
-  animation: badgeFloatIn 1s ease-out forwards;
-}
-
-@keyframes badgeFloatIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.achievementIcon {
-  font-size: 1.2rem;
-}
-
-.achievementLabel {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: white;
-}
 
 /* Main Hero Container */
 .heroContainer {
@@ -143,7 +98,7 @@
 
 /* Logo Section */
 .logoSection {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   animation: logoFadeIn 1s ease-out 0.3s both;
 }
 
@@ -164,11 +119,11 @@
 }
 
 .teamLogo {
-  height: 120px;
+  height: 100px;
   width: auto;
-  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: logoFloat 6s ease-in-out infinite;
+  animation: logoFloat 8s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
@@ -182,11 +137,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
   border-radius: 50%;
-  animation: glowPulse 4s ease-in-out infinite;
+  animation: glowPulse 6s ease-in-out infinite;
   z-index: -1;
 }
 
@@ -197,7 +152,7 @@
 
 /* Identity Section */
 .identitySection {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   animation: identitySlideIn 1s ease-out 0.6s both;
 }
 
@@ -216,20 +171,20 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .teamBadge:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .ftcLabel {
@@ -241,40 +196,41 @@
 }
 
 .teamNumber {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   font-family: var(--ifm-heading-font-family);
-  background: linear-gradient(135deg, #ffffff 0%, var(--team-secondary) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
 }
 
 .teamTitle {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .teamTagline {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Season Section */
 .seasonSection {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   animation: seasonSlideIn 1s ease-out 0.9s both;
 }
 
@@ -295,19 +251,19 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  padding: 1rem 2rem;
-  background: rgba(245, 158, 11, 0.2);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  border-radius: 15px;
+  padding: 0.875rem 1.75rem;
+  background: rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .seasonLabel {
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--team-secondary);
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: rgba(168, 85, 247, 0.9);
+  letter-spacing: 0.03em;
 }
 
 .seasonName {
@@ -343,8 +299,8 @@
 .statsContainer {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -357,21 +313,21 @@
 
 .statItem {
   text-align: center;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  min-width: 120px;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  min-width: 110px;
   opacity: 0;
   animation: statSlideIn 0.8s ease-out forwards;
   transition: all 0.3s ease;
 }
 
 .statItem:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes statSlideIn {
@@ -440,41 +396,41 @@
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, var(--team-secondary) 0%, #D97706 100%);
-  color: var(--ifm-color-content);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
 }
 
 .primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(245, 158, 11, 0.4);
-  color: var(--ifm-color-content);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.35);
+  color: white;
 }
 
 .secondaryButton {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
 }
 
 .secondaryButton:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
   color: white;
 }
 
 .tertiaryButton {
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
 }
 
 .tertiaryButton:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
   color: white;
 }
 
@@ -561,15 +517,15 @@
   }
 
   .teamTitle {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 
   .teamNumber {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .teamTagline {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .statsContainer {
@@ -590,9 +546,6 @@
     justify-content: center;
   }
 
-  .achievementBadges {
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {
@@ -639,7 +592,6 @@
     animation: none !important;
   }
 
-  .achievementBadge,
   .heroContent,
   .logoSection,
   .identitySection,

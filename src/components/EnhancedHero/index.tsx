@@ -32,32 +32,6 @@ const BackgroundParticles = () => {
   );
 };
 
-// Floating achievement badges component
-const AchievementBadges = () => {
-  const achievements = [
-    { icon: '🏆', label: 'Think Award', position: { top: '20%', left: '15%' } },
-    { icon: '🤖', label: 'Innovation', position: { top: '60%', right: '20%' } },
-    { icon: '⭐', label: 'Excellence', position: { bottom: '25%', left: '10%' } },
-  ];
-
-  return (
-    <div className={styles.achievementBadges}>
-      {achievements.map((achievement, index) => (
-        <div
-          key={index}
-          className={styles.achievementBadge}
-          style={{
-            ...achievement.position,
-            animationDelay: `${index * 0.5 + 1}s`,
-          }}
-        >
-          <span className={styles.achievementIcon}>{achievement.icon}</span>
-          <span className={styles.achievementLabel}>{achievement.label}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
 
 // Stats counter component with animation
 const AnimatedStats = () => {
@@ -66,8 +40,8 @@ const AnimatedStats = () => {
 
   const stats = [
     { key: 'years', target: 2, label: 'Years Active', suffix: '' },
-    { key: 'competitions', target: 12, label: 'Competitions', suffix: '+' },
-    { key: 'awards', target: 5, label: 'Awards Won', suffix: '' },
+    { key: 'competitions', target: 8, label: 'Competitions', suffix: '+' },
+    { key: 'awards', target: 3, label: 'Awards Won', suffix: '' },
   ];
 
   useEffect(() => {
@@ -152,7 +126,6 @@ export default function EnhancedHero(): React.ReactElement {
   return (
     <header className={styles.enhancedHero}>
       <BackgroundParticles />
-      <AchievementBadges />
       
       <div className={styles.heroContainer}>
         <div className={styles.heroContent}>
@@ -186,7 +159,7 @@ export default function EnhancedHero(): React.ReactElement {
           <div className={styles.seasonSection}>
             <div className={styles.seasonBadge}>
               <span className={styles.seasonLabel}>
-                {currentSeason ? '🔥 Current Season' : '📅 Latest Season'}
+                {currentSeason ? 'Current Season' : 'Latest Season'}
               </span>
               <span className={styles.seasonName}>
                 {displaySeason ? `${displaySeason.game} ${displaySeason.year}` : 'INTO THE DEEP™ 2024-25'}
@@ -195,10 +168,10 @@ export default function EnhancedHero(): React.ReactElement {
             
             <div className={styles.statusIndicator}>
               <span className={styles.statusIcon}>
-                {displaySeason?.status === 'active' ? '🚀' : '✅'}
+                {displaySeason?.status === 'active' ? '🔴' : '🟢'}
               </span>
               <span className={styles.statusText}>
-                {displaySeason?.status === 'active' ? 'Competition Season Active' : 'Season Complete'}
+                {displaySeason?.status === 'active' ? 'Active Competition Season' : 'Preparing for Next Season'}
               </span>
             </div>
           </div>
