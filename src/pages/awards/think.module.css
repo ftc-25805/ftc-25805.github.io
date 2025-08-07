@@ -1,0 +1,629 @@
+/* Think Award Page Styles */
+
+.thinkAwardPage {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+  color: white;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.awardBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.awardIcon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.awardBadge h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: white;
+}
+
+.awardBadge p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0 0;
+  opacity: 0.9;
+}
+
+.achievedBadge {
+  background: var(--ifm-color-success);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.heroQuote {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Criteria Section */
+.criteriaSection {
+  padding: 6rem 0;
+  background: var(--ifm-background-color);
+}
+
+.criteriaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.criteriaCard {
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--ifm-color-success);
+}
+
+.criteriaNumber {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.criteriaCard h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.evidenceIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-success);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.checkmark {
+  font-size: 1rem;
+}
+
+/* Process Section */
+.processSection {
+  padding: 6rem 0;
+  background: var(--ifm-color-emphasis-50);
+}
+
+.sectionDescription {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 1rem auto 4rem auto;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.processFlow {
+  margin-top: 3rem;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.processStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.processStep:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stepNumber {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepContent h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-primary);
+  font-size: 1.125rem;
+}
+
+.stepContent p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Iterations Section */
+.iterationsSection {
+  padding: 6rem 0;
+  background: var(--ifm-background-color);
+}
+
+.iterationTabs {
+  display: flex;
+  gap: 1rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.iterationTab {
+  background: var(--ifm-card-background-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.iterationTab:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.iterationTab.active {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+}
+
+.tabContent {
+  text-align: center;
+}
+
+.tabTitle {
+  display: block;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 0.25rem;
+}
+
+.tabDate {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.iterationDetails {
+  background: var(--ifm-card-background-color);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.iterationHeader {
+  margin-bottom: 2rem;
+}
+
+.iterationMeta h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  color: var(--ifm-color-primary);
+}
+
+.iterationDate {
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+.iterationContent > div {
+  margin-bottom: 2rem;
+}
+
+.iterationContent h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.challengeSection,
+.solutionSection,
+.resultsSection {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--ifm-color-emphasis-50);
+}
+
+.testDataSection {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+  background: var(--ifm-color-emphasis-25);
+}
+
+.testResult {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.testResult h5 {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-primary);
+}
+
+.testMeta {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 1rem;
+}
+
+.testParameters,
+.testResults {
+  margin-bottom: 1rem;
+}
+
+.testParameters ul,
+.testResults ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.testConclusion {
+  font-style: italic;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.cadSection {
+  background: var(--ifm-color-primary-lightest);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.cadLinks {
+  margin-top: 1rem;
+}
+
+.cadLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.cadLink:hover {
+  background: var(--ifm-color-primary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+/* Metrics Section */
+.metricsSection {
+  padding: 6rem 0;
+  background: var(--ifm-color-emphasis-50);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metricCard {
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.metricIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.metricValue {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-family: var(--ifm-heading-font-family);
+}
+
+.metricLabel {
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Innovation Section */
+.innovationSection {
+  padding: 6rem 0;
+  background: var(--ifm-background-color);
+}
+
+.innovationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.innovationCard {
+  height: 100%;
+  padding: 2rem;
+}
+
+.innovationCard h3 {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.innovationCard p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.innovationMetrics {
+  background: var(--ifm-color-success-lightest);
+  color: var(--ifm-color-success-darkest);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.innovationMetrics span {
+  color: var(--ifm-color-success);
+  font-size: 1.125rem;
+}
+
+/* Documentation Section */
+.documentationSection {
+  padding: 6rem 0;
+  background: var(--ifm-color-emphasis-50);
+}
+
+.docGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.docCard {
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.docCard:hover {
+  transform: translateY(-2px);
+}
+
+.docIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.docCard h3 {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-primary);
+}
+
+.docCard p {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.docMeta {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+/* Call to Action */
+.callToAction {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.ctaContent p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 996px) {
+  .awardBadge {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .awardBadge h1 {
+    font-size: 2.5rem;
+  }
+  
+  .processSteps {
+    grid-template-columns: 1fr;
+  }
+  
+  .iterationTabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .iterationDetails {
+    padding: 2rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .heroQuote {
+    padding: 1.5rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ctaButtons .button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .processStep {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .iterationDetails {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .testResult {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}

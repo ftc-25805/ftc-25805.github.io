@@ -1,0 +1,1659 @@
+/* Social Media Hub Component Styles */
+
+.socialMediaHub {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--ifm-card-background-color);
+  border-radius: 16px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Header */
+.hubHeader {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hubHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.headerTitle {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.headerTitle h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.headerTitle p {
+  margin: 0;
+  font-size: 1.125rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Social Metrics */
+.socialMetrics {
+  position: relative;
+  z-index: 1;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.metricCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.metricIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.metricValue {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--ifm-heading-font-family);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.metricDescription {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  color: white;
+}
+
+/* Navigation */
+.hubNavigation {
+  display: flex;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  overflow-x: auto;
+}
+
+.navTab {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.navTab:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.navTab.active {
+  background: var(--ifm-card-background-color);
+  color: #ff6b35;
+  border-bottom-color: #ff6b35;
+}
+
+.tabIcon {
+  font-size: 1.5rem;
+}
+
+/* Tab Content */
+.tabContent {
+  padding: 2rem;
+}
+
+/* Dashboard Section */
+.dashboardSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.accountsOverview,
+.recentActivity {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accountsOverview h3,
+.recentActivity h3 {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.accountsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accountCard {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.accountCard.connected {
+  border-color: var(--ifm-color-success);
+  background: var(--ifm-color-success-lightest);
+}
+
+.accountCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accountHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.accountInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.platformIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.accountDetails h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.125rem;
+}
+
+.username {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+}
+
+.accountStatus .connected {
+  color: var(--ifm-color-success);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.connectButton {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connectButton:hover {
+  background: #e55a2b;
+  transform: translateY(-1px);
+}
+
+.accountStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.followerCount {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b35;
+  font-family: var(--ifm-heading-font-family);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+.verificationStatus .verified {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.verificationStatus .pending {
+  color: var(--ifm-color-warning);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.lastSync {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.addAccountSection {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.addAccountSection h4 {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.125rem;
+}
+
+.availablePlatforms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.platformButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.platformButton:hover:not(:disabled) {
+  background: #ff6b35;
+  color: white;
+  border-color: #ff6b35;
+}
+
+.platformButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.platformButton.hasAccount {
+  background: var(--ifm-color-success-lightest);
+  border-color: var(--ifm-color-success);
+}
+
+.connectedBadge {
+  margin-left: auto;
+  color: var(--ifm-color-success);
+  font-weight: 700;
+}
+
+/* Recent Activity */
+.activityFeed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
+}
+
+.activityItem:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.activityIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.activityContent {
+  flex: 1;
+}
+
+.activityText {
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.activityMeta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  align-items: center;
+}
+
+/* Post Composer */
+.postComposer {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.composerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.composerHeader h3 {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.25rem;
+}
+
+.characterCount {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.characterCount .warning {
+  color: var(--ifm-color-warning);
+}
+
+.characterCount .danger {
+  color: var(--ifm-color-danger);
+}
+
+.composerTextarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: white;
+  font-family: var(--ifm-font-family-base);
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.composerTextarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+}
+
+.composerTools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mediaUpload {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toolButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.toolButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  border-color: #ff6b35;
+}
+
+.hashtagSuggestions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hashtagButton {
+  padding: 0.25rem 0.75rem;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  border: none;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hashtagButton:hover {
+  background: #ff6b35;
+  color: white;
+}
+
+.platformSelection {
+  margin-bottom: 1.5rem;
+}
+
+.platformSelection h4 {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+}
+
+.platformGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.platformOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.platformOption:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.platformOption.selected {
+  border-color: #ff6b35;
+  background: #fff5f2;
+}
+
+.platformOption input {
+  margin: 0;
+}
+
+.platformInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.characterLimit {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-left: auto;
+}
+
+.composerActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.schedulingOptions {
+  display: flex;
+  gap: 1rem;
+}
+
+.scheduleButton,
+.draftButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.scheduleButton:hover,
+.draftButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  border-color: #ff6b35;
+}
+
+.publishButton {
+  padding: 0.75rem 2rem;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.publishButton:hover:not(:disabled) {
+  background: #e55a2b;
+  transform: translateY(-1px);
+}
+
+.publishButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Posts Section */
+.postsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.postsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.postsHeader h3 {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.5rem;
+}
+
+.postsFilters {
+  display: flex;
+  gap: 1rem;
+}
+
+.platformFilter {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-card-background-color);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.875rem;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.postCard {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.postPlatform {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.postStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.postStatus.published {
+  background: var(--ifm-color-success-lightest);
+  color: var(--ifm-color-success-darkest);
+}
+
+.postStatus.scheduled {
+  background: var(--ifm-color-warning-lightest);
+  color: var(--ifm-color-warning-darkest);
+}
+
+.postStatus.draft {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.postStatus.failed {
+  background: var(--ifm-color-danger-lightest);
+  color: var(--ifm-color-danger-darkest);
+}
+
+.postContent {
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.postContent p {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+.postHashtags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hashtag {
+  color: #ff6b35;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.postMedia {
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.mediaItem {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.postMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.postAnalytics {
+  background: var(--ifm-color-emphasis-100);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.analyticStat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statIcon {
+  font-size: 1rem;
+}
+
+.statNumber {
+  font-weight: 700;
+  color: #ff6b35;
+  font-size: 0.9rem;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.engagementRate {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.rateLabel {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.rateValue {
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.postActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.editButton,
+.duplicateButton,
+.deleteButton {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: white;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editButton:hover {
+  background: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary);
+}
+
+.duplicateButton:hover {
+  background: var(--ifm-color-warning);
+  color: white;
+  border-color: var(--ifm-color-warning);
+}
+
+.deleteButton:hover {
+  background: var(--ifm-color-danger);
+  color: white;
+  border-color: var(--ifm-color-danger);
+}
+
+/* Scheduler Section */
+.schedulerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.schedulerHeader {
+  text-align: center;
+}
+
+.schedulerHeader h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.5rem;
+}
+
+.schedulerHeader p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.125rem;
+}
+
+.schedulerCalendar {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.calendarHeader h4 {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.25rem;
+}
+
+.calendarControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calendarNav {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendarNav:hover {
+  background: #ff6b35;
+  color: white;
+  border-color: #ff6b35;
+}
+
+.currentMonth {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.125rem;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendarDay {
+  background: white;
+  min-height: 80px;
+  padding: 0.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dayNumber {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.9rem;
+}
+
+.scheduledPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.scheduledPost {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #ff6b35;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+.postTime {
+  font-size: 0.6rem;
+}
+
+.optimalTimes {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.optimalTimes h4 {
+  margin: 0 0 1.5rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.25rem;
+}
+
+.timesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.platformTimes {
+  background: white;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.platformHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.timesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeSlot {
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+/* Campaigns Section */
+.campaignsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.campaignsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.campaignsHeader h3 {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.5rem;
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createButton:hover {
+  background: #e55a2b;
+  transform: translateY(-1px);
+}
+
+.campaignsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.campaignCard {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.2s ease;
+}
+
+.campaignCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.campaignHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.campaignInfo h4 {
+  margin: 0 0 0.5rem 0;
+  color: #ff6b35;
+  font-size: 1.25rem;
+}
+
+.campaignType {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.campaignStatus {
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.campaignStatus.draft {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.campaignStatus.active {
+  background: var(--ifm-color-success-lightest);
+  color: var(--ifm-color-success-darkest);
+}
+
+.campaignStatus.completed {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.campaignStatus.paused {
+  background: var(--ifm-color-warning-lightest);
+  color: var(--ifm-color-warning-darkest);
+}
+
+.campaignDates {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.campaignPlatforms {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.platformBadge {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.campaignGoals {
+  margin-bottom: 1.5rem;
+}
+
+.campaignGoals h5 {
+  margin: 0 0 1rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+}
+
+.goalProgress {
+  margin-bottom: 1rem;
+}
+
+.goalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.goalHeader span:first-child {
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+  text-transform: capitalize;
+}
+
+.goalHeader span:last-child {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #ff6b35;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.campaignBudget {
+  background: var(--ifm-color-emphasis-100);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.campaignBudget h5 {
+  margin: 0 0 0.75rem 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+}
+
+.budgetInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.campaignActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton {
+  flex: 1;
+  padding: 0.5rem;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewButton:hover {
+  background: #e55a2b;
+}
+
+/* Analytics Section */
+.analyticsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.analyticsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.analyticsHeader h3 {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 1.5rem;
+}
+
+.analyticsControls {
+  display: flex;
+  gap: 1rem;
+}
+
+.timeRange {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-card-background-color);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.875rem;
+}
+
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.analyticsCard {
+  background: var(--ifm-color-emphasis-50);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.2s ease;
+}
+
+.analyticsCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.analyticsCard h4 {
+  margin: 0 0 1.5rem 0;
+  color: #ff6b35;
+  font-size: 1.25rem;
+}
+
+.platformPerformance {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.platformPerformanceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.platformInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.performanceStats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-weight: 700;
+  color: #ff6b35;
+  font-size: 1.125rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.topPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topPostItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.postRank {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ff6b35;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.postInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.postDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.postContent {
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.9rem;
+}
+
+.postEngagement {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.trendChart {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.trendLine {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.dataPoint {
+  width: 20px;
+  background: #ff6b35;
+  border-radius: 2px;
+  transition: height 0.3s ease;
+}
+
+.chartLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.audienceInsights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.insightItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.insightLabel {
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+.insightValue {
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 996px) {
+  .hubHeader {
+    padding: 1.5rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .metricCard {
+    padding: 1rem;
+  }
+  
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .availablePlatforms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .platformGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .postsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .campaignsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analyticsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calendarGrid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+  }
+  
+  .calendarDay {
+    min-height: 60px;
+    padding: 0.25rem;
+  }
+  
+  .dayNumber {
+    font-size: 0.8rem;
+  }
+  
+  .scheduledPost {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hubHeader {
+    padding: 1rem;
+  }
+  
+  .hubNavigation {
+    flex-wrap: wrap;
+  }
+  
+  .navTab {
+    min-width: 100px;
+    font-size: 0.875rem;
+    padding: 1rem 0.5rem;
+  }
+  
+  .tabContent {
+    padding: 1rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .composerHeader,
+  .postsHeader,
+  .campaignsHeader,
+  .analyticsHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .composerTools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .mediaUpload,
+  .hashtagSuggestions {
+    justify-content: center;
+  }
+  
+  .composerActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .schedulingOptions {
+    justify-content: center;
+  }
+  
+  .availablePlatforms {
+    grid-template-columns: 1fr;
+  }
+  
+  .analyticsGrid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .analyticStat {
+    gap: 0.125rem;
+  }
+  
+  .statIcon {
+    font-size: 0.8rem;
+  }
+  
+  .statNumber {
+    font-size: 0.8rem;
+  }
+  
+  .statLabel {
+    font-size: 0.6rem;
+  }
+  
+  .calendarGrid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .calendarDay {
+    min-height: 40px;
+    font-size: 0.7rem;
+  }
+  
+  .performanceStats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .postComposer {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .accountCard,
+[data-theme='dark'] .postCard,
+[data-theme='dark'] .campaignCard,
+[data-theme='dark'] .analyticsCard {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .composerTextarea,
+[data-theme='dark'] .toolButton,
+[data-theme='dark'] .platformOption {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .schedulerCalendar,
+[data-theme='dark'] .optimalTimes {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .calendarDay,
+[data-theme='dark'] .platformTimes {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
