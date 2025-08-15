@@ -20,8 +20,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/architecture">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/blog">
+            Explore Our Journey
+          </Link>
+          <Link
+            className="button button--primary button--lg"
+            to="/sponsorship">
+            Support Our Team
           </Link>
         </div>
       </div>
@@ -33,8 +38,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} - FTC Team 25805`}
+      description="Welcome to Reprogrammed - FTC Team 25805. Learn about our robotics journey, competitive achievements, and innovative engineering solutions.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
