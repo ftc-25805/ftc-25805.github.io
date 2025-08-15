@@ -75,13 +75,15 @@ const config: Config = {
                 src: 'logo.png',
             },
             items: [
+                { to: '/about', label: 'About', position: 'left' },
+                { to: '/contact', label: 'Contact', position: 'left' },
+                { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     type: 'docSidebar',
                     sidebarId: 'tutorialSidebar',
                     position: 'left',
                     label: 'Tutorial',
                 },
-                { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     href: 'https://github.com/ftc-25805',
                     label: 'GitHub',
