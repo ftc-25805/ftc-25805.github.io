@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Engineering Excellence',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        We strive for innovation and precision in every robot we build,
+        constantly pushing the boundaries of what's possible in competitive robotics.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Team Collaboration',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Our diverse team of students works together to design, build, and program
+        robots while developing leadership and technical skills.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'FIRST Values',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        We embody the core FIRST values of Gracious Professionalism and Coopertition,
+        building lasting relationships both on and off the field.
       </>
     ),
   },
@@ -60,6 +60,13 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className="text--center padding-bottom--lg">
+          <h2>About FTC Team 25805 - Reprogrammed</h2>
+          <p>
+            We are a passionate group of high school students dedicated to competitive robotics,
+            STEM education, and making a positive impact in our community.
+          </p>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
