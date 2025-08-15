@@ -1,0 +1,83 @@
+---
+title: Resources
+description: Learning materials, guides, and videos for FTC Team Reprogrammed 25805
+---
+
+# Resources
+
+Welcome to our resource hub! Here you'll find guides, tutorials, and videos to help our team members learn and grow in robotics, programming, and competition skills.
+
+## Programming Guides
+
+### Getting Started
+- [FIRST Tech Challenge Programming Guide](https://www.firstinspires.org/resource-library/ftc/technology-information-and-resources) - Official FTC programming resources
+- [Java for FTC Programming](https://ftc-docs.firstinspires.org/en/latest/programming_resources/tutorial_specific/android_studio/index.html) - Learn Java programming for FTC robots
+- [OnBot Java Tutorial](https://ftc-docs.firstinspires.org/en/latest/programming_resources/onbot_java/OnBot-Java-Tutorial.html) - Programming directly on the robot controller
+
+### Advanced Programming
+- [FTC SDK Documentation](https://ftctechnh.github.io/ftc_app/doc/javadoc/index.html) - Complete SDK reference
+- [Road Runner Documentation](https://learnroadrunner.com/) - Advanced autonomous programming library
+- [Control Theory for FTC](https://docs.ftclib.org/ftclib/features/drivebases) - PID controllers and advanced motion control
+
+## Build and Design Resources
+
+### Mechanical Design
+- [FTC Build System Guide](https://www.firstinspires.org/resource-library/ftc/robot-building-resources) - Official build system documentation
+- [CAD Resources for FTC](https://www.firstinspires.org/resource-library/ftc/cad-resources) - Computer-aided design for robot building
+- [Mechanical Design Best Practices](https://www.youtube.com/watch?v=26YCKDFWBbE) - Tips for building robust mechanisms
+
+### Electronics and Wiring
+- [FTC Control System Overview](https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/index.html) - Understanding the robot control system
+- [Wiring Best Practices](https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/connecting_devices/index.html) - Proper wiring techniques
+
+## Competition Strategy
+
+### Game Strategy
+- [FTC Game Manual](https://www.firstinspires.org/resource-library/ftc/game-and-season-info) - Current season rules and scoring
+- [Strategic Thinking in FTC](https://www.youtube.com/watch?v=example) - Developing winning strategies
+
+## Video Tutorials
+
+### Programming Tutorial Series
+
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/DaAKtKOhhdw" 
+  title="FTC Programming Tutorial - Getting Started"
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+*FTC Programming Tutorial: Getting Started with Java* - Learn the basics of programming an FTC robot using Java and Android Studio.
+
+### Additional Video Resources
+- [FTC YouTube Channel](https://www.youtube.com/user/FIRSTTechChallenge) - Official FIRST Tech Challenge videos
+- [Team 731 Technical Binder](https://www.youtube.com/watch?v=r6k7nkF_rnk) - Advanced FTC programming concepts
+- [Control Award Winner Presentations](https://www.youtube.com/results?search_query=ftc+control+award) - Learn from successful teams
+
+## Team Development
+
+### Project Management
+- [Engineering Notebook Best Practices](https://www.firstinspires.org/resource-library/ftc/judging-resources) - Documenting your team's journey
+- [Portfolio Development](https://www.firstinspires.org/resource-library/ftc/award-resources) - Building award submissions
+
+### Teamwork and Communication
+- [FIRST Core Values](https://www.firstinspires.org/about/vision-and-mission) - The foundation of FIRST robotics
+- [Team Organization Strategies](https://www.firstinspires.org/resource-library/ftc/team-management-resources) - Building an effective robotics team
+
+## Community Resources
+
+### Forums and Discussion
+- [FTC Discord Community](https://discord.gg/first-tech-challenge) - Connect with other FTC teams
+- [Chief Delphi FTC Forums](https://www.chiefdelphi.com/c/technical/first-tech-challenge/10) - Technical discussions and Q&A
+- [Reddit FTC Community](https://www.reddit.com/r/FTC/) - Tips, tricks, and team showcases
+
+### Local Events and Meetups
+- [Texas FTC Events](https://www.firstinspires.org/robotics/ftc/regional-championships-and-super-regionals) - Find competitions in our area
+- [Mentor Network](https://www.firstinspires.org/ways-to-help/volunteer) - Connect with experienced mentors
+
+---
+
+Have questions or want to suggest additional resources? [Contact us](/contact) - we'd love to hear from you!
