@@ -22,3 +22,5 @@ yarn-error.log*
 .direnv
 .bmad-core
 .claude
+docs/architecture
+docs/prd
