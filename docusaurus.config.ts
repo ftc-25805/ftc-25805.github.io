@@ -78,6 +78,7 @@ const config: Config = {
                 { to: '/about', label: 'About', position: 'left' },
                 { to: '/sponsorship', label: 'Sponsorship', position: 'left' },
                 { to: '/contact', label: 'Contact', position: 'left' },
+                { to: '/resources', label: 'Resources', position: 'left' },
                 { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     type: 'docSidebar',
