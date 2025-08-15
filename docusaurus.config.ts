@@ -5,9 +5,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: 'FTC 25805 Site',
-    tagline: 'Dinosaurs are cool',
-    favicon: 'img/favicon.ico',
+    title: 'Reprogrammed - FTC Team 25805',
+    tagline: 'Innovative robotics solutions through code and engineering',
+    favicon: 'logo.png',
 
     // Set the production url of your site here
     url: 'https://ftc-25805.github.io',
@@ -18,7 +18,7 @@ const config: Config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'ftc-25805', // Usually your GitHub org/user name.
-    projectName: 'ftc-25805.github.io', // Usually your repo name.
+    projectName: 'ftc-25805-website', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -69,10 +69,10 @@ const config: Config = {
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
-            title: 'My Site',
+            title: 'Reprogrammed',
             logo: {
-                alt: 'My Site Logo',
-                src: 'img/logo.svg',
+                alt: 'Reprogrammed Team Logo',
+                src: 'logo.png',
             },
             items: [
                 {
@@ -83,7 +83,7 @@ const config: Config = {
                 },
                 { to: '/blog', label: 'Blog', position: 'left' },
                 {
-                    href: 'https://github.com/facebook/docusaurus',
+                    href: 'https://github.com/ftc-25805',
                     label: 'GitHub',
                     position: 'right',
                 },
@@ -123,12 +123,12 @@ const config: Config = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
+                            href: 'https://github.com/ftc-25805',
                         },
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} Reprogrammed - FTC Team 25805. Built with Docusaurus.`,
         },
         prism: {
             theme: prismThemes.github,
