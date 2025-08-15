@@ -76,6 +76,7 @@ const config: Config = {
             },
             items: [
                 { to: '/about', label: 'About', position: 'left' },
+                { to: '/sponsorship', label: 'Sponsorship', position: 'left' },
                 { to: '/contact', label: 'Contact', position: 'left' },
                 { to: '/blog', label: 'Blog', position: 'left' },
                 {
