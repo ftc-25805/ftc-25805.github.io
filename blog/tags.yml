@@ -1,19 +1,24 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+team:
+  label: Team
+  permalink: /team
+  description: Posts about team updates and announcements
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+competition:
+  label: Competition
+  permalink: /competition
+  description: Updates from FTC competitions and tournaments
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+build-season:
+  label: Build Season
+  permalink: /build-season
+  description: Posts about robot design, building, and development
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: Important team announcements and news
+
+welcome:
+  label: Welcome
+  permalink: /welcome
+  description: Welcome and introduction posts
