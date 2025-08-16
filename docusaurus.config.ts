@@ -18,7 +18,7 @@ const config: Config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'ftc-25805', // Usually your GitHub org/user name.
-    projectName: 'ftc-25805-website', // Usually your repo name.
+    projectName: 'ftc-25805.github.io', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -41,7 +41,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/ftc-25805/ftc-25805-website/tree/main/',
+                        'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -52,7 +52,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/ftc-25805/ftc-25805-website/tree/main/',
+                        'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/',
                     // Useful options to enforce blogging best practices
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
