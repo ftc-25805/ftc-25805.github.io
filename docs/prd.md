@@ -80,8 +80,9 @@ Based on the MVP scope, the following conceptual screens are required to deliver
 
 ### **Epic List**
 
-- [cite_start]**Epic 1: Website Foundation & Core Content MVP** [cite: 468]
+- [cite_start]**Epic 1: Website Foundation & Core Content MVP** [cite: 468] - **CLOSED** ✅
   - [cite_start]**Goal**: To launch the complete Minimum Viable Product, including the site's technical foundation and all core content pages required to serve sponsors, team members, and the community. [cite: 460]
+  - **Status**: Completed 2025-08-16 - All 9 stories delivered, QA approved, MVP deployed
 
 ### **Epic 1: Website Foundation & Core Content MVP**
 
