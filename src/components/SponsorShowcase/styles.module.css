@@ -1,0 +1,210 @@
+.sponsorShowcase {
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sponsorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sponsorCard {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--ifm-color-emphasis-100);
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.sponsorCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.platinum {
+  border-color: #E5E7EB;
+}
+
+.platinum:hover {
+  box-shadow: 0 8px 16px rgba(229, 231, 235, 0.3);
+}
+
+.gold {
+  border-color: #FCD34D;
+}
+
+.gold:hover {
+  box-shadow: 0 8px 16px rgba(252, 211, 77, 0.3);
+}
+
+.silver {
+  border-color: #D1D5DB;
+}
+
+.silver:hover {
+  box-shadow: 0 8px 16px rgba(209, 213, 219, 0.3);
+}
+
+.bronze {
+  border-color: #CD7C2F;
+}
+
+.bronze:hover {
+  box-shadow: 0 8px 16px rgba(205, 124, 47, 0.3);
+}
+
+.tierBadge {
+  position: absolute;
+  top: -8px;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logoContainer {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.sponsorLogo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sponsorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sponsorName {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+}
+
+.sponsorDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sponsorLink {
+  font-size: 0.85rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sponsorLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+}
+
+.callToAction {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin: 0 0 1rem 0;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .sponsorShowcase {
+    padding: 1.5rem;
+  }
+  
+  .sponsorsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .sponsorCard {
+    padding: 1.25rem;
+  }
+  
+  .logoContainer {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.2rem;
+  }
+  
+  .ctaDescription {
+    font-size: 0.9rem;
+  }
+}

@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
     title: 'Reprogrammed - FTC Team 25805',
-    tagline: 'Innovative robotics solutions through code and engineering',
+    tagline: 'Building tomorrow\'s engineers through competitive robotics excellence',
     favicon: 'logo.png',
 
     // Set the production url of your site here
