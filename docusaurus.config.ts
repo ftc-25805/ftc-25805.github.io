@@ -41,7 +41,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/packages/create-docusaurus/templates/shared/',
+                        'https://github.com/ftc-25805/ftc-25805-website/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -52,7 +52,7 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/ftc-25805/ftc-25805.github.io/tree/main/packages/create-docusaurus/templates/shared/',
+                        'https://github.com/ftc-25805/ftc-25805-website/tree/main/',
                     // Useful options to enforce blogging best practices
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
@@ -67,7 +67,7 @@ const config: Config = {
 
     themeConfig: {
         // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        image: 'logo.png',
         navbar: {
             title: 'Reprogrammed',
             logo: {

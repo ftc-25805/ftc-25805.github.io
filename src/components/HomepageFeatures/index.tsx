@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        We embody the core FIRST values of Gracious Professionalism and Coopertition,
+        We embody the core FIRST values of Gracious Professionalism and Coopetition,
         building lasting relationships both on and off the field.
       </>
     ),

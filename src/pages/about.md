@@ -18,7 +18,7 @@ We strive for technical precision and creative problem-solving in every aspect o
 Success comes through working together, sharing knowledge, and supporting each other's growth and learning.
 
 ### FIRST Values
-We embrace the core principles of FIRST - Gracious Professionalism, Coopertition, and making a positive impact in our community.
+We embrace the core principles of FIRST - Gracious Professionalism, Coopetition, and making a positive impact in our community.
 
 ## Our Journey
 
