@@ -1,11 +1,26 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
   width: 100%;
+  background: var(--ifm-background-color);
 }
 
 .featureSvg {
   height: 200px;
   width: 200px;
+  filter: opacity(0.8);
+}
+
+/* Add some visual hierarchy and spacing improvements */
+.features h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.features .container > .text--center > p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: var(--ifm-color-content);
 }

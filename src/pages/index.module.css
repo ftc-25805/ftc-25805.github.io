@@ -20,4 +20,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.buttons .button {
+  margin: 0;
 }

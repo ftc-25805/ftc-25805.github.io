@@ -11,30 +11,31 @@ We'd love to hear from you! Whether you're interested in sponsoring our team, me
 
 ## Team Leadership
 
-**Team Coach**: [Coach Name]
-- Email: coach@teamreprogrammed.org
-- Phone: [Phone Number]
+**Team Coach**: Contact Available Upon Request
+- Primary contact for official team communications and mentorship inquiries
+- Email: Available through our [contact form](#contact-form)
 
-**Team Captain**: [Captain Name]  
-- Email: captain@teamreprogrammed.org
+**Team Captain**: Student Leadership Team  
+- Student-led communications and peer-to-peer inquiries
+- Email: Available through our [contact form](#contact-form)
 
 ## General Inquiries
 
 For general questions about our team, programs, or activities:
-- **Email**: info@teamreprogrammed.org
-- **Phone**: [Main Contact Number]
+- **Best Contact Method**: Use our [contact form](#contact-form) below for fastest response
+- **School District**: Contact through official school channels for administrative matters
 
 ## Sponsorship Opportunities
 
 Interested in supporting our team? We offer various sponsorship levels and partnership opportunities.
-- **Sponsorship Contact**: sponsors@teamreprogrammed.org
-- **Learn More**: Visit our [Sponsorship Page](/sponsorship) for detailed information about sponsorship benefits and packages.
+- **Sponsorship Inquiries**: Use our [contact form](#contact-form) and specify "Sponsorship" in your message
+- **Learn More**: Visit our [Sponsorship Page](/sponsorship) for detailed information about sponsorship benefits and packages
 
 ## Community & Mentorship
 
 We welcome mentors, volunteers, and community members who want to get involved:
-- **Mentorship**: mentors@teamreprogrammed.org
-- **Community Outreach**: outreach@teamreprogrammed.org
+- **Mentorship Opportunities**: Contact us through the form below and mention "Mentorship" 
+- **Community Outreach**: Let us know about opportunities to share robotics with your organization
 
 ## Follow Our Journey
 
@@ -44,10 +45,19 @@ Stay updated with our latest news, competition results, and activities:
 
 ## Team Meetings
 
-**Meeting Location**: [Location to be confirmed]
-**Meeting Times**: [Schedule to be confirmed]
+**Meeting Schedule**: Contact us for current meeting times and locations
+**Season Variations**: Our schedule changes during build season and competition season
 
-*Note: Meeting times and locations may vary during competition season. Please contact us for the most current information.*
+*Note: For the most up-to-date meeting information and to arrange visits, please reach out using the contact form below.*
+
+## Contact Form {#contact-form}
+
+*Coming Soon: Online contact form will be added in a future update.*
+
+For now, please reach out to us through:
+- **School Contacts**: Contact FTC Team 25805 through official school district channels
+- **Competition Events**: Find us at local FTC tournaments and community STEM events
+- **Social Media**: Follow our journey and send us messages through our social media platforms (links to be added)
 
 ## Visit Us
 
