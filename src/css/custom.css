@@ -6,7 +6,33 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  /* Official Reprogrammed team brand colors from front-end-spec.md */
+  /* Dark theme as default - Epic 2 specifications (WCAG 2.1 AA compliant) */
+  --ifm-color-primary: #b377d1;
+  --ifm-color-primary-dark: #a565c7;
+  --ifm-color-primary-darker: #9c5ebc;
+  --ifm-color-primary-darkest: #834ea0;
+  --ifm-color-primary-light: #c189db;
+  --ifm-color-primary-lighter: #c990e0;
+  --ifm-color-primary-lightest: #dda9ea;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(155, 89, 182, 0.1);
+  
+  /* Brand colors for dark theme */
+  --ifm-color-secondary: #f1c40f;
+  --ifm-color-accent: #f1c40f;
+  --ifm-background-color: #1a1a1d;
+  --ifm-font-color-base: #efefef;
+  --ifm-color-content: #efefef;
+  --ifm-color-success: #27ae60;
+  --ifm-color-danger: #e74c3c;
+  
+  /* Dark theme consistency */
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: #000000;
+}
+
+/* Light theme override for when users switch from default dark mode */
+[data-theme='light'] {
   --ifm-color-primary: #242E6B;
   --ifm-color-primary-dark: #1f2759;
   --ifm-color-primary-darker: #1d2554;
@@ -14,38 +40,24 @@
   --ifm-color-primary-light: #29357d;
   --ifm-color-primary-lighter: #2b3782;
   --ifm-color-primary-lightest: #303e91;
-  --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   
-  /* Brand secondary and accent colors from specification */
+  /* Light theme brand colors */
   --ifm-color-secondary: #C1A5F3;
   --ifm-color-accent: #FBC941;
   --ifm-background-color: #FDF5E4;
+  --ifm-font-color-base: #212529;
   --ifm-color-content: #212529;
   --ifm-color-success: #198754;
   --ifm-color-danger: #DC3545;
   
-  /* Enhance brand consistency */
+  /* Light theme consistency */
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: var(--ifm-color-primary-darkest);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #C1A5F3;
-  --ifm-color-primary-dark: #b392f0;
-  --ifm-color-primary-darker: #a985ee;
-  --ifm-color-primary-darkest: #8b6bea;
-  --ifm-color-primary-light: #cfb8f6;
-  --ifm-color-primary-lighter: #d5c2f7;
-  --ifm-color-primary-lightest: #e7dbfb;
-  --ifm-color-accent: #FBC941;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  
-  /* Dark mode brand consistency */
-  --ifm-background-color: #1b1b1d;
-  --ifm-footer-background-color: #000000;
-}
+/* Import theme validation for build-time testing */
+@import url('./theme.validation.css');
 
 /* YouTube Embed Component Styles */
 .youtube-embed-container {
