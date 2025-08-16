@@ -84,12 +84,11 @@ const config: Config = {
                 { to: '/blog', label: 'Blog', position: 'left' },
                 { to: '/sponsorship', label: 'Sponsorship', position: 'left' },
                 { to: '/contact', label: 'Contact', position: 'left' },
-                { to: '/resources', label: 'Resources', position: 'left' },
                 {
                     type: 'docSidebar',
-                    sidebarId: 'tutorialSidebar',
+                    sidebarId: 'resourcesSidebar',
                     position: 'left',
-                    label: 'Tutorial',
+                    label: 'Resources',
                 },
                 {
                     href: 'https://github.com/ftc-25805',
