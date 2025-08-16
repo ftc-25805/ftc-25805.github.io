@@ -1,23 +1,31 @@
+Of course. I have reviewed the new project brief for the "Phase 2 Enhancement" and will now update the existing PRD to reflect the new scope of work.
+
+This update will include a new epic to capture the required enhancements, such as the site-wide dark theme, the homepage revamp, the restructuring of the Resources page, and the expansion of the "About the Team" page.
+
+Here is the updated Product Requirements Document for your review.
+
+---
+
 # Reprogrammed Team Website Product Requirements Document (PRD)
+
+| Date       | Version | Description                                                                                      | Author    |
+| :--------- | :------ | :----------------------------------------------------------------------------------------------- | :-------- |
+| 2025-08-15 | 1.0     | Initial PRD draft based on Project Brief.                                                        | John (PM) |
+| 2025-08-16 | 2.0     | Updated for Phase 2 Enhancement project. Added Epic 2 for visual redesign and content expansion. | John (PM) |
 
 ### **Goals and Background Context**
 
 #### **Goals**
 
 - To attract at least 3 new sponsors during the current FTC season.
-- To establish a professional online presence that legitimizes the team for potential partners.
-- To significantly reduce the time it takes for team members to find educational and organizational resources.
+- To establish a professional, modern, and engaging online presence that legitimizes the team for potential partners.
+- To significantly reduce the time it takes for team members to find educational and organizational resources through a restructured, multi-page guide.
 - To create a central, public-facing hub for sharing team progress and knowledge with the school and FTC communities.
+- To better showcase the talented individuals on the team, including members, mentors, and alumni, to foster a stronger community connection.
 
 #### **Background Context**
 
-The Reprogrammed FTC team currently lacks a dedicated website, which presents challenges for both external outreach and internal operations. Potential sponsors expect a professional website to reference, and its absence creates a barrier to securing new funding. Internally, critical resources are scattered across emails and group chats, making it difficult for team members to find the information they need efficiently. This PRD outlines the requirements for a website that will solve these issues by creating a single, organized source of truth for the team.
-
-#### **Change Log**
-
-| Date       | Version | Description                               | Author    |
-| :--------- | :------ | :---------------------------------------- | :-------- |
-| 2025-08-15 | 1.0     | Initial PRD draft based on Project Brief. | John (PM) |
+The Reprogrammed FTC team website currently serves as a functional Minimum Viable Product (MVP). While successful in establishing a baseline presence, it lacks the professional polish and engaging features necessary to meet the team's evolving goals. The current design is visually uninspired and does not fully capture the team's innovative spirit. This second phase of development aims to address these shortcomings by implementing a comprehensive visual and structural redesign. This will transform the website into a powerful tool for sponsorship, recruitment, and community engagement.
 
 ### **Requirements**
 
@@ -29,6 +37,9 @@ The Reprogrammed FTC team currently lacks a dedicated website, which presents ch
 4.  [cite_start]The website must include a blog/news section for sharing team progress and updates. [cite: 442]
 5.  [cite_start]The website must feature a resource section where educational guides and YouTube videos can be organized and accessed. [cite: 442]
 6.  [cite_start]The website layout must be responsive and function correctly on desktop, tablet, and mobile devices. [cite: 442]
+7.  **New:** The homepage must be redesigned to feature a robot spotlight, a description of the FTC program, and a component to showcase sponsors.
+8.  **New:** The Resources page must be re-architected into a multi-page guide using a sidebar for navigation.
+9.  **New:** The "About" page must be expanded to include dedicated sections for current team members, mentors, and alumni.
 
 #### **Non-Functional**
 
@@ -36,141 +47,107 @@ The Reprogrammed FTC team currently lacks a dedicated website, which presents ch
 2.  [cite_start]The website shall be hosted on GitHub Pages. [cite: 442]
 3.  [cite_start]The website must be performant, with fast page load times characteristic of a static site. [cite: 442]
 4.  [cite_start]Content for the website (blog posts, resources, etc.) must be manageable by team members via Markdown files within a Git repository. [cite: 442]
+5.  **New:** A "clean, modern, fun, innovative" dark theme with colorful accents shall be applied consistently across the entire website.
 
 ### **User Interface Design Goals**
 
-#### [cite_start]**Overall UX Vision** [cite: 447]
+#### **Overall UX Vision**
 
-The website should project a professional, clean, and engaging image that is appealing to both corporate sponsors and student members. Navigation should be intuitive, allowing all user types to find the information they need quickly and efficiently.
+[cite_start]The website should project a professional, clean, and engaging image that is appealing to both corporate sponsors and student members. [cite: 447] The enhanced design will feature a modern dark theme with colorful accents to better reflect the team's innovative and fun personality. [cite_start]Navigation should be intuitive, allowing all user types to find the information they need quickly and efficiently. [cite: 447]
 
-#### [cite_start]**Key Interaction Paradigms** [cite: 447]
+#### **Key Interaction Paradigms**
 
-The site will use standard and familiar web interaction patterns. A persistent top-navigation bar will provide access to the primary sections. Key "call-to-action" buttons, such as "Become a Sponsor," will be prominently displayed.
+[cite_start]The site will use standard and familiar web interaction patterns. [cite: 447] [cite_start]A persistent top-navigation bar will provide access to the primary sections. [cite: 447] [cite_start]Key "call-to-action" buttons, such as "Become a Sponsor," will be prominently displayed. [cite: 447]
 
-#### [cite_start]**Core Screens and Views** [cite: 448]
+#### **Core Screens and Views**
 
-Based on the MVP scope, the following conceptual screens are required to deliver the core functionality:
+Based on the project scope, the following conceptual screens are required:
 
-- [cite_start]Homepage [cite: 449]
-- [cite_start]About Page (Mission Statement) [cite: 449]
-- [cite_start]Sponsorship Page [cite: 449]
-- [cite_start]Resources Page [cite: 449]
-- [cite_start]Blog/News Page [cite: 449]
-- [cite_start]Contact Page [cite: 449]
+- Homepage (Redesigned)
+- About Page (Expanded with Member, Mentor, Alumni sections)
+- Sponsorship Page
+- Resources Section (Re-architected as a multi-page documentation section)
+- Blog/News Page
+- Contact Page
 
-#### [cite_start]**Accessibility** [cite: 447]
+#### **Accessibility**
 
-- **Assumption**: The site should meet WCAG 2.1 AA standards, a common accessibility target that ensures the site is usable by people with a wide range of disabilities.
+- **Assumption**: The site should meet WCAG 2.1 AA standards.
 
-#### [cite_start]**Branding** [cite: 450]
+#### **Branding**
 
-- **Assumption**: The design will need to incorporate the Reprogrammed team's existing branding (e.g., logo, team colors, specific fonts). Please provide any existing style guides or brand assets.
+- **Assumption**: The design will incorporate the Reprogrammed team's existing branding (logo, fonts) within the new dark theme.
 
-#### [cite_start]**Target Device and Platforms** [cite: 453]
+#### **Target Device and Platforms**
 
-- The website will be **Web Responsive**, ensuring a seamless experience across desktops, tablets, and mobile devices.
+- [cite_start]The website will be **Web Responsive**, ensuring a seamless experience across desktops, tablets, and mobile devices. [cite: 453]
 
 ### **Technical Assumptions**
 
-- **Starter Template**: The project will be initialized using the official Docusaurus 'classic-typescript' starter template.
-- [cite_start]**Repository Structure**: A **Monorepo** structure will be used, as the entire project will be contained within a single Docusaurus repository provided by the template. [cite: 455]
-- [cite_start]**Service Architecture**: The project will utilize a **Static Site Architecture**, generating static files for hosting. [cite: 456]
-- [cite_start]**Testing Requirements**: For the MVP, **Unit Testing** will be required for any custom React components created. [cite: 457]
-- **Additional Technical Assumptions**: The project will be built using the **Docusaurus framework with TypeScript** and deployed and hosted on **GitHub Pages**.
+- **Starter Template**: The project will continue to be built upon the foundation created from the Docusaurus 'classic-typescript' starter template.
+- [cite_start]**Repository Structure**: A **Monorepo** structure will be maintained. [cite: 455]
+- [cite_start]**Service Architecture**: The project will continue to utilize a **Static Site Architecture**. [cite: 456]
+- **Testing Requirements**: **Unit Testing** will be required for any new custom React components created.
+- **Additional Technical Assumptions**: The project will continue to be built using the **Docusaurus framework with TypeScript** and deployed and hosted on **GitHub Pages**.
 
 ### **Epic List**
 
-- [cite_start]**Epic 1: Website Foundation & Core Content MVP** [cite: 468] - **CLOSED** ✅
+- **Epic 1: Website Foundation & Core Content MVP** - **CLOSED** ✅
   - [cite_start]**Goal**: To launch the complete Minimum Viable Product, including the site's technical foundation and all core content pages required to serve sponsors, team members, and the community. [cite: 460]
-  - **Status**: Completed 2025-08-16 - All 9 stories delivered, QA approved, MVP deployed
+  - **Status**: Completed 2025-08-16 - All stories delivered, QA approved, MVP deployed.
+- **New Epic 2: Phase 2 Visual Redesign and Content Expansion**
+  - **Goal**: To implement a comprehensive visual redesign of the website and expand key content sections to create a more professional, engaging, and useful platform for sponsors and team members.
 
-### **Epic 1: Website Foundation & Core Content MVP**
+### **Epic 2: Phase 2 Visual Redesign and Content Expansion**
 
-[cite_start]**Epic Goal**: The goal of this epic is to establish the complete technical foundation for the Reprogrammed team website and launch the full Minimum Viable Product. [cite: 470] [cite_start]This involves initializing the project from the Docusaurus starter template, customizing it to fit the team's brand, creating all the core content pages, and deploying the site to GitHub Pages. [cite: 470]
+**Epic Goal**: The goal of this epic is to enhance the existing MVP by applying a new site-wide dark theme, redesigning the homepage with more dynamic content, re-architecting the Resources section into a scalable multi-page guide, and expanding the "About" page to properly showcase the team's talent.
 
-#### **Story 1.1: Project Initialization**
+#### **Story 2.1: Implement Site-Wide Dark Theme**
 
-- **As a** team member, **I want** to initialize the project from the Docusaurus starter template, **so that** I have a working baseline for the website.
+- **As a** visitor, **I want** to experience a clean and modern dark theme across the website, **so that** the site feels more professional and innovative.
 - **Acceptance Criteria**:
-  1. The project is created from the 'classic-typescript' template.
-  2. All dependencies are installed successfully.
-  3. The local development server runs without errors.
+  1.  A dark theme with colorful accents is implemented as the default theme.
+  2.  The theme is applied consistently to all existing pages and components (Header, Footer, Homepage, etc.).
+  3.  Text is legible with sufficient color contrast to meet WCAG 2.1 AA standards.
 
-#### **Story 1.2: Basic Site Configuration and Branding**
+#### **Story 2.2: Redesign Homepage**
 
-- **As a** team member, **I want** to configure the site with the team's name and branding, **so that** the website reflects our team's identity.
+- **As a** visitor, **I want** to see a redesigned homepage with dynamic content, **so that** I am immediately engaged and understand the team's mission.
 - **Acceptance Criteria**:
-  1. The `docusaurus.config.ts` file is updated with the correct site title, tagline, and URL.
-  2. The default Docusaurus logo is replaced with the Reprogrammed team logo.
-  3. The website's primary color scheme is updated to match the team's colors.
+  1.  The homepage layout is updated to a new, modern design.
+  2.  The hero section prominently features the team logo and a compelling tagline.
+  3.  New components for a "Robot Spotlight," a description of FTC, and a "Sponsor Showcase" are created and integrated into the page.
 
-#### **Story 1.3: Homepage Customization**
+#### **Story 2.3: Re-architect Resources Section**
 
-- **As a** visitor, **I want** to see a homepage that introduces the team and its mission, **so that** I can understand the purpose of the site at a glance.
+- **As a** team member, **I want** the Resources section to be a multi-page guide with sidebar navigation, **so that** I can easily find and browse tutorials and documents.
 - **Acceptance Criteria**:
-  1. The default template content on the homepage is replaced.
-  2. The page includes a brief introduction to the Reprogrammed team.
-  3. The page directs users to other key sections like Sponsorship and the Blog.
+  1.  The existing single "Resources" page is removed.
+  2.  The Docusaurus `docs` plugin is configured to serve as the new Resources section.
+  3.  Content is organized into categories that appear in the sidebar.
+  4.  Existing resource content (including embedded videos) is migrated to the new format.
 
-#### **Story 1.4: Create Core Content Pages**
+#### **Story 2.4: Expand "About the Team" Page**
 
-- **As a** visitor, **I want** to access dedicated "About" and "Contact" pages, **so that** I can learn more about the team and how to get in touch.
+- **As a** visitor, **I want** to learn about the people on the team, **so that** I can connect with their story and see their contributions.
 - **Acceptance Criteria**:
-  1. An "About" page with the team's mission statement is created.
-  2. A "Contact" page with information for getting in touch is created.
-  3. Both pages are added to the main site navigation bar.
-
-#### **Story 1.5: Create Sponsorship Page**
-
-- **As a** potential sponsor, **I want** to find a clear page detailing sponsorship opportunities, **so that** I can easily understand how to support the team.
-- **Acceptance Criteria**:
-  1. A "Sponsorship" page is created and added to the navigation bar.
-  2. The page lists the different sponsorship levels and team needs.
-  3. The page includes a clear call-to-action to the Contact page.
-
-#### **Story 1.6: Create Resources Page**
-
-- **As a** team member, **I want** to access a "Resources" page with guides and videos, **so that** I can find learning materials efficiently.
-- **Acceptance Criteria**:
-  1. A "Resources" page is created and added to the navigation bar.
-  2. The page demonstrates the ability to link to guides.
-  3. The page demonstrates the ability to embed at least one YouTube video.
-
-#### **Story 1.7: Set Up Blog and First Post**
-
-- **As a** visitor, **I want** to read news and updates from the team, **so that** I can follow their progress.
-- **Acceptance Criteria**:
-  1. The Docusaurus blog feature is enabled and configured.
-  2. A sample "Welcome" blog post is created.
-  3. The "Blog" is accessible from the main navigation.
-
-#### **Story 1.8: Prepare for Deployment**
-
-- **As a** team coach, **I want** the site to be configured for deployment, **so that** we can easily publish it to GitHub Pages.
-- **Acceptance Criteria**:
-  1. The `docusaurus.config.ts` is correctly configured for GitHub Pages deployment.
-  2. A successful build of the static site can be generated without errors.
-
-#### **Story 1.9: Create and Integrate YouTube Component**
-
-- **As a** content creator, **I want** a reusable component to embed YouTube videos, **so that** I can easily add them to the Resources page and other content.
-- **Acceptance Criteria**:
-  1. A new React component is created that accepts a YouTube video ID as a prop.
-  2. The component renders a responsive YouTube `<iframe>` embed.
-  3. The new component is successfully used on the "Resources" page to display a sample video.
+  1.  The "About" page is redesigned to accommodate new sections.
+  2.  A new component is created to display profiles for current team members.
+  3.  A new section is added to showcase team mentors.
+  4.  A new section is added to feature notable team alumni.
 
 ### **Checklist Results Report**
 
-I have conducted a validation of this PRD against the standard Product Manager checklist. The document is comprehensive, the MVP scope is well-defined, and the epics and stories are logically sequenced.
+This PRD has been updated for the Phase 2 enhancement. The new epic and stories are logically structured to deliver the features outlined in the project brief.
 
-**Final Decision**: **READY FOR ARCHITECT/DESIGN**. [cite_start]The PRD is comprehensive, properly structured, and ready for the next phases of design and architectural planning. [cite: 571]
+**Final Decision**: **READY FOR ARCHITECT/DESIGN**. [cite_start]The PRD is comprehensive, properly structured, and ready for the next phases of design and architectural planning for the enhancement work. [cite: 571]
 
 ### **Next Steps**
 
-#### [cite_start]**UX Expert Prompt** [cite: 483]
+#### **UX Expert Prompt**
 
-The PRD for the Reprogrammed Team Website is complete. Please review the 'User Interface Design Goals' section and create a detailed UI/UX Specification (`front-end-spec.md`) based on its vision.
+The PRD for the Reprogrammed Team Website has been updated for Phase 2. Please review the 'User Interface Design Goals' and the new requirements for Epic 2 to create a detailed UI/UX Specification (`front-end-spec.md`).
 
-#### [cite_start]**Architect Prompt** [cite: 484]
+#### **Architect Prompt**
 
-The PRD for the Reprogrammed Team Website is complete. Please review the 'Technical Assumptions' and other requirements to create the architecture document. Note the decision to use the Docusaurus 'classic-typescript' starter template as the project's foundation.
+The PRD for the Reprogrammed Team Website has been updated for Phase 2. Please review the 'Technical Assumptions' and the new stories in Epic 2 to create an architecture document that details the implementation of these new components and structural changes.
