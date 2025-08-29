@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: 'Reprogrammed - FTC Team 25805',
-    tagline: 'Building tomorrow\'s engineers through competitive robotics excellence',
+    title: 'Reprogrammed - FTC #25805',
+    tagline: 'We are Team 25805 \'Reprogrammed,\' representing Dayton Christian School with the mission to cultivate the next generation of Christ-centered engineers and innovators. Through competitive robotics, we develop technical excellence, creative problem-solving, and servant leadership that transforms both our team and community',
     favicon: 'logo.png',
 
     // Set the production url of your site here
