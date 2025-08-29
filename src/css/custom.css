@@ -64,7 +64,7 @@
   
   /* Theme consistency */
   --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-footer-background-color: #000000;
+  --ifm-footer-background-color: var(--ifm-background-color);
   
   /* Animation variables */
   --animation-duration-fast: 0.15s;
@@ -98,7 +98,7 @@
   
   /* Light theme consistency */
   --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-footer-background-color: var(--ifm-color-primary-darkest);
+  --ifm-footer-background-color: var(--ifm-background-color);
 }
 
 /* Global button contrast fixes for hero section */
@@ -480,4 +480,73 @@ html[data-theme='dark'] {
 
 html[data-theme='light'] {
   color-scheme: light;
+}
+
+/* ========================================
+   FOOTER STYLING IMPROVEMENTS
+   ======================================== */
+
+/* Footer integration with site theme */
+.footer {
+  background: var(--ifm-background-color) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(179, 119, 209, 0.05) 0%, 
+    transparent 50%, 
+    rgba(241, 196, 15, 0.03) 100%);
+  pointer-events: none;
+}
+
+.footer__title {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
+}
+
+.footer__item {
+  color: var(--ifm-font-color-base);
+  transition: color var(--animation-duration-fast) var(--animation-easing);
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary) !important;
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  color: var(--ifm-color-emphasis-600) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+/* Light theme footer adjustments */
+[data-theme='light'] .footer {
+  background: var(--ifm-background-color) !important;
+  border-top-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='light'] .footer::before {
+  background: linear-gradient(135deg, 
+    rgba(36, 46, 107, 0.03) 0%, 
+    transparent 50%, 
+    rgba(251, 201, 65, 0.02) 100%);
+}
+
+[data-theme='light'] .footer__title {
+  color: var(--ifm-color-primary) !important;
+}
+
+[data-theme='light'] .footer__copyright {
+  color: var(--ifm-color-emphasis-700) !important;
+  border-top-color: var(--ifm-color-emphasis-300);
 }
