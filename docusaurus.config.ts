@@ -101,6 +101,15 @@ const config: Config = {
             style: 'dark',
             links: [
                 {
+                    title: 'Team',
+                    items: [
+                        {
+                            label: 'FTC Scout',
+                            to: 'https://ftcscout.org/teams/25805#USOHCIQ'
+                        }
+                    ]
+                },
+                {
                     title: 'More',
                     items: [
                         {
