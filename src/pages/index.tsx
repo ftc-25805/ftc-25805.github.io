@@ -49,14 +49,17 @@ export default function Home(): ReactNode {
         <Layout
             title={`${siteConfig.title} - FTC Team 25805`}
             description="Welcome to Reprogrammed - FTC Team 25805. Learn about our robotics journey, competitive achievements, and innovative engineering solutions.">
+            <a href="#main-content" className="skip-link">
+                Skip to main content
+            </a>
             <HomepageHeader />
-            <main>
+            <main id="main-content">
                 <section className={styles.featuresSection}>
                     <div className="container">
                         <div className={styles.featuresGrid}>
-                            <FTCDescription />
-                            <RobotSpotlight robotImage='/img/robot_2425.jpeg' robotName='2024-25 Robot' />
-                            <SponsorShowcase sponsors={[
+                            <div className="animate-on-scroll"><FTCDescription /></div>
+                            <div className="animate-on-scroll"><RobotSpotlight robotImage='/img/robot_2425.jpeg' robotName='2024-25 Robot' /></div>
+                            <div className="animate-on-scroll"><SponsorShowcase sponsors={[
                                 {
                                     name: "Leidos",
                                     logo: "/img/leidos.svg",
@@ -85,7 +88,7 @@ export default function Home(): ReactNode {
                                     // website: "#",
                                     // description: ""
                                 },
-                            ]} />
+                            ]} /></div>
                         </div>
                     </div>
                 </section>

@@ -20,6 +20,9 @@ export default function RobotSpotlight({
             src={robotImage} 
             alt={robotName}
             className={styles.robotImage}
+            width={200}
+            height={200}
+            loading="lazy"
           />
         </div>
         <div className={styles.textContent}>
