@@ -4,9 +4,26 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* Enhanced modern design system */
 :root {
-  /* Dark theme as default - Epic 2 specifications (WCAG 2.1 AA compliant) */
+  /* Enhanced typography scale */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-h1-font-size: clamp(2rem, 5vw, 3.5rem);
+  --ifm-h2-font-size: clamp(1.5rem, 4vw, 2.5rem);
+  --ifm-h3-font-size: clamp(1.25rem, 3vw, 1.75rem);
+  --ifm-line-height-base: 1.7;
+  --ifm-letter-spacing-base: -0.01em;
+  --ifm-code-font-size: 95%;
+  
+  /* Modern spacing system */
+  --ifm-spacing-xs: 0.5rem;
+  --ifm-spacing-sm: 1rem;
+  --ifm-spacing-md: 1.5rem;
+  --ifm-spacing-lg: 2.5rem;
+  --ifm-spacing-xl: 4rem;
+
+  /* Enhanced color system - Dark theme as default */
   --ifm-color-primary: #b377d1;
   --ifm-color-primary-dark: #a565c7;
   --ifm-color-primary-darker: #9c5ebc;
@@ -14,10 +31,14 @@
   --ifm-color-primary-light: #c189db;
   --ifm-color-primary-lighter: #c990e0;
   --ifm-color-primary-lightest: #dda9ea;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(155, 89, 182, 0.1);
   
-  /* Brand colors for dark theme */
+  /* Gradient enhancements */
+  --primary-gradient: linear-gradient(135deg, #b377d1 0%, #c189db 100%);
+  --accent-gradient: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  --surface-gradient: linear-gradient(135deg, #1a1a1d 0%, #2c2c54 100%);
+  --hero-gradient: linear-gradient(-45deg, #1a1a1d, #2c2c54, #b377d1, #1a1a1d);
+  
+  /* Enhanced semantic colors */
   --ifm-color-secondary: #f1c40f;
   --ifm-color-accent: #f1c40f;
   --ifm-background-color: #1a1a1d;
@@ -26,9 +47,30 @@
   --ifm-color-success: #27ae60;
   --ifm-color-danger: #e74c3c;
   
-  /* Dark theme consistency */
+  /* Enhanced emphasis colors */
+  --ifm-color-emphasis-0: rgba(179, 119, 209, 0.05);
+  --ifm-color-emphasis-100: rgba(179, 119, 209, 0.1);
+  --ifm-color-emphasis-200: rgba(179, 119, 209, 0.15);
+  --ifm-color-emphasis-300: rgba(179, 119, 209, 0.2);
+  --ifm-color-emphasis-400: rgba(179, 119, 209, 0.3);
+  
+  /* Card and surface improvements */
+  --ifm-card-background-color: rgba(255, 255, 255, 0.05);
+  --ifm-card-border-radius: 16px;
+  --ifm-background-surface-color: rgba(255, 255, 255, 0.02);
+  
+  /* Code highlighting improvements */
+  --docusaurus-highlighted-code-line-bg: rgba(179, 119, 209, 0.1);
+  
+  /* Theme consistency */
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: #000000;
+  
+  /* Animation variables */
+  --animation-duration-fast: 0.15s;
+  --animation-duration-normal: 0.3s;
+  --animation-duration-slow: 0.6s;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Light theme override for when users switch from default dark mode */
@@ -51,9 +93,44 @@
   --ifm-color-success: #198754;
   --ifm-color-danger: #DC3545;
   
+  /* Light theme gradient for title */
+  --primary-gradient: linear-gradient(135deg, #242E6B 0%, #303e91 100%);
+  
   /* Light theme consistency */
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: var(--ifm-color-primary-darkest);
+}
+
+/* Global button contrast fixes for hero section */
+.hero .button--secondary,
+.heroBanner .button--secondary {
+  color: #ffffff !important;
+  background: rgba(179, 119, 209, 0.3) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.hero .button--secondary:hover,
+.heroBanner .button--secondary:hover {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(179, 119, 209, 0.4) !important;
+}
+
+/* Light theme button overrides */
+[data-theme='light'] .hero .button--secondary,
+[data-theme='light'] .heroBanner .button--secondary {
+  background: rgba(36, 46, 107, 0.3) !important;
+  color: #ffffff !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+[data-theme='light'] .hero .button--secondary:hover,
+[data-theme='light'] .heroBanner .button--secondary:hover {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
 }
 
 /* Import theme validation for build-time testing */
@@ -86,4 +163,321 @@
   color: var(--ifm-color-danger);
   text-align: center;
   margin: 1rem 0;
+}
+
+/* ========================================
+   MODERN ANIMATIONS & INTERACTIONS
+   ======================================== */
+
+/* Global smooth transitions */
+* {
+  transition: color var(--animation-duration-fast) var(--animation-easing),
+              background-color var(--animation-duration-fast) var(--animation-easing),
+              border-color var(--animation-duration-fast) var(--animation-easing),
+              box-shadow var(--animation-duration-normal) var(--animation-easing),
+              transform var(--animation-duration-normal) var(--animation-easing);
+}
+
+/* Gradient animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Scroll-triggered animations */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-on-scroll:nth-child(1) { animation-delay: 0.1s; }
+  .animate-on-scroll:nth-child(2) { animation-delay: 0.2s; }
+  .animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
+  .animate-on-scroll:nth-child(4) { animation-delay: 0.4s; }
+}
+
+/* Enhanced button styles */
+.button {
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--animation-duration-normal) var(--animation-easing);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left var(--animation-duration-slow) var(--animation-easing);
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button--primary {
+  background: var(--primary-gradient);
+  border: none;
+  box-shadow: 0 4px 12px rgba(179, 119, 209, 0.3);
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(179, 119, 209, 0.4);
+}
+
+.button--secondary {
+  background: transparent;
+  border: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.button--secondary:hover {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  transform: translateY(-2px);
+}
+
+/* Enhanced card styles */
+.card, .modern-card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--animation-duration-normal) var(--animation-easing);
+}
+
+.card:hover, .modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(179, 119, 209, 0.2);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Improved typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: var(--ifm-letter-spacing-base);
+}
+
+h1 {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced focus states for accessibility */
+.button:focus,
+.navbar__link:focus,
+[role="button"]:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(179, 119, 209, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ========================================
+   ENHANCED ACCESSIBILITY & PERFORMANCE
+   ======================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --ifm-color-primary: #9d4edd;
+    --ifm-color-secondary: #ffb700;
+    --ifm-background-color: #000000;
+    --ifm-font-color-base: #ffffff;
+  }
+  
+  .card, .modern-card {
+    border-width: 2px;
+  }
+  
+  .button {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .heroLogo {
+    animation: none !important;
+  }
+  
+  .heroBanner::before {
+    animation: none !important;
+  }
+  
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Focus management */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top var(--animation-duration-normal) var(--animation-easing);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Improved link styles */
+a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: all var(--animation-duration-fast) var(--animation-easing);
+}
+
+a:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Enhanced keyboard navigation */
+.navbar__link:focus,
+.pagination-nav__link:focus,
+.menu__link:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+}
+
+/* Performance optimizations */
+.optimized-image-container {
+  will-change: opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.modern-card {
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Print styles */
+@media print {
+  .hero,
+  .navbar,
+  .footer {
+    display: none;
+  }
+  
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* Dark mode improvements */
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
 }

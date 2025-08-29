@@ -1,15 +1,40 @@
 .robotSpotlight {
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: var(--ifm-card-border-radius);
   background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--animation-duration-normal) var(--animation-easing);
+  position: relative;
+  overflow: hidden;
+}
+
+.robotSpotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity var(--animation-duration-normal) var(--animation-easing);
 }
 
 .robotSpotlight:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(179, 119, 209, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 32px rgba(179, 119, 209, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.robotSpotlight:hover::before {
+  opacity: 1;
 }
 
 .content {
@@ -22,23 +47,41 @@
   flex-shrink: 0;
   width: 200px;
   height: 200px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(179, 119, 209, 0.1), transparent);
+  opacity: 0;
+  transition: opacity var(--animation-duration-normal) var(--animation-easing);
+  z-index: 1;
+}
+
+.robotSpotlight:hover .imageContainer::before {
+  opacity: 1;
 }
 
 .robotImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all var(--animation-duration-normal) var(--animation-easing);
+  filter: brightness(0.9) contrast(1.1);
 }
 
-.robotImage:hover {
+.robotSpotlight:hover .robotImage {
   transform: scale(1.05);
+  filter: brightness(1) contrast(1.2);
 }
 
 .textContent {

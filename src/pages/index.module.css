@@ -8,27 +8,79 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: var(--ifm-background-color);
+  /* Ensure text is always visible regardless of theme */
+  color: var(--ifm-font-color-base);
+}
+
+/* Override Docusaurus hero classes to ensure proper contrast */
+.heroBanner .hero__title {
+  color: var(--ifm-font-color-base) !important;
+  /* Keep the gradient effect for the title */
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroBanner .hero__subtitle {
+  color: var(--ifm-color-content) !important;
+  opacity: 0.9;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--hero-gradient);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(179, 119, 209, 0.1) 0%, transparent 70%);
+  z-index: 1;
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .heroLogo {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgba(179, 119, 209, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    0 8px 24px rgba(179, 119, 209, 0.3),
+    0 0 60px rgba(179, 119, 209, 0.1);
+  transition: all var(--animation-duration-normal) var(--animation-easing);
+  animation: float 3s ease-in-out infinite;
+  border: 3px solid rgba(179, 119, 209, 0.2);
 }
 
 .heroLogo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 32px rgba(179, 119, 209, 0.4);
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 
+    0 16px 40px rgba(179, 119, 209, 0.4),
+    0 0 80px rgba(179, 119, 209, 0.2);
+  border-color: var(--ifm-color-primary);
 }
 
 @media screen and (max-width: 996px) {
@@ -54,6 +106,32 @@
   margin: 0;
 }
 
+/* Ensure button text has proper contrast - using higher specificity */
+.heroBanner .buttons .button.button--secondary {
+  color: #ffffff !important;
+  border-color: var(--ifm-color-primary) !important;
+  background: rgba(179, 119, 209, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-width: 2px !important;
+  font-weight: 600 !important;
+}
+
+.heroBanner .buttons .button.button--secondary:hover {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+  border-color: var(--ifm-color-primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(179, 119, 209, 0.4) !important;
+}
+
+.heroBanner .buttons .button.button--primary {
+  color: white !important;
+  background: var(--primary-gradient) !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
 .featuresSection {
   padding: 4rem 0;
   background: var(--ifm-background-surface-color);
@@ -62,7 +140,7 @@
 .featuresGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: clamp(2rem, 4vw, 3rem);
   max-width: 1200px;
   margin: 0 auto;
 }
