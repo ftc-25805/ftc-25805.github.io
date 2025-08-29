@@ -77,7 +77,7 @@ export default function Home(): ReactNode {
                                 {
                                     name: "DOD STEM",
                                     logo: "/img/dod-stem.svg",
-                                    tier: "silver",
+                                    tier: "bronze",
                                     website: "https://www.dodstem.us/",
                                     // description: ""
                                 },
