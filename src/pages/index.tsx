@@ -65,6 +65,13 @@ export default function Home(): ReactNode {
                                     // description: ""
                                 },
                                 {
+                                    name: "Google",
+                                    logo: "/img/google.svg",
+                                    tier: "silver",
+                                    website: "https://google.com",
+                                    // description: ""
+                                },
+                                {
                                     name: "DOD STEM",
                                     logo: "/img/dod-stem.svg",
                                     tier: "silver",
