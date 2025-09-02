@@ -63,23 +63,38 @@
 }
 
 .heroLogo {
-  width: 140px;
-  height: 140px;
+  width: 220px;
+  height: 220px;
   object-fit: contain;
   border-radius: 50%;
+  /* Enhanced background for transparent logo */
+  background: linear-gradient(135deg, 
+    rgba(179, 119, 209, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(179, 119, 209, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px;
   box-shadow: 
-    0 8px 24px rgba(179, 119, 209, 0.3),
-    0 0 60px rgba(179, 119, 209, 0.1);
+    0 8px 32px rgba(179, 119, 209, 0.3),
+    0 0 60px rgba(179, 119, 209, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all var(--animation-duration-normal) var(--animation-easing);
   animation: float 3s ease-in-out infinite;
-  border: 3px solid rgba(179, 119, 209, 0.2);
+  border: 2px solid rgba(179, 119, 209, 0.3);
+  position: relative;
 }
 
 .heroLogo:hover {
   transform: scale(1.1) translateY(-5px);
+  background: linear-gradient(135deg, 
+    rgba(179, 119, 209, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(179, 119, 209, 0.2) 100%);
   box-shadow: 
     0 16px 40px rgba(179, 119, 209, 0.4),
-    0 0 80px rgba(179, 119, 209, 0.2);
+    0 0 80px rgba(179, 119, 209, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   border-color: var(--ifm-color-primary);
 }
 
@@ -89,8 +104,8 @@
   }
   
   .heroLogo {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
   }
 }
 
