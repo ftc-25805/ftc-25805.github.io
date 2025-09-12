@@ -63,6 +63,13 @@ const sidebars: SidebarsConfig = {
                 'resources/community-resources/local-events-and-meetups',
             ],
         },
+        {
+            type: 'category',
+            label: 'Seasons',
+            items: [
+                'resources/seasons/decode',
+            ],
+        },
     ],
 
     // But you can create a sidebar manually

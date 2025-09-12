@@ -50,4 +50,3 @@ Advanced concepts and libraries for experienced FTC programmers.
   videoId="7yzEMGYVPO8"
   title="Your Robot's First Thought: Selection Statements "
 />
-
