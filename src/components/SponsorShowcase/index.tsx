@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 export interface Sponsor {
   name: string;
-  logo: string;
+  logo?: string;
   tier: 'platinum' | 'gold' | 'silver' | 'bronze';
   website?: string;
   description?: string;
@@ -32,11 +32,10 @@ const defaultSponsors: Sponsor[] = [
     description: "Innovative engineering consultancy"
   },
   {
-    name: "Local Hardware Store",
-    logo: "/img/sponsor-placeholder.png",
+    name: "Community Robotics Fund",
     tier: "silver",
     website: "#",
-    description: "Supporting local robotics teams"
+    description: "Supporting local robotics teams through community donations"
   }
 ];
 
@@ -63,19 +62,21 @@ export default function SponsorShowcase({
         {sponsors.map((sponsor, index) => (
           <div 
             key={index} 
-            className={`${styles.sponsorCard} ${styles[sponsor.tier]}`}
+            className={`${styles.sponsorCard} ${styles[sponsor.tier]} ${!sponsor.logo ? styles.noLogo : ''}`}
           >
             <div className={styles.tierBadge} style={{ backgroundColor: tierColors[sponsor.tier] }}>
               {sponsor.tier.toUpperCase()}
             </div>
             
-            <div className={styles.logoContainer}>
-              <img 
-                src={sponsor.logo} 
-                alt={`${sponsor.name} logo`}
-                className={styles.sponsorLogo}
-              />
-            </div>
+            {sponsor.logo && (
+              <div className={styles.logoContainer}>
+                <img 
+                  src={sponsor.logo} 
+                  alt={`${sponsor.name} logo`}
+                  className={styles.sponsorLogo}
+                />
+              </div>
+            )}
             
             <div className={styles.sponsorInfo}>
               <h4 className={styles.sponsorName}>{sponsor.name}</h4>
