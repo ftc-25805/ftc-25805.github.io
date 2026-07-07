@@ -1,0 +1,6 @@
+filters:
+  and:
+    - file.inFolder("sponsers")
+views:
+  - type: table
+    name: Table

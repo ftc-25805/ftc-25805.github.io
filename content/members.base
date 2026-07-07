@@ -1,0 +1,6 @@
+filters:
+  and:
+    - file.folder == "Members"
+views:
+  - type: cards
+    name: Table
