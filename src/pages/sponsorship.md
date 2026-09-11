@@ -18,14 +18,15 @@ Thank you for your interest in supporting our robotics team! We are always looki
 
 ## Sponsorship Levels
 
-### 🥇 Gold Sponsor ($1,000+)
+### 🥇 Gold Sponsor ($2,000+)
 
-- **Name featured on robot**
-- **Logo on Team T-Shirt**
-- **Logo on Banner**
-- **Logo on Website**
+- **Only 1 Slot available per competition season**
+- **Name/Logo featured on robot**
+- **Logo featured on Team T-Shirt**
+- **Logo featured on Banner**
+- **Logo featured on Website**
 
-### 🥈 Silver Sponsor ($500 - $999)
+### 🥈 Silver Sponsor ($500 - $1999)
 
 - **Logo on Team T-Shirt**
 - **Logo on Banner**
