@@ -1,0 +1,21 @@
+filters:
+  and:
+    - file.inFolder("Sponsors")
+    - file.ext == "md"
+views:
+  - type: cards
+    name: Cards
+    groupBy:
+      property: tier
+      direction: ASC
+    order:
+      - title
+      - tier
+    sort:
+      - property: tier
+        direction: DESC
+    image: logo
+    imageFit: contain
+    imageAspectRatio: 2.4
+  - type: table
+    name: Table

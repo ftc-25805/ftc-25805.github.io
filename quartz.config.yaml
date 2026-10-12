@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: Reprogrammed
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: IBM Plex Sans
+      body: IBM Plex Sans
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#faf8fc"
+        lightgray: "#ddd5e8"
+        gray: "#8a7da0"
+        darkgray: "#3d3254"
+        dark: "#241a38"
+        secondary: "#3a2b57"
+        tertiary: "#fdc62a"
+        highlight: rgba(253, 198, 42, 0.22)
+        textHighlight: "#fdc62a88"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#15101d"
+        lightgray: "#34294a"
+        gray: "#a79cb8"
+        darkgray: "#ebe6f3"
+        dark: "#f5f1fa"
+        secondary: "#fdc62a"
+        tertiary: "#ffdf7d"
+        highlight: rgba(253, 198, 42, 0.12)
+        textHighlight: "#fdc62a66"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -225,8 +225,8 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        FTC Scout: https://ftcscout.org/teams/25805#USOHCIQ
+        GitHub: https://github.com/ftc-25805
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
@@ -262,7 +262,7 @@ plugins:
       name: quartz-themes
       repo: github:saberzero1/quartz-themes
       subdir: plugin
-    enabled: true
+    enabled: false
     options:
       theme: default
   - source: github:quartz-community/obsidian-plugin-excalidraw
