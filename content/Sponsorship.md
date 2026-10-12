@@ -71,5 +71,5 @@ Thank you for your interest in supporting our robotics team! We are always looki
 <div class="cta-box">
   <div class="cta-title">Ready to Partner With Us?</div>
   <div class="cta-desc">Whether you're a local business, national corporation, or individual supporter, we have opportunities that can match your goals and budget.</div>
-  <a class="btn btn-primary" href="/">Become a Sponsor</a>
+  <a class="btn btn-primary" href="/contact">Become a Sponsor</a>
 </div>

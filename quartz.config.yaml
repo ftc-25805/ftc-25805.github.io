@@ -225,6 +225,7 @@ plugins:
     enabled: true
     options:
       links:
+        Contact: https://ftc-25805.github.io/contact
         FTC Scout: https://ftcscout.org/teams/25805#USOHCIQ
         GitHub: https://github.com/ftc-25805
   - source: github:quartz-community/recent-notes
