@@ -1,0 +1,19 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.hasTag("blog")
+properties:
+  title:
+    displayName: Post
+  date:
+    displayName: Date
+views:
+  - type: table
+    name: Latest
+    limit: 5
+    order:
+      - title
+      - date
+    sort:
+      - property: date
+        direction: DESC

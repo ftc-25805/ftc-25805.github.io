@@ -49,6 +49,10 @@ Our latest competition robot features advanced autonomous navigation, precision 
   <span>Control Hub: <b>REV Control Hub</b></span>
 </div>
 
+## Latest Posts
+
+![[recent-posts.base#Latest]]
+
 ## Sponsors
 
 ![[sponsors.base#Cards]]

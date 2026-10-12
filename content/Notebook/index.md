@@ -22,9 +22,9 @@ Use the sidebar to explore our organized resource categories:
 
 If you're new to FTC robotics, we recommend starting with:
 
-1. [Getting Started](/notebook/resources/programming-guides/getting-started) - Essential programming basics
+1. [Getting Started](getting-started.md) - Essential programming basics
 2. [Mechanical Design](/notebook/resources/build-and-design/mechanical-design) - Robot building fundamentals
-3. [FIRST Core Values](/notebook/resources/team-development/teamwork-and-communication) - Understanding the FIRST philosophy
+3. [FIRST Core Values](teamwork-and-communication.md) - Understanding the FIRST philosophy
 
 ## Need Help?
 
