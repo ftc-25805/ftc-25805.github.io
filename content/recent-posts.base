@@ -10,10 +10,10 @@ properties:
 views:
   - type: table
     name: Latest
-    limit: 5
     order:
       - title
       - date
     sort:
       - property: date
         direction: DESC
+    limit: 5
