@@ -52,7 +52,8 @@
 }
 
 // ============================================================================
-// Header roundel: team logo
+// Header logo: team crest (content/crest.svg; its baked-in fills are the dark-theme
+// colors, which suit the purple sidebar in both themes)
 // ============================================================================
 .page-title a {
   display: inline-flex;
@@ -65,9 +66,9 @@
     flex-shrink: 0;
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
-    background-image: url("/static/logo.png");
-    background-size: cover;
+    background-image: url("/crest.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
   }
 }
