@@ -2,20 +2,35 @@ filters:
   and:
     - file.inFolder("Sponsors")
     - file.ext == "md"
+    - file.name != "index"
+formulas:
+  tierRank: if(tier == "GOLD", 1, if(tier == "SILVER", 2, if(tier == "BRONZE", 3, 4)))
+properties:
+  years:
+    displayName: Years Sponsored
 views:
   - type: cards
     name: Cards
-    groupBy:
-      property: tier
-      direction: ASC
+    filters:
+      and:
+        - years.contains("2026-27")
     order:
       - title
       - tier
     sort:
-      - property: tier
-        direction: DESC
+      - property: formula.tierRank
+        direction: ASC
+      - property: title
+        direction: ASC
     image: logo
     imageFit: contain
-    imageAspectRatio: 2.4
+    imageAspectRatio: 1
   - type: table
-    name: Table
+    name: All Sponsors
+    order:
+      - title
+      - tier
+      - years
+    sort:
+      - property: title
+        direction: ASC

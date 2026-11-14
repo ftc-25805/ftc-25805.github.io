@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./variables.scss" as *;
 
 // ============================================================================
@@ -114,6 +115,39 @@
     flex-shrink: 0;
     border-radius: 50%;
   }
+}
+
+// Homepage crest (![[crest.svg]] is inlined at build time by plugins/inline-svg-embeds)
+// Fills are overridden here so the crest follows Quartz's light/dark toggle.
+:root {
+  --crest-gold: #fdc62a;
+  --crest-purple: #8e6fd0;
+  --crest-sword: #6b5a8e;
+  --crest-gear: #8e6fd0;
+  --crest-bulb: #e0a400;
+}
+:root[saved-theme="dark"] {
+  --crest-sword: #c9bde0;
+  --crest-gear: #b9a3ee;
+  --crest-bulb: #fdc62a;
+}
+.inline-svg-crest {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto 20px;
+  background: transparent;
+
+  #shield-outer { fill: var(--crest-gold); }
+  #shield-inner { fill: var(--crest-purple); }
+  #sword-upper, #sword-lower, #sword-left, #sword-right { fill: var(--crest-sword); }
+  #gear { fill: var(--crest-gear); }
+  #lightbulb { fill: var(--crest-bulb); }
+  #light-rays { fill: var(--tertiary); }   // #fdc62a light / #ffdf7d dark
+  #ftc-text, #team-name { fill: var(--dark); } // near-black light / #f5f1fa dark
+  #team-number { fill: var(--secondary); } // purple light / gold dark
+  #binary-code { fill: var(--gray); }
 }
 
 // ============================================================================
@@ -305,6 +339,13 @@
   }
 }
 
+// Folder pages: a folder's index.md with `cssclasses: [hide-folder-listing]`
+// hides the automatic "N items under this folder" list (e.g. Sponsors, which
+// embeds its base instead).
+.popover-hint:has(> article.hide-folder-listing) > .page-listing {
+  display: none;
+}
+
 // ============================================================================
 // Bases cards (Members / Sponsors) — align to the same card tokens
 // ============================================================================
@@ -321,10 +362,60 @@
     background-color: var(--hover-bg);
   }
 }
+// Tier outlines: data-tier is set from each card's "tier" property by
+// plugins/bases-card-tiers. Keeps the tier color on hover too.
+// Silver is darker in light mode so it reads on the pale background.
+:root {
+  --tier-gold: #fdc62a;
+  --tier-silver: #7c7e8c;
+  --tier-bronze: #c47a3d;
+}
+:root[saved-theme="dark"] {
+  --tier-silver: #a8a9b4;
+}
+// Each tier starts on its own row (cards are sorted by tier in the base).
+.bases-card[data-tier-start] {
+  grid-column-start: 1;
+}
+@each $tier in ("gold", "silver", "bronze") {
+  .bases-card[data-tier="#{$tier}"] {
+    &,
+    &:hover {
+      border: 2px solid var(--tier-#{$tier});
+    }
+  }
+}
 .bases-card-title {
   font-family: var(--headerFont);
   font-weight: $semiBoldWeight;
   color: var(--dark);
+}
+// Single-color (black) sponsor logos: base cards draw logos as CSS
+// background-images, so they can't be recolored from inside. Instead these
+// covers keep the default light cover in light mode, and in dark mode are
+// inverted (logo turns white) on a fixed dark background. The filter also
+// inverts background-color, so we set the inverse of the color we actually
+// want to see. Add a selector per logo.
+$mono-logo-bg: #241a38;
+:root[saved-theme="dark"] .bases-card-cover:is([style*="dowstem.svg" i], [style*="levelmb.svg" i]) {
+  filter: invert(1);
+  background-color: color.invert($mono-logo-bg);
+}
+// Full-color sponsor logos can't be inverted without wrecking brand colors,
+// so in dark mode swap in a reversed variant (navy -> white) on the same
+// fixed dark background. Inline background-image needs !important to override.
+// Leidos' light-gray mark (#D3D2D2) vanishes on the default lavender cover,
+// so light mode swaps in a variant with that gray darkened (#8C8A96).
+.bases-card-cover[style*="leidos.svg" i] {
+  background-image: url("/sponsors/leidos-light.svg") !important;
+}
+:root[saved-theme="dark"] .bases-card-cover[style*="leidos.svg" i] {
+  background-image: url("/sponsors/leidos-dark.svg") !important;
+  background-color: $mono-logo-bg;
+}
+:root[saved-theme="dark"] .bases-card-cover[style*="googleorg.svg" i] {
+  background-image: url("/sponsors/googleorg-dark.svg") !important;
+  background-color: $mono-logo-bg;
 }
 .bases-card-image {
   background-color: #ffffff;

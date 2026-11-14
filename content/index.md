@@ -2,9 +2,7 @@
 title: Reprogrammed — FTC #25805
 ---
 
-<div class="hero-row">
-  <img src="/static/logo.png" alt="Team 25805 Reprogrammed logo" />
-</div>
+![[crest.svg]]
 
 <div class="hero-card">
 <div class="hero-eyebrow">DAYTON CHRISTIAN SCHOOL · MIAMISBURG, OH</div>

@@ -1,0 +1,27 @@
+{
+  "name": "inline-svg-embeds",
+  "version": "1.0.0",
+  "description": "Local Quartz plugin: replaces ![[file.svg]] embeds with inline <svg> so site CSS can style them",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "quartz": {
+    "name": "inline-svg-embeds",
+    "displayName": "Inline SVG Embeds",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 35,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}

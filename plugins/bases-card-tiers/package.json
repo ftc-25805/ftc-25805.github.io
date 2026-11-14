@@ -1,0 +1,27 @@
+{
+  "name": "bases-card-tiers",
+  "version": "1.0.0",
+  "description": "Local Quartz plugin: tags base cards with data-tier from their tier property so CSS can outline them",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "quartz": {
+    "name": "bases-card-tiers",
+    "displayName": "Bases Card Tiers",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 95,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}
