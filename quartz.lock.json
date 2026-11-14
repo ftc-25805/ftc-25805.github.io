@@ -19,12 +19,6 @@
       "commit": "7d4e498c752c46d448913973c0ff2df11255e815",
       "installedAt": "2026-11-14T02:50:51.186Z"
     },
-    "bases-card-tiers": {
-      "source": "./plugins/bases-card-tiers",
-      "resolved": "/home/polar/repos/personal/ftc-25805-website/main/plugins/bases-card-tiers",
-      "commit": "local",
-      "installedAt": "2026-11-14T02:50:33.879Z"
-    },
     "bases-page": {
       "source": "github:quartz-community/bases-page",
       "resolved": "https://github.com/quartz-community/bases-page.git",
@@ -144,12 +138,6 @@
       "resolved": "https://github.com/quartz-community/graph.git",
       "commit": "52db5936a4887b47b4a2a3a760a8597248615983",
       "installedAt": "2026-11-14T02:50:51.401Z"
-    },
-    "inline-svg-embeds": {
-      "source": "./plugins/inline-svg-embeds",
-      "resolved": "/home/polar/repos/personal/ftc-25805-website/main/plugins/inline-svg-embeds",
-      "commit": "local",
-      "installedAt": "2026-11-14T02:50:33.879Z"
     },
     "latex": {
       "source": "github:quartz-community/latex",
